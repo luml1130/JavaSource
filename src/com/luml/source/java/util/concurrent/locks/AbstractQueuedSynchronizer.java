@@ -882,11 +882,13 @@ public abstract class AbstractQueuedSynchronizer
      */
     private void doAcquireInterruptibly(int arg)
         throws InterruptedException {
+        // 将节点插入到同步队列中
         final Node node = addWaiter(Node.EXCLUSIVE);
         boolean failed = true;
         try {
             for (;;) {
                 final Node p = node.predecessor();
+                //获取锁出队
                 if (p == head && tryAcquire(arg)) {
                     setHead(node);
                     p.next = null; // help GC
@@ -895,6 +897,7 @@ public abstract class AbstractQueuedSynchronizer
                 }
                 if (shouldParkAfterFailedAcquire(p, node) &&
                     parkAndCheckInterrupt())
+                    //线程被阻塞时,若检测到中断则抛出中断异常后退出
                     throw new InterruptedException();
             }
         } finally {
@@ -912,26 +915,33 @@ public abstract class AbstractQueuedSynchronizer
      */
     private boolean doAcquireNanos(int arg, long nanosTimeout)
             throws InterruptedException {
+        // 传入时间小于0 方法直接退出，线程获取锁失败
         if (nanosTimeout <= 0L)
             return false;
+        // 根据超时时间和当前时间计算出截止时间
         final long deadline = System.nanoTime() + nanosTimeout;
         final Node node = addWaiter(Node.EXCLUSIVE);
         boolean failed = true;
         try {
             for (;;) {
                 final Node p = node.predecessor();
+                // 当前线程获得锁出队列
                 if (p == head && tryAcquire(arg)) {
                     setHead(node);
                     p.next = null; // help GC
                     failed = false;
                     return true;
                 }
+                // 再次计算截止时间-当前时间值（重新计算超时时间）
                 nanosTimeout = deadline - System.nanoTime();
+                // 已超时，线程直接退出
                 if (nanosTimeout <= 0L)
                     return false;
                 if (shouldParkAfterFailedAcquire(p, node) &&
                     nanosTimeout > spinForTimeoutThreshold)
+                    // 在超时时间内仍未被唤醒，线程退出
                     LockSupport.parkNanos(this, nanosTimeout);
+                //线程被中断抛出被中断异常
                 if (Thread.interrupted())
                     throw new InterruptedException();
             }
@@ -1216,8 +1226,11 @@ public abstract class AbstractQueuedSynchronizer
      */
     public final void acquireInterruptibly(int arg)
             throws InterruptedException {
+        //增加了对中断状态的判断，
+        //如果检测线程中断状态改变,抛出中断异常后方法直接退出
         if (Thread.interrupted())
             throw new InterruptedException();
+        //线程获取锁失败
         if (!tryAcquire(arg))
             doAcquireInterruptibly(arg);
     }
