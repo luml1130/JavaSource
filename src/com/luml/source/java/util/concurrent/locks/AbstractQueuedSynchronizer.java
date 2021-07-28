@@ -577,18 +577,25 @@ public abstract class AbstractQueuedSynchronizer
 
     /**
      * Inserts node into queue, initializing if necessary. See picture above.
+     * @description: 自旋cas入队
      * @param node the node to insert
      * @return node's predecessor
      */
     private Node enq(final Node node) {
-        for (;;) {
+        for (;;) {//循环
+            //获取尾节点
             Node t = tail;
+            //如果尾节点为空，创建哨兵节点，通过cas把头节点指向哨兵节点
             if (t == null) { // Must initialize
                 if (compareAndSetHead(new Node()))
+                    //cas成功，尾节点指向哨兵节点
                     tail = head;
             } else {
+                //当前节点的前驱节点设指向之前尾节点
                 node.prev = t;
+                //cas设置把尾节点指向当前节点
                 if (compareAndSetTail(t, node)) {
+                    //cas成功，之前尾节点的下个节点指向当前节点
                     t.next = node;
                     return t;
                 }
@@ -598,21 +605,30 @@ public abstract class AbstractQueuedSynchronizer
 
     /**
      * Creates and enqueues node for current thread and given mode.
-     *
-     * @param mode Node.EXCLUSIVE for exclusive, Node.SHARED for shared
+     * @description: Node节点入队-CLH队列
+     * @param mode
+     *  Node.EXCLUSIVE for exclusive, Node.SHARED for shared
+     *  Node.EXCLUSIVE 独占式 or Node.SHARED共享式
      * @return the new node
      */
     private Node addWaiter(Node mode) {
+        //根据当前线程创建节点，等待状态为0
         Node node = new Node(Thread.currentThread(), mode);
+
         // Try the fast path of enq; backup to full enq on failure
+        // 获取尾节点
         Node pred = tail;
         if (pred != null) {
+            //如果尾节点不等于null，把当前节点的前驱节点指向尾节点
             node.prev = pred;
+            //通过cas把尾节点指向当前节点
             if (compareAndSetTail(pred, node)) {
+                //通过cas把尾节点指向当前节点
                 pred.next = node;
                 return node;
             }
         }
+        //如果添加失败或队列不存在，执行end函数
         enq(node);
         return node;
     }
@@ -625,8 +641,11 @@ public abstract class AbstractQueuedSynchronizer
      * @param node the node
      */
     private void setHead(Node node) {
+        //节点设置为头部
         head = node;
+        //清空线程
         node.thread = null;
+        //清空前驱节点
         node.prev = null;
     }
 
@@ -859,11 +878,17 @@ public abstract class AbstractQueuedSynchronizer
         try {
             boolean interrupted = false;
             for (;;) {
+                //1.获取前驱节点
                 final Node p = node.predecessor();
+                //如果前驱节点是首节点，获取资源（子类实现）
                 if (p == head && tryAcquire(arg)) {
+                    //2.获取资源成功，设置当前节点为头节点，清空当前节点的信息，把当前节点变成哨兵节点
                     setHead(node);
+                    //3.原来首节点下个节点指向为null
                     p.next = null; // help GC
+                    //4.非异常状态，防止指向finally逻辑
                     failed = false;
+                    //5.返回线程中断状态
                     return interrupted;
                 }
                 if (shouldParkAfterFailedAcquire(p, node) &&

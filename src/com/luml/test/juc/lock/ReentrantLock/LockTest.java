@@ -15,7 +15,6 @@ public class LockTest {
         ReentrantLock lock = new ReentrantLock();
         lock.lock();
         try{
-
             //do some thing
         }finally {
             lock.unlock();
