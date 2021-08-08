@@ -8,6 +8,7 @@ import java.util.concurrent.locks.Lock;
 /**
  * @author luml
  * @description:不可重入的独占锁
+ * ：https://mp.weixin.qq.com/s/yikudYWZRgo8aopnIz7Ubw 实战
  * NonReentrantLock定义了一个内部类Sync，Sync用来实现具体的锁操作，它继承了A Q S，
  * 因为使用的是独占式模板，所以重写tryAcquire与tryRelease函数，
  * 另外提供了一个创建条件变量的入口，下面使用自定义的独占锁来同步两个线程对j++。
@@ -19,6 +20,7 @@ public class NonReentrantLock implements Lock {
      * 自定义同步器
      */
     private static class Sync extends AbstractQueuedSynchronizer {
+
         /**
          * 锁是否被线程持有
          */

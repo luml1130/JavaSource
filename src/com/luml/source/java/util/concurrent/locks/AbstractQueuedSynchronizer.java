@@ -379,19 +379,29 @@ public abstract class AbstractQueuedSynchronizer
      */
     static final class Node {
         /** Marker to indicate a node is waiting in shared mode */
+        //共享模式
         static final Node SHARED = new Node();
+
         /** Marker to indicate a node is waiting in exclusive mode */
+        //独占模式
         static final Node EXCLUSIVE = null;
 
         /** waitStatus value to indicate thread has cancelled */
+        //标识线程已处于结束状态
         static final int CANCELLED =  1;
+
         /** waitStatus value to indicate successor's thread needs unparking */
+        //等待被唤醒状态
         static final int SIGNAL    = -1;
+
         /** waitStatus value to indicate thread is waiting on condition */
+        //条件状态，
         static final int CONDITION = -2;
+
         /**
          * waitStatus value to indicate the next acquireShared should
          * unconditionally propagate
+         * 在共享模式中使用表示获得的同步状态会被传播
          */
         static final int PROPAGATE = -3;
 
@@ -428,6 +438,7 @@ public abstract class AbstractQueuedSynchronizer
          * The field is initialized to 0 for normal sync nodes, and
          * CONDITION for condition nodes.  It is modified using CAS
          * (or when possible, unconditional volatile writes).
+         * 等待状态,存在CANCELLED、SIGNAL、CONDITION、PROPAGATE 4种
          */
         volatile int waitStatus;
 
@@ -441,6 +452,7 @@ public abstract class AbstractQueuedSynchronizer
          * head only as a result of successful acquire. A
          * cancelled thread never succeeds in acquiring, and a thread only
          * cancels itself, not any other node.
+         * 同步队列中前驱结点
          */
         volatile Node prev;
 
@@ -456,12 +468,14 @@ public abstract class AbstractQueuedSynchronizer
          * double-check.  The next field of cancelled nodes is set to
          * point to the node itself instead of null, to make life
          * easier for isOnSyncQueue.
+         * 同步队列中后继结点
          */
         volatile Node next;
 
         /**
          * The thread that enqueued this node.  Initialized on
          * construction and nulled out after use.
+         * 请求锁的线程
          */
         volatile Thread thread;
 
@@ -474,11 +488,13 @@ public abstract class AbstractQueuedSynchronizer
          * re-acquire. And because conditions can only be exclusive,
          * we save a field by using special value to indicate shared
          * mode.
+         * 等待队列中的后继结点，这个与Condition有关
          */
         Node nextWaiter;
 
         /**
          * Returns true if node is waiting in shared mode.
+         * 判断是否为共享模式
          */
         final boolean isShared() {
             return nextWaiter == SHARED;
@@ -488,7 +504,7 @@ public abstract class AbstractQueuedSynchronizer
          * Returns previous node, or throws NullPointerException if null.
          * Use when predecessor cannot be null.  The null check could
          * be elided, but is present to help the VM.
-         *
+         *获取前驱结点
          * @return the predecessor of this node
          */
         final Node predecessor() throws NullPointerException {
@@ -532,6 +548,7 @@ public abstract class AbstractQueuedSynchronizer
      */
     private volatile int state;
 
+
     /**
      * Returns the current value of synchronization state.
      * This operation has memory semantics of a {@code volatile} read.
@@ -556,8 +573,8 @@ public abstract class AbstractQueuedSynchronizer
      * This operation has memory semantics of a {@code volatile} read
      * and write.
      *
-     * @param expect the expected value
-     * @param update the new value
+     * @param expect the expected value： 期望值
+     * @param update the new value   ： 要更新的值
      * @return {@code true} if successful. False return indicates that the actual
      *         value was not equal to the expected value.
      */
@@ -1091,7 +1108,8 @@ public abstract class AbstractQueuedSynchronizer
      * may queue the thread, if it is not already queued, until it is
      * signalled by a release from some other thread. This can be used
      * to implement method {@link Lock#tryLock()}.
-     *
+     * AQS中的模板方法,由其子类实现
+     * 独占模式下获取锁的方法
      * <p>The default
      * implementation throws {@link UnsupportedOperationException}.
      *
@@ -1114,10 +1132,10 @@ public abstract class AbstractQueuedSynchronizer
     /**
      * Attempts to set the state to reflect a release in exclusive
      * mode.
-     *
      * <p>This method is always invoked by the thread performing release.
-     *
      * <p>The default implementation throws
+     *
+     * 独占模式下解锁的方法
      * {@link UnsupportedOperationException}.
      *
      * @param arg the release argument. This value is always the one
@@ -1208,7 +1226,7 @@ public abstract class AbstractQueuedSynchronizer
      * UnsupportedOperationException}. This method is invoked
      * internally only within {@link ConditionObject} methods, so need
      * not be defined if conditions are not used.
-     *
+     * 判断是否为持有独占锁
      * @return {@code true} if synchronization is held exclusively;
      *         {@code false} otherwise
      * @throws UnsupportedOperationException if conditions are not supported
@@ -1224,12 +1242,13 @@ public abstract class AbstractQueuedSynchronizer
      * repeatedly blocking and unblocking, invoking {@link
      * #tryAcquire} until success.  This method can be used
      * to implement method {@link Lock#lock}.
-     *
+     * acquire为AQS本身实现的方法，其实现如下：
      * @param arg the acquire argument.  This value is conveyed to
      *        {@link #tryAcquire} but is otherwise uninterpreted and
      *        can represent anything you like.
      */
     public final void acquire(int arg) {
+        //再次尝试获取同步状态
         if (!tryAcquire(arg) &&
             acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
             selfInterrupt();

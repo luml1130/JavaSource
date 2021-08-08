@@ -123,30 +123,44 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         abstract void lock();
 
         /**
-         * Performs non-fair tryLock.  tryAcquire is implemented in
-         * subclasses, but both need nonfair try for trylock method.
+         * Performs non-fair tryLock.
+         * tryAcquire is implemented in subclasses, but both need nonfair try for trylock method.
+         * Acquire：获得
+         * 非公平的执行tryLock
+         * tryAcquire在子类中实现，
+         * 非公平的获得锁
          */
         final boolean nonfairTryAcquire(int acquires) {
             final Thread current = Thread.currentThread();
             int c = getState();
+            //判断同步状态是否为0，并尝试再次获取同步状态
             if (c == 0) {
+                //执行CAS操作
                 if (compareAndSetState(0, acquires)) {
                     setExclusiveOwnerThread(current);
                     return true;
                 }
             }
+            // 获取锁时先判断，如果当前线程就是已经占有锁的线程，则Status值+1，并返回true
             else if (current == getExclusiveOwnerThread()) {
                 int nextc = c + acquires;
                 if (nextc < 0) // overflow
                     throw new Error("Maximum lock count exceeded");
+                //设置当前同步状态，当前只有一个线程持有锁，因为不会发生线程安全问题，可以直接执行 setState(nextc);
                 setState(nextc);
                 return true;
             }
             return false;
         }
 
+        /**
+         * 释放锁
+         * @param releases
+         * @return
+         */
         protected final boolean tryRelease(int releases) {
             int c = getState() - releases;
+            //释放锁时也是判断当前线程是否是已占有锁的线程，然后再判断status,如果=0才释放锁
             if (Thread.currentThread() != getExclusiveOwnerThread())
                 throw new IllegalMonitorStateException();
             boolean free = false;
@@ -158,6 +172,10 @@ public class ReentrantLock implements Lock, java.io.Serializable {
             return free;
         }
 
+        /**
+         * 当前线程是否持有资源。是否正在独占资源。只有用到condition才需要去实现它
+         * @return
+         */
         protected final boolean isHeldExclusively() {
             // While we must in general read state before owner,
             // we don't need to do so to check if current thread is owner
@@ -204,12 +222,20 @@ public class ReentrantLock implements Lock, java.io.Serializable {
          * acquire on failure.
          */
         final void lock() {
+            //执行CAS操作，获取同步状态
             if (compareAndSetState(0, 1))
+                //成功则将独占锁线程设置为当前线程
                 setExclusiveOwnerThread(Thread.currentThread());
             else
+                //否则再次请求同步状态
                 acquire(1);
         }
 
+        /**
+         * AQS的tryAcquire方法 由子类Sync的子类NonfairSync实现
+         * @param acquires
+         * @return
+         */
         protected final boolean tryAcquire(int acquires) {
             return nonfairTryAcquire(acquires);
         }
@@ -240,6 +266,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
                     return true;
                 }
             }
+            // 获取锁时先判断，如果当前线程就是已经占有锁的线程，则Status值+1，并返回true
             else if (current == getExclusiveOwnerThread()) {
                 int nextc = c + acquires;
                 if (nextc < 0)
@@ -254,8 +281,8 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     /**
      * Creates an instance of {@code ReentrantLock}.
      * This is equivalent to using {@code ReentrantLock(false)}.
+     * 空参构造方法 默认非公平锁
      */
-    //空参构造方法 默认公平锁
     public ReentrantLock() {
         sync = new NonfairSync();
     }
@@ -278,11 +305,11 @@ public class ReentrantLock implements Lock, java.io.Serializable {
      *
      * <p>If the current thread already holds the lock then the hold
      * count is incremented by one and the method returns immediately.
-     *
      * <p>If the lock is held by another thread then the
      * current thread becomes disabled for thread scheduling
      * purposes and lies dormant until the lock has been acquired,
      * at which time the lock hold count is set to one.
+     * 加锁操作
      */
     public void lock() {
         sync.lock();

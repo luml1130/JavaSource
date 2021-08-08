@@ -3,6 +3,7 @@ package com.luml.test.juc.lock.customer;
 /**
  * @author luml
  * @description:
+ * 使用自定义的独占锁来同步两个线程对j++。
  * 无论执行多少次输出内容都是：200000
  * @date 2021/7/25 下午9:50
  */
