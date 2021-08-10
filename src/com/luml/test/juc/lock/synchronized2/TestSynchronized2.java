@@ -1,4 +1,4 @@
-package com.luml.test.juc.synchronized2;
+package com.luml.test.juc.lock.synchronized2;
 
 /**
  * @author luml
