@@ -1363,18 +1363,24 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
          * and so reject the task.
          */
         int c = ctl.get();
+        // 1.当前线程数量小于corePoolSize，则创建并启动线程。
         if (workerCountOf(c) < corePoolSize) {
+            // 成功，则返回
             if (addWorker(command, true))
                 return;
             c = ctl.get();
         }
+        // 2.步骤1创建线程失败，则尝试把任务加入阻塞队列，
         if (isRunning(c) && workQueue.offer(command)) {
+            // 入队列成功，检查线程池状态，如果状态部署RUNNING而且remove成功，则拒绝任务
             int recheck = ctl.get();
             if (! isRunning(recheck) && remove(command))
                 reject(command);
+            // 如果当前worker数量为0，通过addWorker(null, false)创建一个线程，其任务为null
             else if (workerCountOf(recheck) == 0)
                 addWorker(null, false);
         }
+        //3. 步骤1和2失败，则尝试将线程池的数量由corePoolSize扩充至maxPoolSize，如果失败，则拒绝任务
         else if (!addWorker(command, false))
             reject(command);
     }
