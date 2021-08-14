@@ -1,4 +1,4 @@
-package com.luml.jvm;
+package com.luml.jvm.init;
 
 /**
  * @author luml

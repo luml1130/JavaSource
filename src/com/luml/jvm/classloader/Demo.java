@@ -1,4 +1,4 @@
-package com.luml.jvm;
+package com.luml.jvm.classloader;
 
 /**
  * @author luml
