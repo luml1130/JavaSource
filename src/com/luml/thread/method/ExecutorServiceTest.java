@@ -1,4 +1,4 @@
-package com.luml.thread.test;
+package com.luml.thread.method;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
