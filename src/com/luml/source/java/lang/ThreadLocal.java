@@ -155,18 +155,29 @@ public class ThreadLocal<T> {
      * by an invocation of the {@link #initialValue} method.
      *
      * @return the current thread's value of this thread-local
+     * 步骤如下
+     *     获取当前线程
+     *     获取当前线程的本地变量
+     *     线程本地变量没有被创建，执行setInitialValue方法进行初始化，并返回value值
+     *     线程本地变量存在，ThreadLocal计算成索引从 本地线程变量 获取Entry，如果Entry为null，
+     *              执行setInitialValue方法进行初始化，并返回value值，否则通过Entry获取value返回
      */
     public T get() {
+        //获取当前线程
         Thread t = Thread.currentThread();
+        //获取线程本地变量，getMap(t) = t.threadLocals
         ThreadLocalMap map = getMap(t);
         if (map != null) {
+            //如果获取线程本地变量不为空，通过当前threadLocal作为索引获取对应的Entry对象
             ThreadLocalMap.Entry e = map.getEntry(this);
             if (e != null) {
+                //如果Entry对象不为空，获取value值并返回
                 @SuppressWarnings("unchecked")
                 T result = (T)e.value;
                 return result;
             }
         }
+        //如果线程本地变量为null 或 value值为空，执行初始化value
         return setInitialValue();
     }
 
@@ -175,14 +186,27 @@ public class ThreadLocal<T> {
      * of set() in case user has overridden the set() method.
      *
      * @return the initial value
+     * 步骤如下
+     *     通过get方法触发
+     *     执行初始化，获取到value
+     *     获取当前线程
+     *     获取当前线程本地变量
+     *     如果当前线程本地变量存在 ，ThreadLocal计算成索引设置映射的value，
+     *                      否则创建线程本地变量再做后续的设置操作
+     *     返回value值
      */
     private T setInitialValue() {
+        //执行initialValue方法，获取value
         T value = initialValue();
+        //获取当前线程
         Thread t = Thread.currentThread();
+        //获取线程本地变量，getMap(t) = t.threadLocals
         ThreadLocalMap map = getMap(t);
+        //如果获取线程本地变量不为空，通过当前threadLocal作为索引设置映射的value
         if (map != null)
             map.set(this, value);
         else
+        //如果线程本地变量为空 创建线程本地变量，并把当前threadLocal作为索引设置映射的value
             createMap(t, value);
         return value;
     }
@@ -195,13 +219,21 @@ public class ThreadLocal<T> {
      *
      * @param value the value to be stored in the current thread's copy of
      *        this thread-local.
+     *步骤如下
+     *     获取当前线程
+     *     获取线程本地变量
+     *     本地变量不为空，当前ThreadLocal为索引设置映射的value，否则创建线程本地变量再做后续的设置操作
      */
     public void set(T value) {
+        //获取当前线程
         Thread t = Thread.currentThread();
+        //获取线程本地变量，getMap(t) = t.threadLocals
         ThreadLocalMap map = getMap(t);
         if (map != null)
+            //如果获取线程本地变量不为空，通过当前threadLocal作为索引设置映射的value
             map.set(this, value);
         else
+            //如果线程本地变量为空 创建线程本地变量，并把当前threadLocal作为索引设置映射的value
             createMap(t, value);
     }
 
@@ -304,11 +336,11 @@ public class ThreadLocal<T> {
          * == null) mean that the key is no longer referenced, so the
          * entry can be expunged from table.  Such entries are referred to
          * as "stale entries" in the code that follows.
+         * Entry对象继承了 WeakReference
          */
         static class Entry extends WeakReference<ThreadLocal<?>> {
             /** The value associated with this ThreadLocal. */
             Object value;
-
             Entry(ThreadLocal<?> k, Object v) {
                 super(k);
                 value = v;
@@ -317,12 +349,14 @@ public class ThreadLocal<T> {
 
         /**
          * The initial capacity -- MUST be a power of two.
+         * 默认数组长度
          */
         private static final int INITIAL_CAPACITY = 16;
 
         /**
          * The table, resized as necessary.
          * table.length MUST always be a power of two.
+         * 数组
          */
         private Entry[] table;
 
@@ -452,7 +486,6 @@ public class ThreadLocal<T> {
          * @param value the value to be set
          */
         private void set(ThreadLocal<?> key, Object value) {
-
             // We don't use a fast path as with get() because it is at
             // least as common to use set() to create new entries as
             // it is to replace existing ones, in which case, a fast
@@ -477,7 +510,6 @@ public class ThreadLocal<T> {
                     return;
                 }
             }
-
             tab[i] = new Entry(key, value);
             int sz = ++size;
             if (!cleanSomeSlots(i, sz) && sz >= threshold)
@@ -486,15 +518,24 @@ public class ThreadLocal<T> {
 
         /**
          * Remove the entry for key.
+         * 步骤如下
+         *     获取Entry数组
+         *     当前ThreadLocal计算出索引
+         *     根据索引获取Entry元素（若是第一次没有命中，就循环直到null）
+         *     清除Entry元素
          */
         private void remove(ThreadLocal<?> key) {
+            //获取entry数组
             Entry[] tab = table;
             int len = tab.length;
+            //计算出当前threadLocal 的数组下标
             int i = key.threadLocalHashCode & (len-1);
             for (Entry e = tab[i];
                  e != null;
                  e = tab[i = nextIndex(i, len)]) {
+                //遍历，找到Entry中key为当前对象key的那个元素
                 if (e.get() == key) {
+                    //清除该元素
                     e.clear();
                     expungeStaleEntry(i);
                     return;
