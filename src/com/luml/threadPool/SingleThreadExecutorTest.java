@@ -1,4 +1,4 @@
-package com.luml.thread.threadPool;
+package com.luml.threadPool;
 
 import org.junit.Test;
 

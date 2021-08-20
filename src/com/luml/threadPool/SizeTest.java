@@ -1,4 +1,4 @@
-package com.luml.thread.threadPool;
+package com.luml.threadPool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
