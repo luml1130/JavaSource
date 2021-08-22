@@ -133,14 +133,12 @@ public interface Map<K,V> {
      * Returns the number of key-value mappings in this map.  If the
      * map contains more than <tt>Integer.MAX_VALUE</tt> elements, returns
      * <tt>Integer.MAX_VALUE</tt>.
-     *
      * @return the number of key-value mappings in this map
      */
     int size();
 
     /**
      * Returns <tt>true</tt> if this map contains no key-value mappings.
-     *
      * @return <tt>true</tt> if this map contains no key-value mappings
      */
     boolean isEmpty();
@@ -151,7 +149,6 @@ public interface Map<K,V> {
      * this map contains a mapping for a key <tt>k</tt> such that
      * <tt>(key==null ? k==null : key.equals(k))</tt>.  (There can be
      * at most one such mapping.)
-     *
      * @param key key whose presence in this map is to be tested
      * @return <tt>true</tt> if this map contains a mapping for the specified
      *         key

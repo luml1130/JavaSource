@@ -445,11 +445,14 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      *         or the load factor is nonpositive
      */
     public HashMap(int initialCapacity, float loadFactor) {
+        //初始容量不能<0
         if (initialCapacity < 0)
             throw new IllegalArgumentException("Illegal initial capacity: " +
                                                initialCapacity);
+        //初始容量不能 > 最大容量值，HashMap的最大容量值为2^30
         if (initialCapacity > MAXIMUM_CAPACITY)
             initialCapacity = MAXIMUM_CAPACITY;
+        //负载因子不能 < 0
         if (loadFactor <= 0 || Float.isNaN(loadFactor))
             throw new IllegalArgumentException("Illegal load factor: " +
                                                loadFactor);
