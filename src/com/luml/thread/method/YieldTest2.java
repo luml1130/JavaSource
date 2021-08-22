@@ -8,11 +8,11 @@ package com.luml.thread.method;
  */
 public class YieldTest2 {
     public static void main(String[] args) {
-        Thread thread1 = new Thread(new com.luml.web.thread.method.tThread2(), "thread1");
-        Thread thread2 = new Thread(new com.luml.web.thread.method.tThread2(), "thread2");
-        Thread thread3 = new Thread(new com.luml.web.thread.method.tThread2(), "thread3");
-        Thread thread4 = new Thread(new com.luml.web.thread.method.tThread2(), "thread4");
-        Thread thread5 = new Thread(new com.luml.web.thread.method.tThread2(), "thread5");
+        Thread thread1 = new Thread(new com.luml.thread.method.tThread2(), "thread1");
+        Thread thread2 = new Thread(new com.luml.thread.method.tThread2(), "thread2");
+        Thread thread3 = new Thread(new com.luml.thread.method.tThread2(), "thread3");
+        Thread thread4 = new Thread(new com.luml.thread.method.tThread2(), "thread4");
+        Thread thread5 = new Thread(new com.luml.thread.method.tThread2(), "thread5");
         thread1.setPriority(1);
         thread2.setPriority(3);
         thread3.setPriority(5);
