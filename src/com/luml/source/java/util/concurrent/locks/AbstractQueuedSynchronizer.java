@@ -535,16 +535,19 @@ public abstract class AbstractQueuedSynchronizer
      * If head exists, its waitStatus is guaranteed not to be
      * CANCELLED.
      */
+    //指向同步队列队头
     private transient volatile Node head;
 
     /**
      * Tail of the wait queue, lazily initialized.  Modified only via
      * method enq to add new wait node.
      */
+    //指向同步的队尾
     private transient volatile Node tail;
 
     /**
      * The synchronization state.
+     * 同步状态，0代表锁未被占用，1代表锁已被占用
      */
     private volatile int state;
 
@@ -595,6 +598,7 @@ public abstract class AbstractQueuedSynchronizer
     /**
      * Inserts node into queue, initializing if necessary. See picture above.
      * @description: 自旋cas入队
+     * AQS本身实现方法，通过循环CAS操作将当前线程构造的node结点入队，解决上面队列为空或者是并发入队失败的情况；
      * @param node the node to insert
      * @return node's predecessor
      */
@@ -602,7 +606,7 @@ public abstract class AbstractQueuedSynchronizer
         for (;;) {//循环
             //获取尾节点
             Node t = tail;
-            //如果尾节点为空，创建哨兵节点，通过cas把头节点指向哨兵节点
+            //如果尾节点为空即没有头结点，创建哨兵节点，通过cas把头节点指向哨兵节点
             if (t == null) { // Must initialize
                 if (compareAndSetHead(new Node()))
                     //cas成功，尾节点指向哨兵节点
@@ -623,22 +627,25 @@ public abstract class AbstractQueuedSynchronizer
     /**
      * Creates and enqueues node for current thread and given mode.
      * @description: Node节点入队-CLH队列
+     * AQS本身实现的方法，将当前获取锁失败的线程构造成node结点加入的同步队列尾部，若队列为空或者并发入队失败，则调用enq方法重试。
      * @param mode
      *  Node.EXCLUSIVE for exclusive, Node.SHARED for shared
      *  Node.EXCLUSIVE 独占式 or Node.SHARED共享式
      * @return the new node
      */
     private Node addWaiter(Node mode) {
-        //根据当前线程创建节点，等待状态为0
+        //将请求同步状态失败的线程封装成结点，根据当前线程创建节点，等待状态为0
         Node node = new Node(Thread.currentThread(), mode);
 
         // Try the fast path of enq; backup to full enq on failure
         // 获取尾节点
         Node pred = tail;
+        //如果是第一个结点加入肯定为空，跳过。
+        //如果非第一个结点则直接执行CAS入队操作，尝试在尾部快速添加
         if (pred != null) {
             //如果尾节点不等于null，把当前节点的前驱节点指向尾节点
             node.prev = pred;
-            //通过cas把尾节点指向当前节点
+            //使用CAS执行尾部结点替换，尝试在尾部快速添加 把尾节点指向当前节点
             if (compareAndSetTail(pred, node)) {
                 //通过cas把尾节点指向当前节点
                 pred.next = node;
@@ -646,6 +653,7 @@ public abstract class AbstractQueuedSynchronizer
             }
         }
         //如果添加失败或队列不存在，执行end函数
+        //如果第一次加入或者CAS操作没有成功执行enq入队操作
         enq(node);
         return node;
     }
@@ -654,7 +662,7 @@ public abstract class AbstractQueuedSynchronizer
      * Sets head of queue to be node, thus dequeuing. Called only by
      * acquire methods.  Also nulls out unused fields for sake of GC
      * and to suppress unnecessary signals and traversals.
-     *
+     * 设置为头结点
      * @param node the node
      */
     private void setHead(Node node) {
@@ -668,7 +676,7 @@ public abstract class AbstractQueuedSynchronizer
 
     /**
      * Wakes up node's successor, if one exists.
-     *
+     * AQS本身方法，唤醒后续挂起的结点
      * @param node the node
      */
     private void unparkSuccessor(Node node) {
@@ -677,8 +685,9 @@ public abstract class AbstractQueuedSynchronizer
          * to clear in anticipation of signalling.  It is OK if this
          * fails or if status is changed by waiting thread.
          */
+        //这里，node一般为当前线程所在的结点。
         int ws = node.waitStatus;
-        if (ws < 0)
+        if (ws < 0) //置零当前线程所在的结点状态，允许失败。
             compareAndSetWaitStatus(node, ws, 0);
 
         /*
@@ -687,15 +696,16 @@ public abstract class AbstractQueuedSynchronizer
          * traverse backwards from tail to find the actual
          * non-cancelled successor.
          */
+        //找到下一个需要唤醒的结点s
         Node s = node.next;
-        if (s == null || s.waitStatus > 0) {
+        if (s == null || s.waitStatus > 0) {//如果为空或已取消
             s = null;
             for (Node t = tail; t != null && t != node; t = t.prev)
-                if (t.waitStatus <= 0)
+                if (t.waitStatus <= 0)//从这里可以看出，<=0的结点，都是还有效的结点。
                     s = t;
         }
         if (s != null)
-            LockSupport.unpark(s.thread);
+            LockSupport.unpark(s.thread);//唤醒
     }
 
     /**
@@ -823,19 +833,24 @@ public abstract class AbstractQueuedSynchronizer
      * Checks and updates status for a node that failed to acquire.
      * Returns true if thread should block. This is the main signal
      * control in all acquire loops.  Requires that pred == node.prev.
-     *
+     * AQS本身的方法，若前驱结点状态为Node.SIGNAL则返回true，表示可以挂起当前结点，
+     * 否则找到非结束状态的前驱结点，并设置其状态后，返回false
      * @param pred node's predecessor holding status
      * @param node the node
      * @return {@code true} if thread should block
      */
     private static boolean shouldParkAfterFailedAcquire(Node pred, Node node) {
+        //获取当前结点的等待状态
         int ws = pred.waitStatus;
+        //如果为等待唤醒（SIGNAL）状态则返回true
         if (ws == Node.SIGNAL)
             /*
              * This node has already set status asking a release
              * to signal it, so it can safely park.
              */
             return true;
+        //如果ws>0 则说明是结束状态，
+        //遍历前驱结点直到找到没有结束状态的结点
         if (ws > 0) {
             /*
              * Predecessor was cancelled. Skip over predecessors and
@@ -851,6 +866,8 @@ public abstract class AbstractQueuedSynchronizer
              * need a signal, but don't park yet.  Caller will need to
              * retry to make sure it cannot acquire before parking.
              */
+            //如果ws小于0又不是SIGNAL状态，
+            //则将其设置为SIGNAL状态，代表该结点的线程正在等待唤醒。
             compareAndSetWaitStatus(pred, ws, Node.SIGNAL);
         }
         return false;
@@ -865,11 +882,14 @@ public abstract class AbstractQueuedSynchronizer
 
     /**
      * Convenience method to park and then check if interrupted
-     *
+     * AQS本身方法，挂起当前线程并检查其中断状态
      * @return {@code true} if interrupted
      */
     private final boolean parkAndCheckInterrupt() {
+        //将当前线程挂起
         LockSupport.park(this);
+        //获取线程中断状态,interrupted()是判断当前中断状态，
+        //并非中断线程，因此可能true也可能false,并返回
         return Thread.interrupted();
     }
 
@@ -885,7 +905,9 @@ public abstract class AbstractQueuedSynchronizer
     /**
      * Acquires in exclusive uninterruptible mode for thread already in
      * queue. Used by condition wait methods as well as acquire.
-     *
+     * AQS本身方法，队列中结点循环观察，当自己的前驱是head结点执行的结点时尝试获取锁，
+     * 若成功将其设置为头结点，否则循环尝试；
+     * 若当前结点前驱结点不是头结点，则在设置其前驱结点状态后将自己挂起
      * @param node the node
      * @param arg the acquire argument
      * @return {@code true} if interrupted while waiting
@@ -894,6 +916,7 @@ public abstract class AbstractQueuedSynchronizer
         boolean failed = true;
         try {
             boolean interrupted = false;
+            //自旋，死循环
             for (;;) {
                 //1.获取前驱节点
                 final Node p = node.predecessor();
@@ -908,12 +931,14 @@ public abstract class AbstractQueuedSynchronizer
                     //5.返回线程中断状态
                     return interrupted;
                 }
+                //如果前驱结点不是head，判断是否挂起线程
                 if (shouldParkAfterFailedAcquire(p, node) &&
                     parkAndCheckInterrupt())
                     interrupted = true;
             }
         } finally {
             if (failed)
+                //最终都没能获取同步状态，结束该线程的请求
                 cancelAcquire(node);
         }
     }
@@ -1308,16 +1333,18 @@ public abstract class AbstractQueuedSynchronizer
      * Releases in exclusive mode.  Implemented by unblocking one or
      * more threads if {@link #tryRelease} returns true.
      * This method can be used to implement method {@link Lock#unlock}.
-     *
+     *  AQS类的release()方法
      * @param arg the release argument.  This value is conveyed to
      *        {@link #tryRelease} but is otherwise uninterpreted and
      *        can represent anything you like.
      * @return the value returned from {@link #tryRelease}
      */
     public final boolean release(int arg) {
+        //尝试释放锁
         if (tryRelease(arg)) {
             Node h = head;
             if (h != null && h.waitStatus != 0)
+                //唤醒后继结点的线程
                 unparkSuccessor(h);
             return true;
         }
@@ -1883,20 +1910,25 @@ public abstract class AbstractQueuedSynchronizer
      *
      * <p>This class is Serializable, but all fields are transient,
      * so deserialized conditions have no waiters.
+     * 上面Node head、tail对象构建同步队列，这里用ConditionObject类的对象创建条件等待队列
      */
     public class ConditionObject implements Condition, java.io.Serializable {
         private static final long serialVersionUID = 1173984872572414699L;
-        /** First node of condition queue. */
+        /**
+         * First node of condition queue
+         * 等待队列第一个等待结点
+         */
         private transient Node firstWaiter;
-        /** Last node of condition queue. */
+        /**
+         * Last node of condition queue.
+         * 等待队列最后一个等待结点
+         */
         private transient Node lastWaiter;
 
         /**
          * Creates a new {@code ConditionObject} instance.
          */
         public ConditionObject() { }
-
-        // Internal methods
 
         /**
          * Adds a new waiter to wait queue.

@@ -102,6 +102,8 @@ import java.util.Collection;
  *
  * @since 1.5
  * @author Doug Lea
+ * ReentrantLock通过内部类Sync及其子类继承AQS实现tryAcuire()和tryRelease()方法来实现独占锁，
+ * 而SemaPhore则通过内部类继承AQS实现tryAcquireShared()方法和tryReleaseShared()方法实现共享模式锁。
  */
 public class ReentrantLock implements Lock, java.io.Serializable {
     private static final long serialVersionUID = 7373984872572414699L;
@@ -142,6 +144,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
                 }
             }
             // 获取锁时先判断，如果当前线程就是已经占有锁的线程，则Status值+1，并返回true
+            // 如果当前线程已获取锁，属于重入锁，再次获取锁后将status值加1
             else if (current == getExclusiveOwnerThread()) {
                 int nextc = c + acquires;
                 if (nextc < 0) // overflow
@@ -155,6 +158,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
 
         /**
          * 释放锁
+         * ReentrantLock类中的内部类Sync实现的tryRelease(int releases)
          * @param releases
          * @return
          */
@@ -164,10 +168,13 @@ public class ReentrantLock implements Lock, java.io.Serializable {
             if (Thread.currentThread() != getExclusiveOwnerThread())
                 throw new IllegalMonitorStateException();
             boolean free = false;
+            //判断状态是否为0，如果是则说明已释放同步状态
             if (c == 0) {
                 free = true;
+                //设置Owner为null
                 setExclusiveOwnerThread(null);
             }
+            //设置更新同步状态
             setState(c);
             return free;
         }
@@ -232,7 +239,7 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         }
 
         /**
-         * AQS的tryAcquire方法 由子类Sync的子类NonfairSync实现
+         * AQS的tryAcquire方法 由AQS子类Sync的子类NonfairSync实现
          * @param acquires
          * @return
          */
