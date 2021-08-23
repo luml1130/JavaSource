@@ -89,8 +89,7 @@ import sun.misc.SharedSecrets;
 
 public class HashSet<E>
     extends AbstractSet<E>
-    implements Set<E>, Cloneable, java.io.Serializable
-{
+    implements Set<E>, Cloneable, java.io.Serializable {
     static final long serialVersionUID = -5024744406713321676L;
 
     private transient HashMap<E,Object> map;
