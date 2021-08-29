@@ -1,7 +1,7 @@
 package com.luml.java.javaclass.date;
 
-import org.apache.commons.lang.StringUtils;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -31,10 +31,10 @@ public class DateUtils {
 
     public static Date convertDate(String date, String pattern) {
         try {
-            if (StringUtils.isEmpty(pattern) || StringUtils.isEmpty(date)) {
+            /*if (StringUtils.isEmpty(pattern) || StringUtils.isEmpty(date)) {
                 String msg = "the date or pattern is empty.";
                 throw new IllegalArgumentException(msg);
-            }
+            }*/
             SimpleDateFormat df = new SimpleDateFormat(pattern.trim());
             return df.parse(date.trim());
         } catch (Exception e) {

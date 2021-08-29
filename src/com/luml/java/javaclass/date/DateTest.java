@@ -1,6 +1,6 @@
 package com.luml.java.javaclass.date;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

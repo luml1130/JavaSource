@@ -1,7 +1,7 @@
 package com.luml.java.javaclass.date;
 
 import org.apache.commons.lang3.time.DateFormatUtils;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

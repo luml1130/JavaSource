@@ -1,7 +1,7 @@
 package com.luml.java.javaclass.String;
 
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * @author luml

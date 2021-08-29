@@ -1,6 +1,6 @@
 package com.luml.java.javaclass.data;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.math.BigDecimal;
 
