@@ -1,4 +1,4 @@
-package com.luml.java.exception.tryTest;
+package com.luml.java.exception.demo;
 
 /**
  * @author luml

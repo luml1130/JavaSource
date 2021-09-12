@@ -1,7 +1,7 @@
 package com.luml.java.exception.tryTest;
 
 
-import com.luml.javase.pojo.Person;
+import com.luml.domain.Person;
 
 public class Demo3_Exception {
 	public static void main(String[] args) throws Exception{

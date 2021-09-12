@@ -1,5 +1,7 @@
 package com.luml.java.javaclass.String;
 
+import org.junit.Test;
+
 /**
  * @author luml
  * @description
@@ -15,6 +17,12 @@ public class StringTest {
         if(cc.startsWith("0")){
             System.out.println(cc.replace("0",""));
         }
+    }
 
+    @Test
+    public void test(){
+        String a = "222";
+        String c = "333";
+        System.out.println((a+c).contains("34"));
     }
 }
