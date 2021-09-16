@@ -1,5 +1,7 @@
 package com.luml.java.collection;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,5 +30,11 @@ public class tempTest {
                 .distinct().map(o -> o.getUserId())
                 .collect(Collectors.toList());
         System.out.println(allSchoolMasterIds);
+    }
+
+    @Test
+    public void test2(){
+        List<Long> addRelationClassMember = null;
+        addRelationClassMember.add(0L);
     }
 }
