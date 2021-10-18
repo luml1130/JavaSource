@@ -1,4 +1,4 @@
-package com.luml.jdk18.Lambda;
+package com.luml.java.jdk18.Lambda;
 
 import java.util.concurrent.ThreadPoolExecutor;
 

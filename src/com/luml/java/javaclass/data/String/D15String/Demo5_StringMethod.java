@@ -1,4 +1,4 @@
-package com.luml.java.javaclass.String.D15String;
+package com.luml.java.javaclass.data.String.D15String;
 /*
  * 2,获取
 		2.1 int length();						//获取字符串的长度

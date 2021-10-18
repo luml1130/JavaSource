@@ -1,7 +1,6 @@
-package com.luml.java.javaclass.String.create;
+package com.luml.java.javaclass.data.String.create;
 
 import com.luml.domain.Person;
-import org.apache.commons.lang3.builder.ToStringExclude;
 import org.junit.Test;
 
 /**
@@ -24,15 +23,16 @@ public class CreateTest {
              3. 当调用String的replace()方法修改指定字符或字符串时，也需要重新指定内存区域赋值，不能使用原有的value进行赋值。
     5.通过字面量的方式（区别于new）给一个字符串赋值，此时的字符串值声明在字符串常量池中。
     6.字符串常量池中是不会存储相同内容的字符串的。
+    String s1 = "abc"; String s2 = "abc"; 在一个常量池里面 引用不一样
     */
     @Test
     public void test1(){
         String s1 = "abc";//字面量的定义方式
         String s2 = "abc";
-        s1 = "hello";
+       // s1 = "hello";
 
 
-        System.out.println(s1 == s2);//比较s1和s2的地址值
+        System.out.println(s1 == s2);// 如果没有s1="hello" 返回true false 比较s1和s2的地址值
 
         System.out.println(s1);//hello
         System.out.println(s2);//abc
@@ -53,6 +53,18 @@ public class CreateTest {
 
     }
 
+    /**
+     * intern返回在String对象在常量池中的引用
+     */
+    @Test
+    public void testIntern(){
+        String s1 = "abc";
+        String s2 = new String("abc");
+        System.out.println(s2.intern());
+        System.out.println(s1 == s2.intern());
+    }
+
+
     /*
     String的实例化方式：
     方式一：通过字面量定义的方式
@@ -60,7 +72,6 @@ public class CreateTest {
 
      面试题：String s = new String("abc");方式创建对象，在内存中创建了几个对象？
             两个:一个是堆空间中new结构，另一个是char[]对应的常量池中的数据："abc"
-
      */
     @Test
     public void test2() {

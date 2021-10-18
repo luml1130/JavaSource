@@ -1,4 +1,4 @@
-package com.luml.java.javaclass.String.D15String;
+package com.luml.java.javaclass.data.String.D15String;
 
 import java.io.UnsupportedEncodingException;
 

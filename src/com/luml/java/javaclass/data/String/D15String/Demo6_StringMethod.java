@@ -1,4 +1,4 @@
-package com.luml.java.javaclass.String.D15String;
+package com.luml.java.javaclass.data.String.D15String;
 /*
  * 3,转换
 		3.1 byte[] getBytes();					//编码,让计算机看的懂的,用默认的编码表,将字符串转换成字节数组

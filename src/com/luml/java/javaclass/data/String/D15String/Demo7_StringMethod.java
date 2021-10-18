@@ -1,4 +1,4 @@
-package com.luml.java.javaclass.String.D15String;
+package com.luml.java.javaclass.data.String.D15String;
 /*
  * 4,替换。
 		4.1 String replace(oldChar,newChar);	//将newChar替换OldChar,如果OldChar不存在,原字符串直接赋值给替换后字符串
