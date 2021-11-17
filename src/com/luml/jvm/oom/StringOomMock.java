@@ -11,7 +11,7 @@ import java.util.List;
  * 譬如符号引用(Symbols)转移到了native heap；字面量(interned strings)转移到了java heap；
  * 类的静态变量(class statics)转移到了java heap。
  * 我们可以通过一段程序来比较 JDK 1.6 与 JDK 1.7及 JDK 1.8 的区别，以字符串常量为例：
- * vm:-XX:PermSize=8m -XX:MaxPermSize=8m -Xmx16m
+ * vm:java -XX:PermSize=8m -XX:MaxPermSize=8m -Xmx16m
  * @date 2020/8/31
  */
 public class StringOomMock {

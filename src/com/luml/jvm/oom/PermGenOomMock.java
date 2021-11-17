@@ -10,6 +10,7 @@ import java.util.List;
  * @author luml
  * @description
  * @date 2021/7/2 09:55
+ * java -XX:PermSize=8m -XX:MapPermSize=8m com.luml.jvm.oom.PermGenOomMock
  */
 public class PermGenOomMock {
     //https://www.cnblogs.com/paddix/p/5309550.html

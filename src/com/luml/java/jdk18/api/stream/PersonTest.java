@@ -30,21 +30,28 @@ public class PersonTest {
             add(new Person2("张三","zhangsan",0,10));
             add(new Person2("李四","zhangsan",1,20));
             add(new Person2("王五","wangwu",0,30));
-            add(new Person2("小刘","xiaoliu",1,40));
+            add(new Person2("小刘","xiaoliu",1,30));
             add(new Person2("三木","sanmu",0,50));
         }};
+
         list.stream()
                 .map(w -> {
                     return w.getSalary();
                 })
                 .collect(Collectors.toList());
+        System.out.println("list="+ list);
+
+        //从list对象中取一个值作为key 有去重的效果
+        List<Integer> historyClassIds =  list.stream()
+                .map(l -> l.getSalary()).distinct().collect(Collectors.toList());
+        System.out.println("historyClassIds="+ historyClassIds);
 
 
         /**
          * min  ：求集合中最小对象:张三
          */
         Object obj = list.stream().min((p1,p2)->(p1.getSalary()-p2.getSalary())).get();
-        System.out.println(obj);
+        System.out.println("obj="+obj);
         /**
          * max   : 求集合最大对象:三木
          */
