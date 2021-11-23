@@ -19,6 +19,10 @@ public class ExceptionTest {
     }
 
     private void b(){
-        int a = 1/0;
+        try{
+            int a = 1/0;
+        }catch (Exception e){
+
+        }
     }
 }
