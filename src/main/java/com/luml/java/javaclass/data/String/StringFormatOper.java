@@ -9,6 +9,9 @@ import org.junit.Test;
  */
 public class StringFormatOper {
     public static void main(String[] args) {
+        String url = "/cgi-bin/school/user/list?department_id=%s&fetch_child=%b";
+        System.out.println(String.format(url,1,false));
+
         //System.out.println(formatTest());
         String aa = "早餐，午餐，晚餐，";
         System.out.println(aa.substring(0,aa.lastIndexOf("，")));

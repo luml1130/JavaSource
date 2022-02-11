@@ -1,12 +1,15 @@
 package com.luml;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.luml.domain.City;
 import com.luml.juc.lock.volatileTest.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
+import java.io.File;
+import java.util.*;
 
 /**
  * @author luml
@@ -15,6 +18,77 @@ import java.util.Map;
  */
 public class test {
     public static void main(String[] args) {
+        Map map = new HashMap(2);
+        map.put("wxCorpId","ss");
+        map.put("messageBus","agree_external_userid_migration");
+        map.put("messageType","business_data_migration_finished");
+        map.put("business","UC");
+        System.out.println(JSON.toJSONString(map));
+    }
+
+
+    public static void main4(String[] args) {
+
+        List<String> externalUserIds = new ArrayList<>();
+        externalUserIds.add("ssd");
+        System.out.println(externalUserIds.toString());
+        System.out.println(JSONObject.toJSONString(externalUserIds));
+        System.out.println(Arrays.toString(externalUserIds.toArray()));
+
+
+        JsonObject jsonObject = new JsonObject();
+        //jsonObject.addProperty("external_userid_list",Arrays.toString(externalUserIds.toArray()));
+        //jsonObject.addProperty("external_userid_list",new Gson().toJson(externalUserIds));
+        jsonObject.addProperty("external_userid_list",JSONObject.toJSONString(externalUserIds));
+
+        System.out.println(jsonObject);
+
+      /*  List<City> aa = new ArrayList<>();
+
+        City city1 = new City();
+        city1.setCity("22");
+        City city = new City();
+        city.setCity("33");
+        aa.add(city);
+        aa.add(city1);
+
+        //aa.remove(city);
+        System.out.println(aa);*/
+
+        /*Map<String, Object> ucAppCache = new HashMap<>();
+        ucAppCache.put("1",new Object());
+        Set<String> set = ucAppCache.keySet();
+        System.out.println(set.toArray()[0]);*/
+
+
+
+
+        /*File file = new File("/opt/1.txt");
+        System.out.println(getFileExtension(file));*/
+    }
+
+    private static String getFileExtension(File file) {
+        String fileName = file.getName();
+        if(fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0){
+            return fileName.substring(fileName.lastIndexOf(".")+1);
+        }else{
+            return "";
+        }
+    }
+    public static void main3(String[] args) {
+        Integer[] aa = new Integer[3];
+        aa[0] = 1;
+        aa[1] = 1;
+        aa[2] = 1;
+        System.out.println(aa.length);
+        System.out.println(aa.toString());
+       List<Integer> bb =  Arrays.asList(aa);
+       for(Integer a : bb){
+           System.out.println(a);
+       }
+
+    }
+    public static void main2(String[] args) {
 
         try{
             new test().aa();

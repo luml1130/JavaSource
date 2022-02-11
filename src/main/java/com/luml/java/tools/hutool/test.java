@@ -2,6 +2,7 @@ package com.luml.java.tools.hutool;
 
 import cn.hutool.crypto.SecureUtil;
 import cn.hutool.json.JSONUtil;
+import com.alibaba.fastjson.JSON;
 
 /**
  * @author luml
@@ -19,10 +20,8 @@ public class test {
         System.out.println("time===========" + time);
         System.out.println("json===========" + JSONUtil.toJsonStr(req));
 
-        String signLocal = SecureUtil.md5(JSONUtil.toJsonStr(req) + salt);
+        String signLocal = SecureUtil.md5(JSON.toJSONString(req) + salt);
         System.out.println("sign===========" + signLocal);
-
-
 
         /*String a = HttpUtil.post("http://localhost:8100/wxwork/mix/listAllSuiteInfo?sign=" +
                 SecureUtil.md5(JSONUtil.toJsonStr(req) + salt),JSONUtil.toJsonStr(req));*/
