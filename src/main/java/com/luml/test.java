@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import org.apache.commons.lang3.StringUtils;
 import com.luml.domain.City;
 import com.luml.juc.lock.volatileTest.Test;
 
@@ -17,7 +18,19 @@ import java.util.*;
  * @date 2021/8/23 上午11:47
  */
 public class test {
+
+    public static final String GET_EXTERNAL_USER_LIST_URL = "/qw-platform/api/v1/mix/getExternalUserList?suiteId=%s&unionId=%s&openId=%s&corpId=%s";
+
     public static void main(String[] args) {
+        System.out.println("122".startsWith("2"));
+        /*String suiteId = "ss";
+        String unionId = "unionId";
+        String openId ="openId";
+        String method = String.format(GET_EXTERNAL_USER_LIST_URL,suiteId,unionId,openId,"");
+        System.out.println(method);*/
+    }
+
+    public static void main5(String[] args) {
         Map map = new HashMap(2);
         map.put("wxCorpId","ss");
         map.put("messageBus","agree_external_userid_migration");

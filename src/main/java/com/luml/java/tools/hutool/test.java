@@ -13,7 +13,14 @@ public class test {
 
     private static final String salt = "xueJJeduqw";
 
+    public static String ACCESS_TOKEN_URL = "%s/qrcode/wx/rest/getAccessToken?appCode=%s";
+    public static String PRODURL = "http://pre-applet.imzhiliao.com";
     public static void main(String[] args) {
+        String url = String.format(PRODURL,ACCESS_TOKEN_URL,"dietcare");
+        System.out.println(url);
+    }
+
+    public static void main2(String[] args) {
         long time = System.currentTimeMillis();
         WxworkMixReq req = new WxworkMixReq();
         req.setTimestamp(System.currentTimeMillis());

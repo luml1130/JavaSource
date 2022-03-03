@@ -137,6 +137,7 @@ public class PersonTest {
         }};
         List<Integer> orderNoList = list.stream()
                 .map(Person2::getSalary)
+                .distinct() //不加这个不会去重复
                 .collect(Collectors.toList());
         System.out.println(orderNoList);
     }
