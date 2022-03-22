@@ -20,7 +20,8 @@ import java.util.stream.Collectors;
 public class PersonTest {
 
     public static void main(String[] args) {
-
+        Person2 person2 = new Person2();
+        System.out.println(person2.getName());
 
     }
 
@@ -121,9 +122,11 @@ public class PersonTest {
             add(new Person2("三木","sanmu",0,50));
         }};
         //将list转换map
-        Map<String, Person2> childInfoMap = list.stream().collect(Collectors.toMap(c -> c.getName(), c -> c,
-                (c1, c2) -> c1));
+        Map<String, Person2> childInfoMap = list.stream().collect(
+                Collectors.toMap(c -> c.getName(), c -> c,(c1, c2) -> c1)
+        );
         System.out.println(childInfoMap);
+
     }
 
     @Test
