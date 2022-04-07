@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import com.luml.domain.City;
 import com.luml.juc.lock.volatileTest.Test;
@@ -22,6 +23,8 @@ public class test {
     public static final String GET_EXTERNAL_USER_LIST_URL = "/qw-platform/api/v1/mix/getExternalUserList?suiteId=%s&unionId=%s&openId=%s&corpId=%s";
 
     public static void main(String[] args) {
+        System.out.println(CollectionUtils.isNotEmpty(null));
+
         System.out.println("122".startsWith("2"));
         /*String suiteId = "ss";
         String unionId = "unionId";
