@@ -23,15 +23,11 @@ public class test {
     public static final String GET_EXTERNAL_USER_LIST_URL = "/qw-platform/api/v1/mix/getExternalUserList?suiteId=%s&unionId=%s&openId=%s&corpId=%s";
 
     public static void main(String[] args) {
-        System.out.println(CollectionUtils.isNotEmpty(null));
-
-        System.out.println("122".startsWith("2"));
-        /*String suiteId = "ss";
-        String unionId = "unionId";
-        String openId ="openId";
-        String method = String.format(GET_EXTERNAL_USER_LIST_URL,suiteId,unionId,openId,"");
-        System.out.println(method);*/
+        Long[] department = new Long[]{3L};
+        List<Long> newRelationList = Arrays.asList(department);
+        System.out.println(newRelationList);
     }
+
 
     public static void main5(String[] args) {
         Map map = new HashMap(2);

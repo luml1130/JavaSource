@@ -1,15 +1,14 @@
 package com.luml.java.jdk18.api.stream;
 
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.luml.domain.Person2;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -20,9 +19,46 @@ import java.util.stream.Collectors;
 public class PersonTest {
 
     public static void main(String[] args) {
-        Person2 person2 = new Person2();
-        System.out.println(person2.getName());
 
+        List<String> userList2 = new ArrayList<>();
+        userList2.add("LuMengLiang");
+        System.out.println(userList2.toString());
+
+        String userListStr = JSONArray.toJSONString(userList2);//userList2.toString();
+        System.out.println(userListStr);
+
+        String userListStr2 = "[2]";//"[\"LuMengLiang\"]";
+
+        //String userListStr = schoolTagInfo.getUserList();
+        List<Long> userList = StringUtils.isBlank(userListStr2) ? null : JSON.parseArray(userListStr2,Long.class);
+        //List<String> partyList = JSON.parseArray(partyListStr,String.class);
+        //List<String> partyList = Arrays.asList(partyListStr.split(","));
+        for(Long partyId : userList){
+            System.out.println(partyId);
+            //System.out.println(Long.valueOf(partyId));
+        }
+    }
+
+    public static void main2(String[] args) {
+        //Person2 person2 = new Person2();
+        //System.out.println(person2.getName());
+
+        List<String> list = new ArrayList<String>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        System.out.println(list);
+        System.out.println(list.toString());
+        List<String> asList = Arrays.asList(list.toString());
+        System.out.println("aa="+JSON.toJSONString(asList));
+        for(String s : asList){
+            System.out.println(s);
+        }
+
+        String json = JSONArray.toJSONString(list);//把list转换成json格式的String类型
+        System.out.println("json格式的String类型 " + json);
+
+        System.out.println(StringUtils.strip(list.toString(),"[]"));
     }
 
     @Test
@@ -40,6 +76,12 @@ public class PersonTest {
                 .distinct()
                 .collect(Collectors.toList());
         System.out.println("historyClassIds="+ historyClassIds);
+        //下面这个不会去重哦
+        List<Integer> historyClassIds2 =  list.stream()
+                .distinct()
+                .map(l -> l.getSalary())
+                .collect(Collectors.toList());
+        System.out.println("historyClassIds2="+ historyClassIds2);
 
 
         /**
