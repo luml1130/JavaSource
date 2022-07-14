@@ -1,5 +1,7 @@
 package com.luml.java.collection;
 
+import cn.hutool.core.util.StrUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,6 +16,47 @@ import java.util.Set;
  * @date 2021/9/16 下午10:31
  */
 public class transfTest {
+
+    private static final String PHONE_GROUP_REG = " \\| ";
+    private static final String PHONE_GROUP_NEW_REG = " | ";
+    private static final int PHONE_LENGTH = 11;
+
+    public static void main(String[] args) {
+       /* String phoneN = "13220212021 | 40016656729 | 15920210902";
+        String[] phoneNum = phoneN.trim().split(" \\| ");
+        List<String> aa = Arrays.asList(phoneNum);
+        List<String> bb = new ArrayList<>(phoneNum.length);
+        for(String a : aa){
+            bb.add(a);
+        }
+        System.out.println(bb);*/
+
+        String reg = "13220212021 | 40016656729 | 15920210902";
+        String[] phones = reg.split(PHONE_GROUP_REG);
+        StringBuffer sb = new StringBuffer();
+        for (String value : phones) {
+            System.out.println("length=" + value.length());
+            if (StrUtil.isNotEmpty(value) && value.length() >= PHONE_LENGTH) {
+                sb.append(value).append(PHONE_GROUP_NEW_REG);
+            }
+        }
+        System.out.println(sb.toString());
+        System.out.println(sb.substring(0, sb.length() - PHONE_GROUP_NEW_REG.length()));
+        //return ;
+    }
+
+    public static void main2(String[] args) {
+        String phoneN = "13220212021,40016656729,15920210902";
+        String[] phoneNum = phoneN.trim().split(",");
+
+        List<String> aa = Arrays.asList(phoneNum);
+        List<String> bb = new ArrayList<>(phoneNum.length);
+        for(String a : aa){
+            bb.add(a);
+        }
+        String s = StringUtils.join(bb," | ");
+        System.out.println(s);
+    }
 
     /**
      * 数组转化为List： Arrays.asList

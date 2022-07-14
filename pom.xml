@@ -40,6 +40,21 @@
             <version>2.0.2</version>
         </dependency>
 
+        <!--加解密-->
+        <!-- https://mvnrepository.com/artifact/com.google/guava -->
+        <!--<dependency>
+            <groupId>com.google</groupId>
+            <artifactId>guava</artifactId>
+            <version>10.0.1-v201203051515</version>
+        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.3.21</version>
+        </dependency>
+
         <!--lombok插件-->
         <dependency>
             <groupId>org.projectlombok</groupId>

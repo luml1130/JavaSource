@@ -1,8 +1,10 @@
 package com.luml.java.data.json.fastjson;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.luml.domain.City;
 import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
 
 /**
  * @author luml
@@ -24,5 +26,13 @@ public class FastjsonTest {
         JSONObject externalContact = JSONObject.parseObject(JSONObject.toJSONString(c));
         String aa = (String)externalContact.get("city");
         return StringUtils.isBlank(aa) ? null : aa;
+    }
+
+    @Test
+    public void test2(){
+        String json = "{\"classId\":91073,\"name\":\"outClassTeacher\",\"operatorId\":800211,\"time\":1657762993095,\"userId\":536713}";
+        JSONObject object = JSON.parseObject(json);
+        Long userId = (Long)object.get("userId");
+        System.out.println(userId);
     }
 }
