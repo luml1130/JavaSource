@@ -6,6 +6,8 @@ import com.luml.domain.City;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import java.util.Map;
+
 /**
  * @author luml
  * @description
@@ -29,10 +31,18 @@ public class FastjsonTest {
     }
 
     @Test
-    public void test2(){
-        String json = "{\"classId\":91073,\"name\":\"outClassTeacher\",\"operatorId\":800211,\"time\":1657762993095,\"userId\":536713}";
+    public void test2(){ //536713
+        String json = "{\"classId\":91073,\"name\":\"outClassTeacher\",\"operatorId\":800211,\"time\":1657762993095,\"userId\":100000000068498}";
         JSONObject object = JSON.parseObject(json);
-        Long userId = (Long)object.get("userId");
-        System.out.println(userId);
+
+
+        //Map<String,Object> map = JSON.parseObject(json, Map.class);
+        Object userId  = object.get("userId");
+        System.out.println(Long.valueOf(String.valueOf(userId)));
+
+        //Integer a = 536713;
+        //System.out.println(a.longValue());
+        //String userId  = map.get("userId");
+
     }
 }

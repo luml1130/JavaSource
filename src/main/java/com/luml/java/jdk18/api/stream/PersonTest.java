@@ -1,10 +1,10 @@
 package com.luml.java.jdk18.api.stream;
 
 
+import cn.hutool.core.collection.CollectionUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.luml.domain.Person2;
-import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
@@ -185,6 +185,35 @@ public class PersonTest {
                 .distinct() //不加这个不会去重复
                 .collect(Collectors.toList());
         System.out.println(orderNoList);
+    }
+
+    @Test
+    public  void List2List2(){
+        LinkedHashMap<String,String> content = new LinkedHashMap<>(4);
+        content.put("授权企业：", "dddd");
+        content.put("授权应用：","1");
+        content.put("描述","企微授权企业获取授权码失败(未知)" );
+        StringBuilder stringBuilder = new StringBuilder();
+
+        if (CollectionUtil.isNotEmpty(content)) {
+            //Set<String> keySet = content.keySet();
+            System.out.println(content.size());
+            int index = 0;
+            for(String key : content.keySet()){
+                //System.out.println(key.in);
+                index++;
+                System.out.println("index="+index);
+                stringBuilder.append("\t").append(key).append(": \t").append(content.get(key));
+                if(index != content.size()){
+                    stringBuilder.append("\n");
+                }
+            }
+            /*content.forEach((k, v) -> {
+                stringBuilder.append("\t").append(k).append(": \t").append(v).append("\n");
+                System.out.println(k.intern());
+            });*/
+        }
+        System.out.println(stringBuilder.toString());
     }
 
 

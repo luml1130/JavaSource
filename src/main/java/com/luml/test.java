@@ -2,13 +2,7 @@ package com.luml;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.lang3.StringUtils;
-import com.luml.domain.City;
-import com.luml.juc.lock.volatileTest.Test;
 
 import java.io.File;
 import java.util.*;
@@ -20,9 +14,19 @@ import java.util.*;
  */
 public class test {
 
+    public static void main(String[] args) {
+        String path="/Users/luml/Downloads/luml";
+
+        File file = new File(path);
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+
+    }
+
     public static final String GET_EXTERNAL_USER_LIST_URL = "/qw-platform/api/v1/mix/getExternalUserList?suiteId=%s&unionId=%s&openId=%s&corpId=%s";
 
-    public static void main(String[] args) {
+    public static void main6(String[] args) {
         Long[] department = new Long[]{3L};
         List<Long> newRelationList = Arrays.asList(department);
         System.out.println(newRelationList);

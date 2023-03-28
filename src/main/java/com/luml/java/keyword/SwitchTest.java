@@ -24,6 +24,26 @@ public class SwitchTest {
         //log.info();
     }
 
+    @Test
+    public void test(){
+        String tag = "2$pay_for_app_success";
+        switch (tag) {
+            //1、应用付费-支付成功通知
+            case Constant.other_pay_for_app_success:
+                System.out.println("22");
+                break;
+
+            //2、应用付费-付费版本变更通知
+            case Constant.other_change_editon:
+                System.out.println("33");
+                break;
+
+            //3、应用付费-退款通知
+            case Constant.other_refund:
+                System.out.println("33");
+                break;
+        }
+    }
 
     /**
      * 根据操作数不同，返回不同的值
