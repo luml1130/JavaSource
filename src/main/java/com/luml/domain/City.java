@@ -5,8 +5,6 @@ package com.luml.domain;
  * @description
  * @date 2021/11/23
  */
-
-//
 public class City {
     private String address;
     private String city;
