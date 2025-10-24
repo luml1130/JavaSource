@@ -1,6 +1,9 @@
 package com.luml.java.exception.tryTest;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +16,7 @@ import java.util.List;
 public class test {
 
     //private final static Logger logger = LoggerFactory.getLogger(test.class);
-    private static Logger logger = Logger.getLogger(test.class.getName());
+    private static final Logger logger = LogManager.getLogger(test.class);
 
     /**
      * test：catch后不需要continue后自动会

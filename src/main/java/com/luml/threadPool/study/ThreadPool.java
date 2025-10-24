@@ -1,6 +1,9 @@
 package com.luml.threadPool.study;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;//log4j1.x
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Collections;
 import java.util.Date;
@@ -13,11 +16,12 @@ import java.util.List;
  * @author huashuo
  */
 public final class ThreadPool {
-	 private static Logger logger = Logger.getLogger(ThreadPool.class);
-     private static Logger taskLogger = Logger.getLogger("TaskLogger");
+	//private static Logger logger = Logger.getLogger(ThreadPool.class); //log4j1.x
+    private static Logger logger = LogManager.getLogger(ThreadPool.class);
+     private static Logger taskLogger = LogManager.getLogger("TaskLogger");
 
      private static boolean debug = taskLogger.isDebugEnabled();
-     // private static boolean debug = taskLogger.isInfoEnabled();
+     //private static boolean debug = taskLogger.isInfoEnabled();
      //单例 
      private static ThreadPool instance = ThreadPool.getInstance();
 
@@ -67,8 +71,8 @@ public final class ThreadPool {
               /* 唤醒队列, 开始执行 */
               taskQueue.notifyAll();
           }
-          logger.info("Submit Task<" + newTask.getTaskId() + ">: "
-                  + newTask.info());
+          //logger.info("Submit Task<" + newTask.getTaskId() + ">: "
+            //      + newTask.info());
       }
       
       /**
@@ -95,8 +99,7 @@ public final class ThreadPool {
                if (taskes[i] == null) {
                    continue;
                }
-               logger.info("Submit Task<" + taskes[i].getTaskId() + ">: "
-                       + taskes[i].info());
+               //logger.info("Submit Task<" + taskes[i].getTaskId() + ">: "+ taskes[i].info());
            }
        }
        
@@ -161,7 +164,7 @@ public final class ThreadPool {
                                  /* 任务队列为空，则等待有新任务加入从而被唤醒 */
                                  taskQueue.wait(20);
                              } catch (InterruptedException ie) {
-                                 logger.error(ie);
+                                 //logger.error(ie);
                              }
                          }
                          /* 取出任务执行 */
@@ -170,16 +173,16 @@ public final class ThreadPool {
                      if (r != null) {
                          isWaiting = false;
                          try {
-                             if (debug) {
+                             if (true) { //debug
                                  r.setBeginExceuteTime(new Date());
-                                 taskLogger.debug("Worker<" + index
-                                         + "> start execute Task<" + r.getTaskId() + ">");
+                                 //taskLogger.debug("Worker<" + index
+                                    //     + "> start execute Task<" + r.getTaskId() + ">");
                                  if (r.getBeginExceuteTime().getTime()
                                          - r.getSubmitTime().getTime() > 1000) {
-                                     taskLogger.debug("longer waiting time. "
-                                             + r.info() + ",<" + index + ">,time:"
-                                             + (r.getFinishTime().getTime() - r
-                                                     .getBeginExceuteTime().getTime()));
+                                     //taskLogger.debug("longer waiting time. "
+                                       //      + r.info() + ",<" + index + ">,time:"
+                                         //    + (r.getFinishTime().getTime() - r
+                                           //          .getBeginExceuteTime().getTime()));
                                  }
                              }
                              /* 该任务是否需要立即执行 */
@@ -188,21 +191,21 @@ public final class ThreadPool {
                              } else {
                                  r.run();
                              }
-                             if (debug) {
+                             if (true) {//debug
                                  r.setFinishTime(new Date());
-                                 taskLogger.debug("Worker<" + index
-                                         + "> finish task<" + r.getTaskId() + ">");
+                                // taskLogger.debug("Worker<" + index
+                                 //        + "> finish task<" + r.getTaskId() + ">");
                                  if (r.getFinishTime().getTime()
                                          - r.getBeginExceuteTime().getTime() > 1000){
-                                     taskLogger.debug("longer execution time. "
-                                             + r.info() + ",<" + index + ">,time:"
-                                             + (r.getFinishTime().getTime() - r
-                                                     .getBeginExceuteTime().getTime()));
+                                  //   taskLogger.debug("longer execution time. "
+                                    //         + r.info() + ",<" + index + ">,time:"
+                                      //       + (r.getFinishTime().getTime() - r
+                                        //             .getBeginExceuteTime().getTime()));
                                  }
                              }
                          } catch (Exception e) {
                              e.printStackTrace();
-                             logger.error(e);
+                             //logger.error(e);
                          }
                          isWaiting = true;
                          r = null;

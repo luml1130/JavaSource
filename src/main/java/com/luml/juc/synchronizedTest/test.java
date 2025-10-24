@@ -1,6 +1,6 @@
 package com.luml.juc.synchronizedTest;
 
-import org.openjdk.jol.info.ClassLayout;
+//import org.openjdk.jol.info.ClassLayout;
 
 /**
  * @author luml
@@ -10,10 +10,11 @@ import org.openjdk.jol.info.ClassLayout;
 public class test {
 
     public static void main(String[] args) {
-        Object obj = new Object();
-        obj.hashCode();  //显示调用下
-        String classInfo = ClassLayout.parseInstance(obj).toPrintable();
-        System.out.println(classInfo);
+       // Object obj = new Object();
+        //obj.hashCode();  //显示调用下
+       // String classInfo = ClassLayout.parseInstance(obj).toPrintable();
+        //System.out.println(classInfo);
+        System.out.println("ss");
     }
 
 }

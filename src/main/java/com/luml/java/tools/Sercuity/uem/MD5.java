@@ -5,7 +5,9 @@
 
 package com.luml.java.tools.Sercuity.uem;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -18,8 +20,10 @@ import java.security.NoSuchAlgorithmException;
  * @author JiaLing
  */
 public class MD5 {
-	private static final Logger log = Logger.getLogger(MD5.class);
-	
+	//private static final Logger log = Logger.getLogger(MD5.class);
+	private static final Logger log = LogManager.getLogger(MD5.class);
+
+
 	protected static char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6',
 			'7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 
