@@ -1,4 +1,4 @@
-package com.luml.thread.method;
+package com.luml.thread.base;
 
 import org.junit.Test;
 
@@ -11,7 +11,6 @@ public class threadNameTest {
 
     @Test
     public  void setName1(){
-
 
         new Thread("线程1") {
             @Override
