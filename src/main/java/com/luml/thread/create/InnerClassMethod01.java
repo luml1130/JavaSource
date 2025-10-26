@@ -1,8 +1,8 @@
-package com.luml.thread.study;
+package com.luml.thread.create;
 /*
  * 匿名内部类对两种方式的优化
  */
-public class Demo4_Thread {
+public class InnerClassMethod01 {
 
 	/**
 	 * @param args
@@ -25,6 +25,7 @@ public class Demo4_Thread {
 		}.start();
 		
 		new Thread(new Runnable(){						//实现Runnable接口
+			@Override
 			public void run() {
 				for(int i = 0; i < 1000;i++) {
 					System.out.println("aaaaaaaaaaaaaaaaaaa" +"---------" + Thread.currentThread().getName());

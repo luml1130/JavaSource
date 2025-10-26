@@ -1,4 +1,4 @@
-package com.luml.thread;
+package com.luml.thread.work;
 
 /**
  * @author luml

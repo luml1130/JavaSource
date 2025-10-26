@@ -1,8 +1,8 @@
-package com.luml.thread.study;
+package com.luml.thread.base;
 /**
  * @author luml
  */
-public class Demo1_Thread {
+public class ThreadJvmTest01 {
 	public static void main(String[] args) {	//通过垃圾回收机制证明jvm是多线程的
 		for (int i = 0; i < 100000; i++) {
 			new Demo();

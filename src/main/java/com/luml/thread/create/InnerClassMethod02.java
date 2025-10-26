@@ -1,6 +1,6 @@
-package com.luml.thread.study;
+package com.luml.thread.create;
 
-public class Demo5_Thread {
+public class InnerClassMethod02 {
 
 	/**
 	 * @param args
