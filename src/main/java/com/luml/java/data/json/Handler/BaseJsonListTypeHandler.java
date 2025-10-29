@@ -10,8 +10,18 @@ import java.util.List;
 /**
  * @author luml
  * @description  ??? 这个干啥的
+ *
  * @date 2025/10/29
  */
+/**
+ * 异常上报附件list
+ */
+//@TableField(value = "ext_json_list", typeHandler = TmsBaseJsonListTypeHandler.class)
+//private List<ReportExtFileDTO> extJsonList;
+/** 图片，音频，文件 url */
+//@TableField(value = "url", typeHandler = TmsBaseJsonListTypeHandler.class)
+//private List<String> url;
+
 public class BaseJsonListTypeHandler<E>{
 
     public BaseJsonListTypeHandler() {

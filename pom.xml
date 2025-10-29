@@ -46,6 +46,13 @@
             <version>5.4.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>26.0-jre</version>
+            <optional>true</optional>
+        </dependency>
+
         <!--XML解析 package com.luml.data.xml-->
         <dependency>
             <groupId>org.dom4j</groupId>
