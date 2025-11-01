@@ -20,6 +20,11 @@ public class JSONFieldTest {
         public int value;
     }
 
+    public static class B {
+        @JSONField(serializeUsing = AValueSerializer.class)
+        public int value;
+    }
+
     public static class AValueSerializer implements ObjectSerializer {
         @Override
         public void write(JSONSerializer serializer, Object object,

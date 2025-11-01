@@ -21,8 +21,8 @@ public class JSONTest {
 
     @Before
     public void setUp() {
-        listOfPersons.add(new Person(1,15, "John Doe", new Date()));
-        listOfPersons.add(new Person(2,20, "Janette Doe", new Date()));
+        listOfPersons.add(new Person(1,15, "John Doe", new Date(),new Date()));
+        listOfPersons.add(new Person(2,20, "Janette Doe", new Date(),new Date()));
     }
 
     @Test
@@ -30,4 +30,20 @@ public class JSONTest {
         String jsonOutput = JSON.toJSONString(listOfPersons);
         System.out.println(jsonOutput);
     }
+    /**
+     * [
+     *   {
+     *     "AGE": 15,
+     *     "DATE OF BIRTH": 1761961897489,
+     *     "FULL NAME": "John Doe",
+     *     "receiptTime": "2025-11-01 09:51:37"
+     *   },
+     *   {
+     *     "AGE": 20,
+     *     "DATE OF BIRTH": 1761961897489,
+     *     "FULL NAME": "Janette Doe",
+     *     "receiptTime": "2025-11-01 09:51:37"
+     *   }
+     * ]
+     */
 }

@@ -25,17 +25,15 @@ public class Person {
     @JSONField(name = "DATE OF BIRTH")
     private Date dateOfBirth;
 
-    public Person(int id, int age, String fullName, Date dateOfBirth) {
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private Date receiptTime;
+
+
+    public Person(int id, int age, String fullName, Date dateOfBirth, Date receiptTime) {
         this.id = id;
         this.age = age;
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
-    }
-
-    public Person(int age, String fullName, Date dateOfBirth) {
-        super();
-        this.age = age;
-        this.fullName= fullName;
-        this.dateOfBirth = dateOfBirth;
+        this.receiptTime = receiptTime;
     }
 }

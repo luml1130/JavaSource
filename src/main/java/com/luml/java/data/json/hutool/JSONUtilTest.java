@@ -15,15 +15,15 @@ import java.util.Date;
 public class JSONUtilTest {
 
     public static void main(String[] args) {
-        Person person = new Person(1,15, "John Doe", new Date());
+        Person person = new Person(1,15, "John Doe", new Date(),new Date());
         String signStr = JSONUtil.toJsonStr(person);
         System.out.println(signStr);
         System.out.println(JSON.toJSONString(signStr));
         System.out.println(JSONObject.toJSON(signStr));
         /**
-         * {"fullName":"John Doe","dateOfBirth":1649164153030,"id":1,"age":15}
-         * "{\"fullName\":\"John Doe\",\"dateOfBirth\":1649164153030,\"id\":1,\"age\":15}"
-         * {"fullName":"John Doe","dateOfBirth":1649164153030,"id":1,"age":15}
+         *{"fullName":"John Doe","dateOfBirth":1761962855882,"receiptTime":1761962855882,"id":1,"age":15}
+         * "{\"fullName\":\"John Doe\",\"dateOfBirth\":1761962855882,\"receiptTime\":1761962855882,\"id\":1,\"age\":15}"
+         * {"fullName":"John Doe","dateOfBirth":1761962855882,"receiptTime":1761962855882,"id":1,"age":15}
          */
     }
 }
