@@ -25,7 +25,7 @@ import java.io.Serializable;
  * @Date: 2021/7/12 16:39
  * @Version 1.0
  */
-@Slf4j
+//@Slf4j
 public enum WxWorkDataSyncStrategyEnum implements Serializable {
 
     ZONE_ADD(DepartmentTypeEnum.ZONE.getCode(), "create_department", "cn.eduplus.uc.wxwork.strategy.sync.zone.ZoneAddStrategy"),

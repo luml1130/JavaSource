@@ -112,6 +112,25 @@
             <version>1.2.78</version> <!-- 请使用最新版本 -->
         </dependency>
 
+        <!--校验工具类-->
+        <dependency>
+            <groupId>commons-validator</groupId>
+            <artifactId>commons-validator</artifactId>
+            <version>1.7</version> <!-- 请检查最新版本 -->
+        </dependency>
+        <!-- Hibernate Validator (Bean Validation API) -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.2.5.Final</version> <!-- 请检查最新版本 -->
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>jakarta.el</artifactId>
+            <version>3.0.3</version> <!-- 请检查最新版本 -->
+        </dependency>
+
+
     </dependencies>
 
     
