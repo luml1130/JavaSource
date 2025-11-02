@@ -25,9 +25,12 @@ public class HandlerTest {
         TypeReference typeReference = new TypeReference<List<picureVo>>() {};
         List<picureVo> bb = (List<picureVo>) JSON.parseObject(json,typeReference);
         //List<picureVo> bb = BaseJsonListTypeHandler<picureVo.class>.
-        System.out.println(bb.size());
-        System.out.println(bb);
-
+        try {
+            System.out.println(bb.size());
+            System.out.println(bb);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
     }
