@@ -14,7 +14,12 @@ import java.util.Date;
  */
 public class DateTest {
     public static  final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
     public static void main(String[] args) {
+        System.out.println(System.currentTimeMillis());
+        System.out.println(sdf.format(System.currentTimeMillis()));
+    }
+    public static void main2(String[] args) {
         // Date d = DateUtils.addHour(new Date(),5);
 
         //
