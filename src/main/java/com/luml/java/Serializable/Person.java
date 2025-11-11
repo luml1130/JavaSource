@@ -29,9 +29,16 @@ public class Person implements Serializable{
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-    
-    
+
+	public Person() {
+	}
+
+	public Person(int age, String name) {
+		this.age = age;
+		this.name = name;
+	}
 }
