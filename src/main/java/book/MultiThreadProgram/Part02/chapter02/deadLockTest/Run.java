@@ -1,4 +1,4 @@
-package book.MultiThreadProgram.Part02.deadLockTest;
+package book.MultiThreadProgram.Part02.chapter02.deadLockTest;
 
 public class Run {
 	public static void main(String[] args) {

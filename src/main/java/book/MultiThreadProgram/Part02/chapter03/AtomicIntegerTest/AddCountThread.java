@@ -1,4 +1,4 @@
-package book.MultiThreadProgram.Part02.AtomicIntegerTest;
+package book.MultiThreadProgram.Part02.chapter03.AtomicIntegerTest;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

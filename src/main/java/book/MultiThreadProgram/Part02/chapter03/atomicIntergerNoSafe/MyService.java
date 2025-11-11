@@ -1,4 +1,4 @@
-package book.MultiThreadProgram.Part02.atomicIntergerNoSafe;
+package book.MultiThreadProgram.Part02.chapter03.atomicIntergerNoSafe;
 
 import java.util.concurrent.atomic.AtomicLong;
 
