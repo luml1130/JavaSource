@@ -1,4 +1,4 @@
-package com.luml;
+package com.luml.java.collection.map.hashMap.test;
 
 
 import java.util.HashMap;

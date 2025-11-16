@@ -1,4 +1,4 @@
-package com.luml.java.operate;
+package com.luml.java.collection.array;
 
 import java.util.Arrays;
 
