@@ -1,15 +1,32 @@
 package com.luml.java.collection.list;
 
 
+import com.alibaba.fastjson.JSON;
+import com.luml.domain.DriverPushVo;
+import org.apache.commons.collections4.CollectionUtils;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class ListTest {
 	public static void main(String[] args) {
-		System.out.println("ssss");
+		DriverPushVo pushVo = null;
+		if(true){
+			pushVo = DriverPushVo.builder().name("aa").phone("137323").build();
+			if(true){
+				pushVo.setPhone("2323");
+				pushVo.setIsUpdatePhone(true);
+			}
+		}
+		DriverPushVo pushDto = null;
+		if(pushVo.getIsUpdatePhone()){
+			pushDto = DriverPushVo.builder().name(pushVo.getName())
+					.phone(pushVo.getPhone())
+					.oldPhone(pushVo.getOldPhone()).build();
+		}else{
+			pushDto = DriverPushVo.builder().name(pushVo.getName()).phone(pushVo.getPhone()).build();
+		}
+		System.out.println(JSON.toJSONString(pushDto));
 	}
 
 
@@ -19,16 +36,25 @@ public class ListTest {
 		gList.add("ddd");          gList.add("eee");          gList.add("fff");
 		gList.add("ggg");          gList.add("111");          gList.add("222");
 		gList.add("333");          gList.add("444");          gList.add("555");
-		List<String> dbList = new ArrayList<String>();
-		dbList.add("aaa");         dbList.add("ddd");          dbList.add("eee");
-
-		List<String> otherLinkPageIdList = new ArrayList(gList);;//new ArrayList<String>(gList.subList(2+1,gList.size()));
-		int i=4;
-		System.out.println(gList.size());
-
-		if(otherLinkPageIdList.size()>10){ //即第二到第11页
-			otherLinkPageIdList =  new ArrayList<String>(gList.subList(0,10));
+		//List<String> dbList = new ArrayList<String>();
+		//dbList.add("aaa");         dbList.add("ddd");          dbList.add("eee");
+		int i = 0;
+		for(String a : gList){
+			i++;
+			System.out.println(a);
+			if(i > 3){
+				break;
+			}
 		}
+		System.out.println("跳出了");
+
+//		List<String> otherLinkPageIdList = new ArrayList(gList);;//new ArrayList<String>(gList.subList(2+1,gList.size()));
+//		int i=4;
+//		System.out.println(gList.size());
+//
+//		if(otherLinkPageIdList.size()>10){ //即第二到第11页
+//			otherLinkPageIdList =  new ArrayList<String>(gList.subList(0,10));
+//		}
 		/*if(gList.size()>10){
 			if(gList.size()>i+10){
 				otherLinkPageIdList = otherLinkPageIdList.subList(i+1,i+10);
@@ -40,7 +66,7 @@ public class ListTest {
 		}*/
 
 		//otherLinkPageIdList.add(0,"lu");
-		System.out.println(otherLinkPageIdList);
+		//System.out.println(otherLinkPageIdList);
 
 	}
 
