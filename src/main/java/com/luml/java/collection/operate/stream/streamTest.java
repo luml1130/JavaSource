@@ -1,4 +1,4 @@
-package com.luml.java.collection;
+package com.luml.java.collection.operate.stream;
 
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
  * @description
  * @date 2021/8/11 下午5:02
  */
-public class tempTest {
+public class streamTest {
     public static void main(String[] args) {
         /*List<String> a = new ArrayList<String>();
         for(String bb : a){

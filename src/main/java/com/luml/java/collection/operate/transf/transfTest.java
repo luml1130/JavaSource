@@ -1,4 +1,4 @@
-package com.luml.java.collection;
+package com.luml.java.collection.operate.transf;
 
 import cn.hutool.core.util.StrUtil;
 import org.apache.commons.lang3.StringUtils;
