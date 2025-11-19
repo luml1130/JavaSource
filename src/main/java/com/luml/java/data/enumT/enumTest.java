@@ -9,8 +9,25 @@ import com.alibaba.fastjson.JSON;
  */
 public class enumTest {
 
-
     public static void main(String[] args) {
+        String desc = getDescByValue(20);
+        System.out.println(desc);
+    }
+
+    private static String getDescByValue(Integer score) {
+        if (score < 70) {
+            return ScoreEnum.D.name();
+        }else if(score < 80 && score >= 70){
+            return ScoreEnum.C.name();
+        }else if (score < 90 && score >= 80){
+            return ScoreEnum.B.name();
+        }else if((score >= 90)){
+            return ScoreEnum.A.name();
+        }
+        return ScoreEnum.D.name();
+
+    }
+    public static void main2(String[] args) {
         UserPo po = new UserPo();
         po.setId(2);
         po.setDisposedTypeEnum(DisposedTypeEnum.WAIT);
