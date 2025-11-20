@@ -3,6 +3,7 @@ package com.luml;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.JsonObject;
+import com.luml.domain.Person;
 
 import java.io.File;
 import java.util.*;
@@ -15,6 +16,11 @@ import java.util.*;
 public class test {
 
     public static void main(String[] args) {
+
+        Person p = new Person();
+        p.setAge(2);
+
+        System.out.println(p.getAge() * 2);
         System.out.println("aaa");
         /*String path="/Users/luml/Downloads/luml";
 
