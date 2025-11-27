@@ -1,0 +1,671 @@
+2025-11-27 17:02:39.313 [main] [,,,,,] INFO  c.a.n.c.e.SearchableProperties - properties search order:PROPERTIES->JVM->ENV->DEFAULT_SETTING
+2025-11-27 17:02:39.393 [background-preinit] [,,,,,] INFO  o.h.v.i.u.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-11-27 17:02:40.216 [main] [,,,,,] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-11-27 17:02:40.217 [main] [,,,,,] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-11-27 17:02:58.247 [main] [,,,,,] WARN  c.a.c.n.c.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[app_E6-MS-TMS-SUPPORT-WEB.properties] & group[DEFAULT_GROUP]
+2025-11-27 17:02:58.248 [main] [,,,,,] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-app_E6-MS-TMS-SUPPORT-WEB.properties,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-app_E6-MS-TMS-SUPPORT-WEB,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-public_xxl_job,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-public_redis_weixin,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-public_redis_trackr,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-public_redis_tempdata_report,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-public_redis_base,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-public_mq_default,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-public_email_default,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-public_database_basic,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-public_database_report,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-public_database_iot,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-public_database_log,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-public_database_i18n,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-public_database_support,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-public_database_main,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-tms_deploy_settings,DEFAULT_GROUP'}]
+2025-11-27 17:03:03.318 [main] [,,,,,] INFO  c.e.p.SupportApplication - No active profile set, falling back to 1 default profile: "default"
+2025-11-27 17:03:07.307 [main] [,,,,,] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-27 17:03:07.312 [main] [,,,,,] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-11-27 17:03:07.423 [main] [,,,,,] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 90 ms. Found 0 Redis repository interfaces.
+2025-11-27 17:03:08.165 [main] [,,,,,] INFO  o.s.c.c.s.GenericScope - BeanFactory id=b19f3efc-3690-3164-9fbb-4b4c70197263
+2025-11-27 17:03:08.538 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration' of type [org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:08.540 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:08.541 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'loadBalancerClientsDefaultsMappingsProvider' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration$$Lambda$541/1701590380] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:08.542 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'defaultsBindHandlerAdvisor' of type [org.springframework.cloud.commons.config.DefaultsBindHandlerAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:08.547 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'stringToNoneShardingStrategyConfigurationConverter' of type [org.apache.shardingsphere.spring.boot.converter.StringToNoneShardingStrategyConfigurationConverter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:08.554 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.shardingsphere-org.apache.shardingsphere.spring.boot.prop.SpringBootPropertiesConfiguration' of type [org.apache.shardingsphere.spring.boot.prop.SpringBootPropertiesConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:08.789 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.apache.shardingsphere.spring.boot.ShardingSphereAutoConfiguration' of type [org.apache.shardingsphere.spring.boot.ShardingSphereAutoConfiguration$$EnhancerBySpringCGLIB$$6ca3c5eb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:09.177 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'e6CommonDbExtensionAutoConfig.LogicDuplication' of type [com.e6yun.project.common.db.config.E6CommonDbExtensionAutoConfig$LogicDuplication$$EnhancerBySpringCGLIB$$65471305] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:09.195 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'logicDuplicationProcessor' of type [com.e6yun.project.common.db.extension.duplicate.processor.LogicDuplicationProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:09.208 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'logicDuplicateAnnotationAdvisor' of type [com.e6yun.project.common.db.extension.duplicate.aop.LogicDuplicateAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:09.209 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'e6CommonDbAutoConfig' of type [com.e6yun.project.common.db.config.E6CommonDbAutoConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:09.414 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'e6.common.datasource-com.e6yun.project.common.db.config.E6CommonDbProperties' of type [com.e6yun.project.common.db.config.E6CommonDbProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:09.432 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'e6.sharding.datasource-com.e6yun.project.common.db.config.sharding.E6ShardingDbProperties' of type [com.e6yun.project.common.db.config.sharding.E6ShardingDbProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:09.445 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceProperty' of type [com.e6yun.project.common.db.datasource.DynamicDataSourceProperty] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:09.456 [main] [,,,,,] INFO  c.e.p.c.d.s.p.r.DataSourcePathResolver - 动态数据源扫描路径：[com.e6yun.project.*.log.mapper.*, com.e6yun.project.*.mapper.log.*, com.e6yun.project.*.report.mapper.*, com.e6yun.project.*.mapper.report.*, com.e6yun.project.*.supports.mapper.*, com.e6yun.project.*.mapper.supports.*, com.e6yun.project.*.main.mapper.*, com.e6yun.project.*.main.dao.*, com.e6yun.project.*.mapper.main.*, com.e6yun.project.*.basic.mapper.*, com.e6yun.project.*.mapper.basic.*, com.e6yun.project.*.iot.mapper.*, com.e6yun.project.*.mapper.iot.*]
+2025-11-27 17:03:09.457 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'packageMatchedHandler' of type [com.e6yun.project.common.db.strategy.path.resolver.DataSourcePathResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:09.471 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourcePathAdvisor' of type [com.e6yun.project.common.db.strategy.path.aop.DynamicDataSourcePathAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:09.479 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.e6yun.project.common.db.strategy.annotation.processer.DsSpelExpressionProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:09.488 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceAnnotationAdvisor' of type [com.e6yun.project.common.db.strategy.annotation.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:09.489 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'pageCheckComponentConfig' of type [com.e6yun.project.tms.common.framework.pagecheck.config.PageCheckComponentConfig$$EnhancerBySpringCGLIB$$ada08124] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:09.538 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'tmsPageCheckerAnnotationAdvisor' of type [com.e6yun.project.tms.common.framework.pagecheck.TmsPageCheckerAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:09.638 [main] [,,,,,] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.e6yun.project.tms.common.framework.support.config.E6CommonSupportConfig' of type [com.e6yun.project.tms.common.framework.support.config.E6CommonSupportConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-11-27 17:03:10.055 [main] [,,,,,] INFO  c.e.p.t.c.f.w.s.s.E6FileStorageTempConfig - tomcat-temp-dir-path:/System/Volumes/Data/workspace/GitLabWorkSpace/yanchang/busi-module-3.0/e6-ms-tms-support/tmp/data
+2025-11-27 17:03:10.292 [main] [,,,,,] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 30080 (http)
+2025-11-27 17:03:10.335 [main] [,,,,,] WARN  o.a.c.w.DirResourceSet - Disabled the global canonical file name cache to protect against CVE-2024-56337 when starting the WebResourceSet at [/var/folders/q3/h92w990d1dg9c037rtk6mdh00000gn/T/tomcat-docbase.30080.462321219888287932] which is part of the web application []
+2025-11-27 17:03:10.540 [main] [,,,,,] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 7183 ms
+2025-11-27 17:03:11.047 [main] [,,,,,] INFO  c.a.d.p.DruidDataSource - {dataSource-1,basic} inited
+2025-11-27 17:03:11.048 [main] [,,,,,] INFO  c.a.d.p.DruidDataSource - {dataSource-2,report} inited
+2025-11-27 17:03:11.049 [main] [,,,,,] INFO  c.a.d.p.DruidDataSource - {dataSource-3,iot} inited
+2025-11-27 17:03:11.050 [main] [,,,,,] INFO  c.a.d.p.DruidDataSource - {dataSource-4,log} inited
+2025-11-27 17:03:11.051 [main] [,,,,,] INFO  c.a.d.p.DruidDataSource - {dataSource-5,i18n} inited
+2025-11-27 17:03:11.052 [main] [,,,,,] INFO  c.a.d.p.DruidDataSource - {dataSource-6,supports} inited
+2025-11-27 17:03:11.053 [main] [,,,,,] INFO  c.a.d.p.DruidDataSource - {dataSource-7,main} inited
+2025-11-27 17:03:13.238 [main] [,,,,,] INFO  c.e.p.c.r.c.E6CommonRedisAutoConfig - 创建Redis连接：report
+2025-11-27 17:03:13.245 [main] [,,,,,] INFO  c.e.p.c.r.c.E6CommonRedisAutoConfig - 创建Redis连接：trackr
+2025-11-27 17:03:13.246 [main] [,,,,,] INFO  c.e.p.c.r.c.E6CommonRedisAutoConfig - 创建Redis连接：weixin
+2025-11-27 17:03:13.247 [main] [,,,,,] INFO  c.e.p.c.r.c.E6CommonRedisAutoConfig - 创建Redis连接：base
+2025-11-27 17:03:14.234 [main] [,,,,,] INFO  o.q.i.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2025-11-27 17:03:14.248 [main] [,,,,,] INFO  o.q.c.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-11-27 17:03:14.249 [main] [,,,,,] INFO  o.q.c.QuartzScheduler - Quartz Scheduler v.2.3.2 created.
+2025-11-27 17:03:14.249 [main] [,,,,,] INFO  o.q.s.RAMJobStore - RAMJobStore initialized.
+2025-11-27 17:03:14.250 [main] [,,,,,] INFO  o.q.c.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-11-27 17:03:14.250 [main] [,,,,,] INFO  o.q.i.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-11-27 17:03:14.250 [main] [,,,,,] INFO  o.q.i.StdSchedulerFactory - Quartz scheduler version: 2.3.2
+2025-11-27 17:03:14.251 [main] [,,,,,] INFO  o.q.c.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@256bfbbb
+2025-11-27 17:03:26.195 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:26.671 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:26.751 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-REPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:27.124 [main] [,,,,,] INFO  c.e.p.t.s.s.e.i.AsyncExecutorServiceImpl - OSS文件下载基础目录：/System/Volumes/Data/workspace/GitLabWorkSpace/yanchang/busi-module-3.0/e6-ms-tms-support/tmp/oss_downloads
+2025-11-27 17:03:27.159 [main] [,,,,,] WARN  c.b.m.c.m.TableInfoHelper - This "id" is the table primary key by default name for `id` in Class: "com.e6yun.project.tms.support.po.export.ExportInterfaceInfoPO",So @TableField will not work!
+2025-11-27 17:03:27.441 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:27.625 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:27.645 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:27.668 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:27.934 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-EVALUATE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:27.961 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:28.294 [Finalizer] [,,,,,] WARN  i.l.c.r.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2025-11-27 17:03:28.300 [Finalizer] [,,,,,] WARN  i.l.c.r.DefaultClientResources - io.lettuce.core.resource.DefaultClientResources was not shut down properly, shutdown() was not called before it's garbage-collected. Call shutdown() or shutdown(long,long,TimeUnit) 
+2025-11-27 17:03:28.329 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:28.419 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:29.965 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:29.991 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:30.088 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:30.300 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:30.770 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:31.197 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-FINANCIAL-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:31.352 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:31.492 [main] [,,,,,] INFO  c.e.p.t.s.s.m.i.MessagePushRecodeScheduled - 该节点启动 定时任务 处理数据
+2025-11-27 17:03:31.597 [main] [,,,,,] WARN  c.e.p.t.c.f.c.u.h.E6CommonUserServiceImpl - 【开发模式】使用开发模式用户体系。
+2025-11-27 17:03:31.648 [main] [,,,,,] INFO  c.e.p.t.c.f.c.u.h.l.UserServiceLocalHandler - 加载开发环境临时用户：
+[
+    {
+		"carrierId":"",
+		"companyId":1,
+		"corpId":1,
+		"customerId":"",
+		"orgId":-1,
+		"parentId":0,
+		"roleIdList":[1],
+		"userCode":"admin",
+		"userId":1,
+		"userName":"管理员",
+		"userType":0,
+		"webgisUserId":1
+	},
+	{
+		"carrierId":"",
+		"companyId":1,
+		"corpId":1,
+		"customerId":"",
+		"orgId":-1,
+		"parentId":0,
+		"roleIdList":[1],
+		"userCode":"zhaohui",
+		"userId":76,
+		"userName":"管理员",
+		"userType":0,
+		"webgisUserId":53
+	}
+]
+2025-11-27 17:03:37.683 [main] [,,,,,] INFO  c.e.p.t.c.u.IdWorkerUtils - idWorkerUtils, workerId origin:4
+2025-11-27 17:03:37.830 [main] [,,,,,] INFO  c.e.p.c.p.s.d.TmsDruidMetricsConfig - finish register metrics to micrometer
+2025-11-27 17:03:38.992 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：NoticeRuleRegistryRpcService => NoticeRuleRegistryServiceImpl
+2025-11-27 17:03:38.993 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：ApproveProcessRpcService => ApproveProcessRpcServiceImpl
+2025-11-27 17:03:38.993 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：ApiBigDataRpcService => ApiBigDataServiceImpl
+2025-11-27 17:03:38.994 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：BidMessageConfigRPCService => BidMessageConfigServiceImpl
+2025-11-27 17:03:38.994 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：ApiEtoeTaskRpcService => ApiEtoeTaskRpcServiceImpl
+2025-11-27 17:03:38.995 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：DataExportRpcService => DataExportServiceImpl
+2025-11-27 17:03:38.995 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：ExportEventRpcService => ExportEventRpcServiceImpl
+2025-11-27 17:03:38.996 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：FileExportRpcService => FileExportServiceImpl
+2025-11-27 17:03:38.996 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：AiPictureRpcService => AiPictureRpcServiceImpl
+2025-11-27 17:03:38.997 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：ApiE6EleLockRpcService => ApiE6EleLockServiceImpl
+2025-11-27 17:03:38.997 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：ApiE6OilRpcService => ApiE6OilServiceImpl
+2025-11-27 17:03:38.997 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：IotHumidityRpcService => IotHumidityServiceImpl
+2025-11-27 17:03:38.998 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：IotRealtimeRpcService => IotRealtimeRpcServiceImpl
+2025-11-27 17:03:38.998 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：IotTemperatureRpcService => IotTemperatureServiceImpl
+2025-11-27 17:03:38.999 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：IotTrackRpcService => IotTrackServiceImpl
+2025-11-27 17:03:39.000 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：OpenDoorReportRpcService => OpenDoorReportServiceImpl
+2025-11-27 17:03:39.000 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：RefrigeratorReportRpcService => RefrigeratorReportServiceImpl
+2025-11-27 17:03:39.001 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：StopCarReportRpcService => StopCarReportServiceImpl
+2025-11-27 17:03:39.001 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：TmsOrderTerminalRecordRpcService => TmsOrderTerminalRecordRpcServiceImpl
+2025-11-27 17:03:39.002 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：WeatheRpcService => ApiE6WeahterServiceImpl
+2025-11-27 17:03:39.002 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：IMapCutOutRpcService => IMapCutOutRpcServiceImpl
+2025-11-27 17:03:39.003 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：LazyNavigationRpcService => LazyNavigationServiceImpl
+2025-11-27 17:03:39.006 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：LocationservRpcService => LocationservRpcServiceImpl
+2025-11-27 17:03:39.007 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：NavigationRpcService => NavigationRpcServiceImpl
+2025-11-27 17:03:39.008 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：TmsMessagePushRpcService => TmsMessagePushRpcServiceImpl
+2025-11-27 17:03:39.009 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：CorpUniqueCodeRpcService => CorpUniqueCodeServiceImpl
+2025-11-27 17:03:39.010 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：ApiFileUploadRpcService => ApiUploadServiceImpl
+2025-11-27 17:03:39.011 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：AuthorizeRpcService => AuthorizeRpcServiceImpl
+2025-11-27 17:03:39.012 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：E6WxDbAccountRpcService => WechatPublicAccountInfoServiceImpl$$EnhancerBySpringCGLIB$$4820e48a
+2025-11-27 17:03:39.013 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：E6WxDbUserRpcService => WechatUserInfoServiceImpl
+2025-11-27 17:03:39.015 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：E6WxMaQrRpcService => E6WxMaQrService
+2025-11-27 17:03:39.015 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：E6WxMaSubscribeMsgRpcService => WxMaSubscribeMessageService
+2025-11-27 17:03:39.016 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：E6WxMaUserRpcService => WxMaUserService
+2025-11-27 17:03:39.017 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：E6WxMpMenuRpcService => WxMpMenuService
+2025-11-27 17:03:39.018 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：E6WxMpTemplateMsgRpcService => WxMpTemplateMsgService
+2025-11-27 17:03:39.019 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：E6WxMpTokenRpcService => WxMpTokenService
+2025-11-27 17:03:39.020 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerMapping - 接口穿透：E6WxMpUserRpcService => WxMpUserService
+2025-11-27 17:03:39.102 [main] [,,,,,] INFO  o.s.b.a.e.w.EndpointLinksResolver - Exposing 4 endpoint(s) beneath base path '/actuator'
+2025-11-27 17:03:39.486 [main] [,,,,,] INFO  c.e.p.t.s.c.XxlJobConfig - >>>>>>>>>>> xxl-job config init.
+2025-11-27 17:03:40.978 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@35a60674, started on Thu Nov 27 17:03:03 CST 2025, parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@2228db21
+2025-11-27 17:03:40.988 [main] [,,,,,] INFO  c.e.p.t.c.f.w.r.m.E6RpcMappingHandlerAdapter - Detected ResponseBodyAdvice bean in e6CommonResponseBodyAdvice
+2025-11-27 17:03:41.945 [main] [,,,,,] INFO  o.s.b.c.r.s.JobRepositoryFactoryBean - No database type set, using meta data indicating: MYSQL
+2025-11-27 17:03:41.987 [main] [,,,,,] INFO  o.s.b.c.l.s.SimpleJobLauncher - No TaskExecutor has been set, defaulting to synchronous executor.
+2025-11-27 17:03:44.886 [main] [,,,,,] INFO  c.x.j.c.e.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:financialContractRemind, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@2c48d423[class com.e6yun.project.tms.support.notice.extend.listener.ContractRemindJob#financialContractRemind]
+2025-11-27 17:03:44.886 [main] [,,,,,] INFO  c.x.j.c.e.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:remindProcessTimeOut, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@61876e0e[class com.e6yun.project.tms.support.notice.extend.listener.RemindProcessTimeOutJob#remindProcessTimeOut]
+2025-11-27 17:03:44.886 [main] [,,,,,] INFO  c.x.j.c.e.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:waybillTimeoutRemind, jobHandler:com.xxl.job.core.handler.impl.MethodJobHandler@53a6d5fc[class com.e6yun.project.tms.support.notice.extend.listener.WaybillTimeoutRemindJob#waybillTimeoutRemind]
+2025-11-27 17:03:44.940 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'BL-MODULE-SMART-TRACE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:44.970 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'BUSINESS' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:44.996 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-ATOM-REPORT' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.007 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-ATOM-REPORT' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.018 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-ATOM-REPORT' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.046 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'BASIC' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.055 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'BUSINESS' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.087 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'IOT-DATA' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.099 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'IOT-DATA' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.110 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'IOT-DATA' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.138 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.148 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.158 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.172 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.183 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.191 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.201 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.211 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.219 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.227 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.237 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.245 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.253 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.262 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.270 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.278 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.287 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.295 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.303 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.313 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.325 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.342 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.353 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.362 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.371 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.384 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.392 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.402 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.412 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.430 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.442 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.457 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.471 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.481 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.493 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.504 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.515 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.523 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-SUPPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.532 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.543 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.551 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.570 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.579 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.599 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.610 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.629 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.638 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.649 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.660 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.670 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.680 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.688 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.699 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.714 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.729 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.774 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB-LOCAL' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.786 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.795 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.805 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.821 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.830 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.838 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.845 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BUSI-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.861 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-FINANCIAL-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.873 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-FINANCIAL-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.881 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-FINANCIAL-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.895 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-FINANCIAL-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.934 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-FINANCIAL-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.945 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-FINANCIAL-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.959 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-FINANCIAL-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.968 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-FINANCIAL-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.977 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-FINANCIAL-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:45.990 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-FINANCIAL-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.000 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-FINANCIAL-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.008 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-FINANCIAL-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.023 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-FINANCIAL-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.032 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-FINANCIAL-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.042 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.056 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.065 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.075 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.085 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.094 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.107 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.118 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.133 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.144 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.152 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.160 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.169 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.197 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.207 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.227 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.258 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.272 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.281 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.292 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.306 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.342 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.355 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.380 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.395 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.412 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.420 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.440 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.451 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.460 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.467 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.477 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.487 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.505 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.514 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.524 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.539 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.549 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.559 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.573 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.586 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-BASE-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.598 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-REPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.607 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-REPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.617 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-REPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.625 [main] [,,,,,] INFO  o.s.c.o.FeignClientFactoryBean - For 'E6-MS-TMS-REPORT-WEB' URL not provided. Will try picking an instance via load-balancing.
+2025-11-27 17:03:46.826 [main] [,,,,,] INFO  c.x.j.c.u.NetUtil - >>>>>>>>>>> xxl-rpc, port[9999] is in use.
+2025-11-27 17:03:51.889 [Thread-190] [,,,,,] INFO  c.x.j.c.s.EmbedServer - >>>>>>>>>>> xxl-job remoting server start success, nettype = class com.xxl.job.core.server.EmbedServer, port = 10000
+2025-11-27 17:03:51.899 [xxl-job, executor ExecutorRegistryThread] [,,,,,] ERROR c.x.j.c.u.XxlJobRemotingUtil - xxl-job
+java.net.UnknownHostException: xxl-job
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:95)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.lang.Thread.run(Thread.java:748)
+2025-11-27 17:03:51.899 [xxl-job, executor ExecutorRegistryThread] [,,,,,] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='bl-support', registryValue='http://172.24.60.49:10000/'}, registryResult:ReturnT [code=500, msg=xxl-rpc remoting error(xxl-job), for url : http://xxl-job:8080/xxl-job-admin/api/registry, content=null]
+2025-11-27 17:03:52.169 [main] [,,,,,] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 30080 (http) with context path ''
+2025-11-27 17:03:52.205 [main] [,,,,,] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-11-27 17:03:52.205 [main] [,,,,,] INFO  c.a.n.p.a.s.c.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-11-27 17:03:52.629 [main] [,,,,,] INFO  c.a.c.n.r.NacosServiceRegistry - nacos registry, DEFAULT_GROUP E6-MS-TMS-SUPPORT-WEB_LOCAL 172.24.60.49:30080 register finished
+2025-11-27 17:03:53.556 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.815 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.817 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.823 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.823 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.825 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.830 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.830 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.830 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.845 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.846 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.848 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.848 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.854 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.854 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.854 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.865 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:53.865 [main] [,,,,,] WARN  s.d.s.r.o.OperationImplicitParameterReader - Unable to interpret the implicit parameter configuration with dataType: , dataTypeClass: class java.lang.Void
+2025-11-27 17:03:54.625 [main] [,,,,,] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [10.161.59.164:5672]
+2025-11-27 17:03:54.866 [main] [,,,,,] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: primaryConnectionFactory#7f85482c:0/SimpleConnection@7d7d6131 [delegate=amqp://prorabbitmq@10.161.59.164:5672/baseline-tms, localPort= 50998]
+2025-11-27 17:03:54.887 [main] [,,,,,] INFO  o.s.a.r.c.RabbitAdmin - Auto-declaring a non-durable, auto-delete, or exclusive Queue (mq_e6yun3_support_notice_tms_order) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2025-11-27 17:03:54.887 [main] [,,,,,] INFO  o.s.a.r.c.RabbitAdmin - Auto-declaring a non-durable, auto-delete, or exclusive Queue (mq_e6yun3_support_notice_tms_waybill) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2025-11-27 17:03:54.887 [main] [,,,,,] INFO  o.s.a.r.c.RabbitAdmin - Auto-declaring a non-durable, auto-delete, or exclusive Queue (mq_e6yun3_support_notice_tms_analysis) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2025-11-27 17:03:55.789 [main] [,,,,,] INFO  o.s.a.r.c.RabbitAdmin - Auto-declaring a non-durable, auto-delete, or exclusive Queue (mq_e6yun3_support_notice_tms_order) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2025-11-27 17:03:55.789 [main] [,,,,,] INFO  o.s.a.r.c.RabbitAdmin - Auto-declaring a non-durable, auto-delete, or exclusive Queue (mq_e6yun3_support_notice_tms_waybill) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2025-11-27 17:03:55.789 [main] [,,,,,] INFO  o.s.a.r.c.RabbitAdmin - Auto-declaring a non-durable, auto-delete, or exclusive Queue (mq_e6yun3_support_notice_tms_analysis) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2025-11-27 17:03:56.963 [main] [,,,,,] INFO  o.s.s.q.SchedulerFactoryBean - Starting Quartz Scheduler now
+2025-11-27 17:03:56.964 [main] [,,,,,] INFO  o.q.c.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-11-27 17:03:57.014 [main] [,,,,,] INFO  c.e.p.t.c.f.p.TmsPageCheckProcessor - 加载分页检查配置：
+TmsPageCheckProcessor{enableTimeRange=false, defaultMaxDays=365, timeRangeMap={}, enablePageSize=false, defaultMaxPageSize=5000, pageSizeMap={}}
+2025-11-27 17:03:57.059 [main] [,,,,,] INFO  c.e.p.SupportApplication - Started SupportApplication in 88.403 seconds (JVM running for 94.667)
+2025-11-27 17:03:57.073 [main] [,,,,,] INFO  c.e.p.t.c.f.w.s.a.E6DefaultApplicationRunListener - =========== 服务启动成功 ===========
+2025-11-27 17:03:57.080 [main] [,,,,,] INFO  c.a.c.n.r.NacosContextRefresher - [Nacos Config] Listening config: dataId=app_E6-MS-TMS-SUPPORT-WEB, group=DEFAULT_GROUP
+2025-11-27 17:03:57.081 [main] [,,,,,] INFO  c.a.c.n.r.NacosContextRefresher - [Nacos Config] Listening config: dataId=app_E6-MS-TMS-SUPPORT-WEB.properties, group=DEFAULT_GROUP
+2025-11-27 17:03:57.178 [scheduling-1] [d53f80d9c264df3e,,d53f80d9c264df3e,,,] INFO  c.e.p.t.s.s.w.d.i.WechatPublicAccountInfoServiceImpl - 定时刷新微信平台信息缓存，size:5
+2025-11-27 17:03:57.241 [scheduling-1] [8e09fe5af64d2371,,8e09fe5af64d2371,,,] INFO  c.e.p.t.s.s.w.d.i.WechatEventConfigServiceImpl - 定时刷新微信平台事件设置缓存，size:0
+2025-11-27 17:03:57.303 [RMI TCP Connection(4)-172.24.60.49] [,,,,,] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-11-27 17:03:57.309 [RMI TCP Connection(4)-172.24.60.49] [,,,,,] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 6 ms
+2025-11-27 17:04:21.906 [xxl-job, executor ExecutorRegistryThread] [,,,,,] ERROR c.x.j.c.u.XxlJobRemotingUtil - xxl-job
+java.net.UnknownHostException: xxl-job
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:95)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.lang.Thread.run(Thread.java:748)
+2025-11-27 17:04:21.907 [xxl-job, executor ExecutorRegistryThread] [,,,,,] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='bl-support', registryValue='http://172.24.60.49:10000/'}, registryResult:ReturnT [code=500, msg=xxl-rpc remoting error(xxl-job), for url : http://xxl-job:8080/xxl-job-admin/api/registry, content=null]
+2025-11-27 17:04:51.910 [xxl-job, executor ExecutorRegistryThread] [,,,,,] ERROR c.x.j.c.u.XxlJobRemotingUtil - xxl-job
+java.net.UnknownHostException: xxl-job
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:95)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.lang.Thread.run(Thread.java:748)
+2025-11-27 17:04:51.911 [xxl-job, executor ExecutorRegistryThread] [,,,,,] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='bl-support', registryValue='http://172.24.60.49:10000/'}, registryResult:ReturnT [code=500, msg=xxl-rpc remoting error(xxl-job), for url : http://xxl-job:8080/xxl-job-admin/api/registry, content=null]
+2025-11-27 17:04:57.089 [scheduling-1] [9a1172354e4e2c76,,9a1172354e4e2c76,,,] INFO  c.e.p.t.s.s.w.d.i.WechatEventConfigServiceImpl - 定时刷新微信平台事件设置缓存，size:0
+2025-11-27 17:05:21.917 [xxl-job, executor ExecutorRegistryThread] [,,,,,] ERROR c.x.j.c.u.XxlJobRemotingUtil - xxl-job
+java.net.UnknownHostException: xxl-job
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:95)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.lang.Thread.run(Thread.java:748)
+2025-11-27 17:05:21.918 [xxl-job, executor ExecutorRegistryThread] [,,,,,] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='bl-support', registryValue='http://172.24.60.49:10000/'}, registryResult:ReturnT [code=500, msg=xxl-rpc remoting error(xxl-job), for url : http://xxl-job:8080/xxl-job-admin/api/registry, content=null]
+2025-11-27 17:05:51.955 [xxl-job, executor ExecutorRegistryThread] [,,,,,] ERROR c.x.j.c.u.XxlJobRemotingUtil - xxl-job
+java.net.UnknownHostException: xxl-job
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:95)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.lang.Thread.run(Thread.java:748)
+2025-11-27 17:05:51.956 [xxl-job, executor ExecutorRegistryThread] [,,,,,] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='bl-support', registryValue='http://172.24.60.49:10000/'}, registryResult:ReturnT [code=500, msg=xxl-rpc remoting error(xxl-job), for url : http://xxl-job:8080/xxl-job-admin/api/registry, content=null]
+2025-11-27 17:05:57.147 [scheduling-1] [008bf6b77bde7202,,008bf6b77bde7202,,,] INFO  c.e.p.t.s.s.w.d.i.WechatPublicAccountInfoServiceImpl - 定时刷新微信平台信息缓存，size:5
+2025-11-27 17:05:57.173 [scheduling-1] [33471d46cb726ae4,,33471d46cb726ae4,,,] INFO  c.e.p.t.s.s.w.d.i.WechatEventConfigServiceImpl - 定时刷新微信平台事件设置缓存，size:0
+2025-11-27 17:06:21.964 [xxl-job, executor ExecutorRegistryThread] [,,,,,] ERROR c.x.j.c.u.XxlJobRemotingUtil - xxl-job
+java.net.UnknownHostException: xxl-job
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:95)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.lang.Thread.run(Thread.java:748)
+2025-11-27 17:06:21.966 [xxl-job, executor ExecutorRegistryThread] [,,,,,] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='bl-support', registryValue='http://172.24.60.49:10000/'}, registryResult:ReturnT [code=500, msg=xxl-rpc remoting error(xxl-job), for url : http://xxl-job:8080/xxl-job-admin/api/registry, content=null]
+2025-11-27 17:06:47.833 [data-transfer-pool-%d1] [2c2a1881b61d3698,,a8f7b00c6f993012,1,1,] INFO  c.e.p.t.s.s.e.i.AsyncExecutorServiceImpl - 文件名称：磅单信息明细20251127170643.xlsx
+2025-11-27 17:06:47.947 [http-nio-30080-exec-1] [2c2a1881b61d3698,,2c2a1881b61d3698,1,1,] WARN  c.e.p.t.c.f.w.s.f.E6CommonFilter - /exportCenter/batchExport, 慢请求: 10163 ms
+2025-11-27 17:06:49.301 [data-transfer-pool-%d1] [2c2a1881b61d3698,,a8f7b00c6f993012,1,1,] INFO  o.s.b.c.l.s.SimpleJobLauncher - Job: [FlowJob: [name=dataExportJob]] launched with the following parameters: [{exportMeta={"configVO":{"appName":"E6-MS-TMS-BUSI-WEB","fileType":1, "fileTypeLabel": ".xlsx","headerType":4, "headerTypeLabel": "config_field表格头","interfaces":[{"interfaceType":1, "interfaceTypeLabel": "数据接口","queryUrl":"/rpc/com.e6yun.project.tms.busi.client.waybill.WaybillWeighingRpcService/batchExport","serviceName":"E6-MS-TMS-BUSI-WEB-LOCAL"}],"jobName":"磅单信息明细","operationId":34,"operationMethod":"","pageId":0,"pageSize":500,"queryType":2, "queryTypeLabel": "metaPage","sceneGroupId":0,"uri":"/pl/waybillWeighing/page"},"criteria":{"appName":"E6-MS-TMS-BUSI-WEB","criteria":{"current":1,"size":20,"criteria":{"modifiedTime":[1764000000000,1764259199999],"weightNoteNo":"","weightTareTime":[],"weighbridgeNo":"","weightGrossTime":[],"waybillNo":"","vehicleIds":[]}},"uri":"/pl/waybillWeighing/page"},"eventId":"1153948634245513216","fileName":"磅单信息明细20251127170643.xlsx","requestHeader":{"referer":"strict-origin-when-cross-origin","content-length":"475","bizOrgIdList":"[0]","corpId":"1","roleIdList":"[1]","postman-token":"c5c95a3f-dacf-45c6-81db-5365d6220293","userId":"1","userCode":"admin","orgId":"-1","parentId":"0","token":"X2TUaYkOIOkDSFge2WmamehRAH5jdqkHTCTUqwO5IUNGeAnagqyKIQ==","accept":"*/*","webgisUserId":"1","companyId":"1","driverId":"0","host":"localhost:30080","userSourceType":"0","content-type":"application/json","connection":"keep-alive","userType":"0","cache-control":"no-cache","accept-encoding":"gzip, deflate, br","user-agent":"PostmanRuntime/7.26.8","Content-Type":"application/json"},"user":{"bizOrgIdList":[0],"companyId":1,"corpId":1,"customerCarrierId":"","driverId":0,"orgId":-1,"parentId":0,"roleIdList":[1],"shipperReceiverId":"","userCode":"admin","userId":1,"userSourceType":0,"userType":0,"webgisUserId":1}}, fileName=tmp/oss_downloads/磅单信息明细20251127170643.xlsx}]
+2025-11-27 17:06:50.001 [data-transfer-pool-%d1] [2c2a1881b61d3698,,66ad0bcc1b592a5b,1,1,] INFO  o.s.b.c.j.SimpleStepHandler - Executing step: [step]
+2025-11-27 17:06:50.610 [data-transfer-pool-%d1] [2c2a1881b61d3698,,7ddbc86486561ab8,1,1,] INFO  c.e.p.t.s.c.e.d.w.FileExcelWriter - 写入文件：/System/Volumes/Data/workspace/GitLabWorkSpace/yanchang/busi-module-3.0/e6-ms-tms-support/tmp/oss_downloads/磅单信息明细20251127170643.xlsx
+2025-11-27 17:06:51.411 [data-transfer-pool-%d1] [2c2a1881b61d3698,,7ddbc86486561ab8,1,1,] INFO  c.e.p.t.s.c.e.d.DataExportUtil - 请求url:http://E6-MS-TMS-BUSI-WEB-LOCAL/rpc/com.e6yun.project.tms.busi.client.waybill.WaybillWeighingRpcService/batchExport
+2025-11-27 17:06:51.972 [xxl-job, executor ExecutorRegistryThread] [,,,,,] ERROR c.x.j.c.u.XxlJobRemotingUtil - xxl-job
+java.net.UnknownHostException: xxl-job
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:95)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.lang.Thread.run(Thread.java:748)
+2025-11-27 17:06:51.972 [xxl-job, executor ExecutorRegistryThread] [,,,,,] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='bl-support', registryValue='http://172.24.60.49:10000/'}, registryResult:ReturnT [code=500, msg=xxl-rpc remoting error(xxl-job), for url : http://xxl-job:8080/xxl-job-admin/api/registry, content=null]
+2025-11-27 17:06:57.117 [scheduling-1] [ae72ed63704e4f39,,ae72ed63704e4f39,,,] INFO  c.e.p.t.s.s.w.d.i.WechatEventConfigServiceImpl - 定时刷新微信平台事件设置缓存，size:0
+2025-11-27 17:07:21.978 [xxl-job, executor ExecutorRegistryThread] [,,,,,] ERROR c.x.j.c.u.XxlJobRemotingUtil - xxl-job
+java.net.UnknownHostException: xxl-job
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:95)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.lang.Thread.run(Thread.java:748)
+2025-11-27 17:07:21.980 [xxl-job, executor ExecutorRegistryThread] [,,,,,] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='bl-support', registryValue='http://172.24.60.49:10000/'}, registryResult:ReturnT [code=500, msg=xxl-rpc remoting error(xxl-job), for url : http://xxl-job:8080/xxl-job-admin/api/registry, content=null]
+2025-11-27 17:07:38.103 [data-transfer-pool-%d1] [2c2a1881b61d3698,,7ddbc86486561ab8,1,1,] INFO  c.e.p.t.s.c.e.d.w.FileExcelWriter - 写入文件：共计6条数据
+2025-11-27 17:07:41.962 [data-transfer-pool-%d1] [2c2a1881b61d3698,,7ddbc86486561ab8,1,1,] WARN  c.e.p.t.s.c.e.d.w.FileExcelWriter - after step error
+2025-11-27 17:07:41.964 [data-transfer-pool-%d1] [2c2a1881b61d3698,,7ddbc86486561ab8,1,1,] ERROR c.e.p.t.s.c.e.d.w.FileExcelWriter - 
+com.e6yun.project.tms.exception.E6UnanticipatedException: 文件存储失败
+	at com.e6yun.project.tms.exception.E6Exception.switchThrow(E6Exception.java:114)
+	at com.e6yun.project.tms.exception.E6Exception.switchThrow(E6Exception.java:79)
+	at com.e6yun.project.tms.support.service.upload.impl.ApiUploadServiceImpl.fileUpload(ApiUploadServiceImpl.java:141)
+	at com.e6yun.project.tms.support.service.upload.impl.ApiUploadServiceImpl.fildUploadPublicByInputStream(ApiUploadServiceImpl.java:94)
+	at com.e6yun.project.tms.support.core.export.data.DataExportUtil.upload2Oss(DataExportUtil.java:243)
+	at com.e6yun.project.tms.support.core.export.data.writer.FileExcelWriter.afterStep(FileExcelWriter.java:143)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.batch.support.SimpleMethodInvoker.invokeMethod(SimpleMethodInvoker.java:108)
+	at org.springframework.batch.core.listener.MethodInvokerMethodInterceptor.invoke(MethodInvokerMethodInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220)
+	at com.sun.proxy.$Proxy521.afterStep(Unknown Source)
+	at org.springframework.batch.core.listener.CompositeStepExecutionListener.afterStep(CompositeStepExecutionListener.java:64)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:247)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:152)
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:68)
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:68)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:169)
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:144)
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:139)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220)
+	at com.sun.proxy.$Proxy238.run(Unknown Source)
+	at com.e6yun.project.tms.support.service.export.impl.AsyncExecutorServiceImpl.doDataExportAsync(AsyncExecutorServiceImpl.java:134)
+	at com.e6yun.project.tms.support.service.export.impl.AsyncExecutorServiceImpl$$FastClassBySpringCGLIB$$3272ee75.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at org.springframework.cloud.sleuth.instrument.async.TraceAsyncAspect.traceBackgroundThread(TraceAsyncAspect.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:634)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:624)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at org.springframework.cloud.sleuth.instrument.async.TraceRunnable.run(TraceRunnable.java:64)
+	at com.alibaba.ttl.TtlRunnable.run(TtlRunnable.java:51)
+	at com.e6yun.project.tms.common.framework.support.thread.E6TaskDecorator.lambda$decorate$0(E6TaskDecorator.java:24)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.CompletionException: com.aliyuncs.exceptions.ClientException: NoPermission : You are not authorized to do this action. You should be authorized by RAM.
+RequestId : 1B02C58E-8F68-5757-9320-3CD84DA6F200
+	at com.github.benmanes.caffeine.cache.BoundedLocalCache$BoundedLocalLoadingCache.lambda$new$0(BoundedLocalCache.java:3373)
+	at com.github.benmanes.caffeine.cache.BoundedLocalCache.lambda$doComputeIfAbsent$14(BoundedLocalCache.java:2039)
+	at java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1853)
+	at com.github.benmanes.caffeine.cache.BoundedLocalCache.doComputeIfAbsent(BoundedLocalCache.java:2037)
+	at com.github.benmanes.caffeine.cache.BoundedLocalCache.computeIfAbsent(BoundedLocalCache.java:2020)
+	at com.github.benmanes.caffeine.cache.LocalCache.computeIfAbsent(LocalCache.java:112)
+	at com.github.benmanes.caffeine.cache.LocalLoadingCache.get(LocalLoadingCache.java:67)
+	at com.e6yun.project.tms.support.service.upload.impl.AliyunOssFileStorage.save(AliyunOssFileStorage.java:132)
+	at com.e6yun.project.tms.support.service.upload.impl.ApiUploadServiceImpl.fileUpload(ApiUploadServiceImpl.java:139)
+	... 64 common frames omitted
+Caused by: com.aliyuncs.exceptions.ClientException: NoPermission : You are not authorized to do this action. You should be authorized by RAM.
+RequestId : 1B02C58E-8F68-5757-9320-3CD84DA6F200
+	at com.aliyuncs.DefaultAcsClient.parseAcsResponse(DefaultAcsClient.java:212)
+	at com.aliyuncs.DefaultAcsClient.getAcsResponse(DefaultAcsClient.java:121)
+	at com.e6yun.project.tms.support.service.upload.impl.AliyunOssFileStorage.sts(AliyunOssFileStorage.java:119)
+	at com.e6yun.project.tms.support.service.upload.impl.AliyunOssFileStorage.lambda$initOssClient$0(AliyunOssFileStorage.java:87)
+	at com.github.benmanes.caffeine.cache.BoundedLocalCache$BoundedLocalLoadingCache.lambda$new$0(BoundedLocalCache.java:3366)
+	... 72 common frames omitted
+2025-11-27 17:07:42.052 [data-transfer-pool-%d1] [2c2a1881b61d3698,,66ad0bcc1b592a5b,1,1,] INFO  o.s.b.c.s.AbstractStep - Step: [step] executed in 52s51ms
+2025-11-27 17:07:42.248 [data-transfer-pool-%d1] [2c2a1881b61d3698,,66ad0bcc1b592a5b,1,1,] INFO  c.e.p.t.s.c.e.b.JobCompletionNotificationListener - !!! JOB FINISHED! Time to verify the results
+2025-11-27 17:07:42.378 [data-transfer-pool-%d1] [2c2a1881b61d3698,,a8f7b00c6f993012,1,1,] INFO  o.s.b.c.l.s.SimpleJobLauncher - Job: [FlowJob: [name=dataExportJob]] completed with the following parameters: [{exportMeta={"configVO":{"appName":"E6-MS-TMS-BUSI-WEB","fileType":1, "fileTypeLabel": ".xlsx","headerType":4, "headerTypeLabel": "config_field表格头","interfaces":[{"interfaceType":1, "interfaceTypeLabel": "数据接口","queryUrl":"/rpc/com.e6yun.project.tms.busi.client.waybill.WaybillWeighingRpcService/batchExport","serviceName":"E6-MS-TMS-BUSI-WEB-LOCAL"}],"jobName":"磅单信息明细","operationId":34,"operationMethod":"","pageId":0,"pageSize":500,"queryType":2, "queryTypeLabel": "metaPage","sceneGroupId":0,"uri":"/pl/waybillWeighing/page"},"criteria":{"appName":"E6-MS-TMS-BUSI-WEB","criteria":{"current":1,"size":20,"criteria":{"modifiedTime":[1764000000000,1764259199999],"weightNoteNo":"","weightTareTime":[],"weighbridgeNo":"","weightGrossTime":[],"waybillNo":"","vehicleIds":[]}},"uri":"/pl/waybillWeighing/page"},"eventId":"1153948634245513216","fileName":"磅单信息明细20251127170643.xlsx","requestHeader":{"referer":"strict-origin-when-cross-origin","content-length":"475","bizOrgIdList":"[0]","corpId":"1","roleIdList":"[1]","postman-token":"c5c95a3f-dacf-45c6-81db-5365d6220293","userId":"1","userCode":"admin","orgId":"-1","parentId":"0","token":"X2TUaYkOIOkDSFge2WmamehRAH5jdqkHTCTUqwO5IUNGeAnagqyKIQ==","accept":"*/*","webgisUserId":"1","companyId":"1","driverId":"0","host":"localhost:30080","userSourceType":"0","content-type":"application/json","connection":"keep-alive","userType":"0","cache-control":"no-cache","accept-encoding":"gzip, deflate, br","user-agent":"PostmanRuntime/7.26.8","Content-Type":"application/json"},"user":{"bizOrgIdList":[0],"companyId":1,"corpId":1,"customerCarrierId":"","driverId":0,"orgId":-1,"parentId":0,"roleIdList":[1],"shipperReceiverId":"","userCode":"admin","userId":1,"userSourceType":0,"userType":0,"webgisUserId":1}}, fileName=tmp/oss_downloads/磅单信息明细20251127170643.xlsx}] and the following status: [COMPLETED] in 52s903ms
+2025-11-27 17:07:47.809 [data-transfer-pool-%d1] [2c2a1881b61d3698,,a8f7b00c6f993012,1,1,] WARN  c.e.p.t.s.s.e.i.AsyncExecutorServiceImpl - 导出任务出现错误
+2025-11-27 17:07:47.810 [data-transfer-pool-%d1] [2c2a1881b61d3698,,a8f7b00c6f993012,1,1,] ERROR c.e.p.t.s.s.e.i.AsyncExecutorServiceImpl - 
+java.lang.ClassCastException: Value for key=[oss] is not of type: [class java.lang.String], it is [null]
+	at org.springframework.batch.item.ExecutionContext.readAndValidate(ExecutionContext.java:290)
+	at org.springframework.batch.item.ExecutionContext.getString(ExecutionContext.java:161)
+	at com.e6yun.project.tms.support.service.export.impl.AsyncExecutorServiceImpl.doDataExportAsync(AsyncExecutorServiceImpl.java:139)
+	at com.e6yun.project.tms.support.service.export.impl.AsyncExecutorServiceImpl$$FastClassBySpringCGLIB$$3272ee75.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at org.springframework.cloud.sleuth.instrument.async.TraceAsyncAspect.traceBackgroundThread(TraceAsyncAspect.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:634)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:624)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:72)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at org.springframework.cloud.sleuth.instrument.async.TraceRunnable.run(TraceRunnable.java:64)
+	at com.alibaba.ttl.TtlRunnable.run(TtlRunnable.java:51)
+	at com.e6yun.project.tms.common.framework.support.thread.E6TaskDecorator.lambda$decorate$0(E6TaskDecorator.java:24)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2025-11-27 17:07:51.984 [xxl-job, executor ExecutorRegistryThread] [,,,,,] ERROR c.x.j.c.u.XxlJobRemotingUtil - xxl-job
+java.net.UnknownHostException: xxl-job
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:606)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at com.xxl.job.core.util.XxlJobRemotingUtil.postBody(XxlJobRemotingUtil.java:95)
+	at com.xxl.job.core.biz.client.AdminBizClient.registry(AdminBizClient.java:42)
+	at com.xxl.job.core.thread.ExecutorRegistryThread$1.run(ExecutorRegistryThread.java:48)
+	at java.lang.Thread.run(Thread.java:748)
+2025-11-27 17:07:51.984 [xxl-job, executor ExecutorRegistryThread] [,,,,,] INFO  c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry fail, registryParam:RegistryParam{registryGroup='EXECUTOR', registryKey='bl-support', registryValue='http://172.24.60.49:10000/'}, registryResult:ReturnT [code=500, msg=xxl-rpc remoting error(xxl-job), for url : http://xxl-job:8080/xxl-job-admin/api/registry, content=null]
+2025-11-27 17:07:57.118 [scheduling-1] [0f3aa91d8b912146,,0f3aa91d8b912146,,,] INFO  c.e.p.t.s.s.w.d.i.WechatPublicAccountInfoServiceImpl - 定时刷新微信平台信息缓存，size:5
+2025-11-27 17:07:57.147 [scheduling-1] [2723c77a128df713,,2723c77a128df713,,,] INFO  c.e.p.t.s.s.w.d.i.WechatEventConfigServiceImpl - 定时刷新微信平台事件设置缓存，size:0
+2025-11-27 17:08:03.020 [Thread-55] [,,,,,] WARN  c.a.n.c.n.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2025-11-27 17:08:03.020 [Thread-26] [,,,,,] WARN  c.a.n.c.h.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2025-11-27 17:08:03.020 [Thread-55] [,,,,,] WARN  c.a.n.c.n.NotifyCenter - [NotifyCenter] Destruction of the end
+2025-11-27 17:08:03.021 [Thread-26] [,,,,,] WARN  c.a.n.c.h.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2025-11-27 17:08:03.055 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] [,,,,,] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2025-11-27 17:08:03.083 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] [,,,,,] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2025-11-27 17:08:03.105 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] [,,,,,] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2025-11-27 17:08:03.129 [SpringApplicationShutdownHook] [,,,,,] INFO  o.q.c.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2025-11-27 17:08:03.129 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-2] [,,,,,] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.

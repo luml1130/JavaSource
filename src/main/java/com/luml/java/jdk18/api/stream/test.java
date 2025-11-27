@@ -1,6 +1,8 @@
 package com.luml.java.jdk18.api.stream;
 
+import com.alibaba.fastjson.JSONObject;
 import com.luml.domain.Person2;
+import com.luml.java.jdk18.WayBillWeightPhoto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +17,9 @@ public class test {
     public static final String GET_LOGIN_INFO =  "/qw-platform/api/v1/mix/get_login_info?authCode=%s";
 
     public static void main(String[] args) {
-        System.out.println(Math.max(Math.toIntExact(5300), 0));
-        String code = "2222";
-        String method = String.format(GET_LOGIN_INFO,code);
-        System.out.println(method);
+
+
+
     }
     public static void main2(String[] args) {
         List<Person2> list = new ArrayList<Person2>(){{
