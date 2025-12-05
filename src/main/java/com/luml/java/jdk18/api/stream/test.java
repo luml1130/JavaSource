@@ -3,6 +3,7 @@ package com.luml.java.jdk18.api.stream;
 import com.alibaba.fastjson.JSONObject;
 import com.luml.domain.Person2;
 import com.luml.java.jdk18.WayBillWeightPhoto;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,10 @@ public class test {
     public static final String GET_LOGIN_INFO =  "/qw-platform/api/v1/mix/get_login_info?authCode=%s";
 
     public static void main(String[] args) {
-
+        List<String> nodeAreaNameList = new ArrayList<>();
+        nodeAreaNameList.add("北京");
+        nodeAreaNameList.add("上海");
+        System.out.println(String.join(" -> ", nodeAreaNameList));
 
 
     }

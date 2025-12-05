@@ -28,6 +28,10 @@ public class Person {
     @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date receiptTime;
 
+    public Person(int id, String fullName) {
+        this.id = id;
+        this.fullName = fullName;
+    }
 
     public Person(int id, int age, String fullName, Date dateOfBirth, Date receiptTime) {
         this.id = id;

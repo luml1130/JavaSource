@@ -1,5 +1,7 @@
 package com.luml.domain;
 
+import org.omg.CORBA.INTERNAL;
+
 /**
  * @author luml
  * @description
@@ -7,14 +9,14 @@ package com.luml.domain;
  */
 //@Accessors(chain = true) // 链式方法
 public class User2 {
-    private String id;
+    private Integer id;
     private String name;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
