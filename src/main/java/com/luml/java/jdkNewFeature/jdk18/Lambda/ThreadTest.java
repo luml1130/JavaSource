@@ -1,6 +1,4 @@
-package com.luml.java.jdk18.Lambda;
-
-import java.util.concurrent.ThreadPoolExecutor;
+package com.luml.java.jdkNewFeature.jdk18.Lambda;
 
 /**
  * @author luml

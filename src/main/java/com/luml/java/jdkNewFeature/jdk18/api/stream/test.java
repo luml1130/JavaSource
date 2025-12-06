@@ -1,13 +1,10 @@
-package com.luml.java.jdk18.api.stream;
+package com.luml.java.jdkNewFeature.jdk18.api.stream;
 
-import com.alibaba.fastjson.JSONObject;
 import com.luml.domain.Person2;
-import com.luml.java.jdk18.WayBillWeightPhoto;
-import org.apache.commons.lang3.StringUtils;
+import com.luml.java.jdkNewFeature.jdk18.WayBillWeightPhoto;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author luml

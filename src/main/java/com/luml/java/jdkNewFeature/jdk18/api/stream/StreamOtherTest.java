@@ -1,8 +1,7 @@
-package com.luml.java.jdk18.api.stream;
+package com.luml.java.jdkNewFeature.jdk18.api.stream;
 
 import com.luml.domain.Person;
 import com.luml.domain.Person2;
-import com.sun.deploy.uitoolkit.impl.awt.AWTPluginEmbeddedFrameWindow;
 
 import java.util.ArrayList;
 import java.util.Arrays;

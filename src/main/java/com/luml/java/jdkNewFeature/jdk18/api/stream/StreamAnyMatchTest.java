@@ -1,4 +1,4 @@
-package com.luml.java.jdk18.api.stream;
+package com.luml.java.jdkNewFeature.jdk18.api.stream;
 
 import java.util.Arrays;
 import java.util.List;

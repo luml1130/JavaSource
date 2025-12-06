@@ -1,4 +1,4 @@
-package com.luml.java.jdk18;
+package com.luml.java.jdkNewFeature.jdk18;
 
 import lombok.Data;
 

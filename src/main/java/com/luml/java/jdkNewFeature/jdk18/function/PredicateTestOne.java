@@ -1,4 +1,4 @@
-package com.luml.java.jdk18.function;
+package com.luml.java.jdkNewFeature.jdk18.function;
 
 import org.junit.Test;
 

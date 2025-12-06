@@ -1,4 +1,4 @@
-package com.luml.java.jdk18.api.stream;
+package com.luml.java.jdkNewFeature.jdk18.api.stream;
 
 import com.luml.domain.Person2;
 
@@ -26,6 +26,7 @@ public class StreamFilterTest {
 
         System.out.println(startsWithA); // 输出: [apple, elderberry]
     }
+
     //3、使用 filter 方法过滤偶数
     public static void main2(String[] args) {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
@@ -42,6 +43,8 @@ public class StreamFilterTest {
             add(new Person2("小刘","xiaoliu",1,30));
             add(new Person2("三木","sanmu",0,50));
         }};
+
+        //Set<Integer> vehicleIds = resultRecords.stream().map(EventReportInfoPO::getVehicleId).filter(Objects::nonNull).collect(Collectors.toSet());
 
         list.stream().
                 filter(Person2 -> Person2.getGender() ==1 )
