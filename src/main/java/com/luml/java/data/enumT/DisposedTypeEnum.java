@@ -1,5 +1,9 @@
 package com.luml.java.data.enumT;
 
+import com.google.common.collect.Lists;
+
+import java.util.List;
+
 /**
  * @Description 异常上报明细表处理状态枚举
  *      待处理：驳回后待司机端进行修改
@@ -28,6 +32,14 @@ public enum DisposedTypeEnum  {
     DisposedTypeEnum(Integer statusType, String statusName) {
         this.statusType = statusType;
         this.statusName = statusName;
+    }
+
+    public static List<Integer> getTypeList(){
+        List<Integer> typeList = Lists.newArrayList();
+        for (OpenSaasTypeEnum openSaasTypeEnum: OpenSaasTypeEnum.values()) {
+            typeList.add(openSaasTypeEnum.getValue());
+        }
+        return typeList;
     }
 
 }

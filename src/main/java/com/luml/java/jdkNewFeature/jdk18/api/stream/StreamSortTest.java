@@ -1,6 +1,8 @@
 package com.luml.java.jdkNewFeature.jdk18.api.stream;
 
+import com.luml.domain.Person;
 import com.luml.domain.PersonSort;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,8 +18,13 @@ import java.util.stream.Collectors;
  */
 public class StreamSortTest {
 
-    //使用Lambda表达式自定义排序
     public static void main(String[] args) {
+        System.out.println(12-15);
+    }
+
+    //使用Lambda表达式自定义排序
+    @Test
+    public void lambdaSort(){
         List<String> strings = Arrays.asList("banana", "apple", "oew");
         List<String> sortedStrings = strings.stream()
                 .sorted()
@@ -26,6 +33,28 @@ public class StreamSortTest {
                 .collect(Collectors.toList());
         System.out.println(sortedStrings); // 输出可能为: [banana, orange, oew]（取决于长度）
 
+    }
+
+    @Test
+    public void sort(){
+        //对于自定义类
+        List<PersonSort> personList = new ArrayList<PersonSort>(){{
+            add(new PersonSort("Bob",12));
+            add(new PersonSort("Alice",13));
+        }};
+
+        List<Person> personList2 = personList.stream()
+                .map(f -> {
+                    Person vo = new Person();
+                    vo.setAge(f.getAge());
+                    vo.setName(f.getName());
+                    return vo;
+                })
+                //.sorted((s1, s2) -> s2.getAge() - s1.getAge())//年龄从大到小
+                //.sorted(Comparator.comparing(Person::getAge, Comparator.reverseOrder())) //reverseOrder降序
+                .sorted(Comparator.comparing(Person::getAge, Comparator.naturalOrder())) //naturalOrder升序
+                .collect(Collectors.toList());
+        System.out.println(personList2);
     }
 
     /**

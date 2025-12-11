@@ -128,6 +128,16 @@ public class DateUtils {
         return calendar.getTimeInMillis();
     }
 
+    public static Long getFrontEndOfDay(int day) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE,day);
+        calendar.set(Calendar.HOUR_OF_DAY, 23);
+        calendar.set(Calendar.MINUTE, 59);
+        calendar.set(Calendar.SECOND, 59);
+        calendar.set(Calendar.MILLISECOND, 59);
+        return calendar.getTimeInMillis();
+    }
+
     public static Long getEndOfDay() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, 23);
@@ -136,6 +146,8 @@ public class DateUtils {
         calendar.set(Calendar.MILLISECOND, 59);
         return calendar.getTimeInMillis();
     }
+
+
 
     public static Long getCurrentWeekStartTime() {
         Calendar weekInstance = Calendar.getInstance();

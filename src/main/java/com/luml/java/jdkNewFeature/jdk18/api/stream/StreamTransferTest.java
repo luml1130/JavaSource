@@ -6,7 +6,11 @@ import com.sun.tools.javac.util.List;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -43,16 +47,24 @@ public class StreamTransferTest {
     }
 
     //list--> map
-    public static void main1(String[] args) {
+    @Test
+    public void list2Map() {
         List<Person> people = List.of(
                 new Person(1, "Alice"),
                 new Person(2, "Bob"),
                 new Person(3, "Charlie")
         );
 
-        Map<Integer, Person> personMap = people.stream()
-                .collect(Collectors.toMap(Person::getId, p -> p));
+       /* Map<Integer, Person> personMap = people.stream()
+                .collect(Collectors.toMap(Person::getId, p -> p));*/
 
-        System.out.println(personMap);
+        Map<Integer, Person> alarmStatPOMap = new HashMap<>();//Collections.emptyMap();
+        people.stream().forEach(person -> {
+            alarmStatPOMap.put(person.getId(), person);
+        });
+
+
+        System.out.println(alarmStatPOMap);
+
     }
 }

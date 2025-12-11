@@ -1,6 +1,8 @@
 package com.luml.java.data.enumT;
 
 import com.alibaba.fastjson.JSON;
+import com.luml.domain.Person;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author luml
@@ -10,8 +12,14 @@ import com.alibaba.fastjson.JSON;
 public class enumTest {
 
     public static void main(String[] args) {
-        String desc = getDescByValue(20);
-        System.out.println(desc);
+       // String desc = getDescByValue(20);
+       // System.out.println(desc);
+        Person p = new Person();
+        p.setName("dd");
+        System.out.println(StringUtils.isEmpty(p.getBigName()));
+        String uri = StringUtils.isEmpty(p.getBigName()) ? "/pl/alarmStat/pag" : p.getBigName();
+        System.out.println(uri);
+        //System.out.println(StringUtils.isEmpty(p.getBigName()) ?"是":"否");
     }
 
     private static String getDescByValue(Integer score) {

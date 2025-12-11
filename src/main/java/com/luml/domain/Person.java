@@ -2,6 +2,7 @@ package com.luml.domain;
 
 public class Person { // ctrl + m全屏
 	private String name;
+	private String bigName;
 	private int age;
 
 	public Person() {
@@ -25,6 +26,10 @@ public class Person { // ctrl + m全屏
 
 	public int getAge() {
 		return age;
+	}
+
+	public String getBigName() {
+		return bigName;
 	}
 
 	public void setAge(int age) {
