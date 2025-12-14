@@ -2,15 +2,14 @@ package com.luml.java.jdkNewFeature.jdk18.api.stream;
 
 import com.luml.domain.Person2;
 import com.luml.java.data.Person;
-import com.sun.tools.javac.util.List;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
-import java.util.Objects;
-import java.util.function.Function;
+
 import java.util.stream.Collectors;
 
 /**
@@ -36,7 +35,7 @@ public class StreamTransferTest {
 
     //mapToInt/mapToLong/mapToDouble   list/map-->int
     public static void main2(String[] args) {
-        List<Person> peopleList = List.of(
+        com.sun.tools.javac.util.List<Person> peopleList = com.sun.tools.javac.util.List.of(
                 new Person(1, "Alice"),
                 new Person(2, "Bob"),
                 new Person(3, "Charlie")
@@ -46,25 +45,36 @@ public class StreamTransferTest {
         System.out.println(totalTransit);
     }
 
+
+
+
+
+
     //list--> map
     @Test
     public void list2Map() {
-        List<Person> people = List.of(
-                new Person(1, "Alice"),
-                new Person(2, "Bob"),
-                new Person(3, "Charlie")
+        List<Person> peopleList = com.sun.tools.javac.util.List.of(
+                new Person(1, 12,"Alice"),
+                new Person(2, 15,"Bob"),
+                new Person(3, 9,"Charlie")
         );
-
        /* Map<Integer, Person> personMap = people.stream()
                 .collect(Collectors.toMap(Person::getId, p -> p));*/
 
-        Map<Integer, Person> alarmStatPOMap = new HashMap<>();//Collections.emptyMap();
+        //list先排序 再转换tomap
+        //Collections.sort(peopleList,Comparator.comparing(Person::getFullName, Comparator.naturalOrder()));
+
+
+        System.out.println(peopleList);
+        /*Map<Integer, String> ageToNameMap = peopleList.stream()
+                .collect(Collectors.toMap(Person::getId, Person::getFullName));
+        System.out.println(ageToNameMap);*/
+
+        /*Map<Integer, Person> alarmStatPOMap = new HashMap<>();//Collections.emptyMap();
         people.stream().forEach(person -> {
             alarmStatPOMap.put(person.getId(), person);
         });
-
-
-        System.out.println(alarmStatPOMap);
+        System.out.println(alarmStatPOMap);*/
 
     }
 }

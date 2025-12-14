@@ -35,6 +35,7 @@ public class StreamSortTest {
 
     }
 
+
     @Test
     public void sort(){
         //对于自定义类
@@ -55,6 +56,9 @@ public class StreamSortTest {
                 .sorted(Comparator.comparing(Person::getAge, Comparator.naturalOrder())) //naturalOrder升序
                 .collect(Collectors.toList());
         System.out.println(personList2);
+
+
+
     }
 
     /**

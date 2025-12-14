@@ -33,6 +33,12 @@ public class Person {
         this.fullName = fullName;
     }
 
+    public Person(int id, int age, String fullName) {
+        this.id = id;
+        this.age = age;
+        this.fullName = fullName;
+    }
+
     public Person(int id, int age, String fullName, Date dateOfBirth, Date receiptTime) {
         this.id = id;
         this.age = age;

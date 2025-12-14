@@ -1,6 +1,6 @@
-package com.luml.java.reflect.study;
+package com.luml.java.nature.reflect.study;
 
-import com.luml.java.reflect.Person;
+import com.luml.java.nature.reflect.Person;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
 public class test {
 
     public static void main(String[] args) throws Exception {
-        Class clazz=Class.forName("com.luml.java.reflect.Person");
+        Class clazz=Class.forName("com.luml.java.nature.reflect.Person");
         Person p = (Person) clazz.newInstance();
 
         /**
@@ -67,7 +67,7 @@ public class test {
     @Test
     public void getField(){
         try {
-            Class clazz= Class.forName("com.luml.java.reflect.Person");
+            Class clazz= Class.forName("com.luml.java.nature.reflect.Person");
             Person p=(Person) clazz.newInstance();
             /**
              * 公用的属性

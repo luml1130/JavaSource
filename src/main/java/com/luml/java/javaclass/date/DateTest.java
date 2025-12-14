@@ -336,25 +336,4 @@ public class DateTest {
     }
 
 
-    public static void main1(String[] args) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date e = new Date();
-        System.out.println(e.getTime());
-        /*Date date = new Date();
-		System.out.println(sdf.format(date));
-
-		Date date1 = new Date(System.currentTimeMillis()+1000*60*60*24*10);
-		int num = date1.compareTo(date);
-		System.out.println(num);*/
-        System.out.println(longToDate(1571916920759L));
-    }
-
-    /**
-     * long 类型转换成日期
-     */
-    public static String longToDate(Long longTime){
-        Date date = new Date(longTime);
-        SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        return sd.format(date);
-    }
 }

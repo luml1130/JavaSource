@@ -1,4 +1,4 @@
-package com.luml.java.javaclass.date;
+package com.luml.java.javaclass.date.javaUtilPac;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

@@ -4,6 +4,9 @@ package com.luml.java.javaclass.date;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -57,6 +60,11 @@ public class DateUtils {
             return sf.format(date);
         }
         return "";
+    }
+
+    public static Date localDateTime2Date(LocalDateTime localDateTime) {
+        ZonedDateTime zdt = localDateTime.atZone(ZoneId.systemDefault());
+        return Date.from(zdt.toInstant());
     }
 
     //--------------add
