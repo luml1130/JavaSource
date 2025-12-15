@@ -1,15 +1,24 @@
-package com.luml.java.data.enumT;
+package com.luml.java.data.enumT.test;
 
 import com.alibaba.fastjson.JSON;
+import com.google.common.collect.Lists;
 import com.luml.domain.Person;
+import com.luml.java.data.enumT.DisposedTypeEnum;
+import com.luml.java.data.enumT.ScoreEnum;
+import com.luml.java.data.enumT.TableAlignTypeEnum;
+import com.luml.java.data.enumT.UserPo;
 import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author luml
  * @description
  * @date 2025/10/29
  */
-public class enumTest {
+public class EnumTest {
 
     public static void main(String[] args) {
        // String desc = getDescByValue(20);
@@ -50,6 +59,30 @@ public class enumTest {
         //System.out.println(OpenSaasTypeEnum.getValueList());
         //System.out.println(StaticParamEnum.CICADA_DEFULT_ICON);
 
+    }
+
+    @Test
+    public void enum2List(){
+
+        List<Map<String,Object>> enumList = EnumUtil.enumToList(ScoreEnum.class);
+        System.out.println(enumList);
+        //[{name=A, value=0}, {name=B, value=1}, {name=C, value=2}, {name=D, value=3}]
+
+        List<Map<String,Object>> tableAlignEnumList = EnumUtil.enumToList(TableAlignTypeEnum.class);
+        System.out.println("tableAlignEnumList="+tableAlignEnumList);
+        //tableAlignEnumList=[{name=LEFT, value=0}, {name=CENTER, value=1}, {name=RIGHT, value=2}]
+
+        //EnumUtil.enumToList不靠谱啊
+        List<Integer> typeList = Lists.newArrayList();
+        for (TableAlignTypeEnum eventTypeEnum: TableAlignTypeEnum.values()) {
+            typeList.add(eventTypeEnum.getId());
+        }
+        System.out.println(typeList); //[1, 2, 3]
+    }
+
+    @Test
+    public void implementsTest(){
+        ScoreEnum.A.print(); //desc: A
     }
 
 }

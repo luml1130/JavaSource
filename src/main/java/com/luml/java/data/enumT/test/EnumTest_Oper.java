@@ -1,5 +1,6 @@
-package com.luml.java.data.enumT;
+package com.luml.java.data.enumT.test;
 
+import com.luml.java.data.enumT.DisposedTypeEnum;
 import lombok.Data;
 import org.junit.Test;
 

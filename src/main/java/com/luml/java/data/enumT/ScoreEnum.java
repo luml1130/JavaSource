@@ -3,7 +3,7 @@ package com.luml.java.data.enumT;
 import com.luml.java.keyword.SwitchTest;
 import org.springframework.util.StringUtils;
 
-public enum ScoreEnum {
+public enum ScoreEnum implements Printable{
 
     A("A"),
     B("B"),
@@ -38,5 +38,10 @@ public enum ScoreEnum {
         }*/
         return D.desc;
 
+    }
+
+    @Override
+    public void print() {
+        System.out.println("desc: " + this);
     }
 }

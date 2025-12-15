@@ -28,6 +28,8 @@ public class User2 {
         this.name = name;
     }
 
-
-
+    public User2(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

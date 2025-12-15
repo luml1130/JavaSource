@@ -1,4 +1,4 @@
-package com.luml.java.collection.operate;
+package com.luml.java.collection.operate.create;
 
 import com.luml.domain.Person2;
 import org.junit.Test;
