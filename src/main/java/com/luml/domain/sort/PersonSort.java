@@ -1,4 +1,4 @@
-package com.luml.domain;
+package com.luml.domain.sort;
 
 import lombok.Data;
 

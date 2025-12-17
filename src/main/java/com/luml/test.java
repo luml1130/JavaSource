@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.JsonObject;
 import com.luml.domain.Person;
+import com.luml.java.tools.Sercuity.uem.MD5;
 
 import java.io.File;
 import java.util.*;
@@ -14,8 +15,19 @@ import java.util.*;
  * @date 2021/8/23 上午11:47
  */
 public class test {
-
     public static void main(String[] args) {
+        //String md = MD5.md5("184CD4DF-C5D2-4F55-8539-ED45D4E91FBBappkeyabe10b89-8185-483a-b28f-894f7957f78dformatjsonmethodGetVehcileInfosessionidtimestamp2014-11-08 11:47:42vehicle陕A0000184CD4DF-C5D2-4F55-8539-ED45D4E91FBB");
+
+        String md = MD5.md5("8D6B64F4-B6C1-4EAD-8860-34E476146FDC" +
+                "appkey3ED37D32-30D7-4984-9E4B-0DB3A504AC5Bformatjson" +
+                "methodsyncsessionidtimestamp2025-12-16 13:40:42nameceshi" +
+                "8D6B64F4-B6C1-4EAD-8860-34E476146FDC");
+        System.out.println(md);
+        //1ee16d3d4c0964bbfc583c69ff7b1f52
+        String sign = "1EE16D3D4C0964BBFC583C69FF7B1F52";
+
+    }
+    public static void main7(String[] args) {
 
         Person p = new Person();
         p.setAge(2);

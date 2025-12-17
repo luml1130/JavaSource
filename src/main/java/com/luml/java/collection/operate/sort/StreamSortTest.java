@@ -1,7 +1,7 @@
-package com.luml.java.jdkNewFeature.jdk18.api.stream;
+package com.luml.java.collection.operate.sort;
 
 import com.luml.domain.Person;
-import com.luml.domain.PersonSort;
+import com.luml.domain.sort.PersonSort;
 import org.junit.Test;
 
 import java.util.ArrayList;
