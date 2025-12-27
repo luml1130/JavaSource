@@ -38,18 +38,27 @@ public class StreamTransferTest {
             add(new Person2("三木","sanmu",0,50));
             //add(new Person2("四木","simu",0,20));
         }};
+        List<User2> existFixedLineAreaList = new ArrayList<>();
+        User2 user2 = new User2(74, "wo");
+        User2 user3 = new User2(92, "ni");
+        existFixedLineAreaList.add(user2);
+        existFixedLineAreaList.add(user3);
 
         Map<Integer, String> genderMap = list.stream()
                 .collect(Collectors.toMap(Person2::getGender, item -> item.getNickName()));
         System.out.println(genderMap); //{0=sanmu, 1=xiaoliu}
         //如果key冲突 比如 两个gender为0 的 java.lang.IllegalStateException: Duplicate key sanmu
 
+        Map<Integer, User2> customAreaMap =
+                    existFixedLineAreaList.stream().collect(Collectors.toMap(User2::getId,item -> item));
+        System.out.println("customAreaMap="+customAreaMap);
+
         //或者如下写法
         /*Map<Integer, String> studentMap = list.stream()
                 .collect(Collectors.toMap(Person2::getGender, Person2::getNickName));*/
 
         /**
-         * 处理键冲突
+         * 2、处理键冲突
          * 当流中存在生成相同键的元素时，如果不用第三个参数处理冲突，会抛出 IllegalStateException。‌
          * ‌第三个参数 mergeFunction‌ 是一个 BinaryOperator<U>，用于定义发生键冲突时的处理策略：
          * (existing, replacement) -> replacement：保留最后出现的元素（推荐常用）。‌

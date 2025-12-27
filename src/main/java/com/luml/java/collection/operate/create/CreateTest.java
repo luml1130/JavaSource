@@ -9,6 +9,7 @@ import com.google.common.collect.Sets;
 import com.luml.domain.Person;
 import org.junit.Test;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -45,6 +46,13 @@ public class CreateTest {
         ImmutableMap<String, String> iMap = ImmutableMap.of("k1", "v1", "k2", "v2");
 
         ImmutableList<Person> people = ImmutableList.of();
+    }
+
+    @Test
+    public void singletonList(){
+        Integer i = 10;
+        List<Integer> IntegerList =  Collections.singletonList(i);
+        System.out.println(IntegerList);
     }
 
     public void java19(){

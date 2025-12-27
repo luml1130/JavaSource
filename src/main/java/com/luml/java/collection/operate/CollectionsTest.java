@@ -17,4 +17,5 @@ public class CollectionsTest {
 
        // List<UserListVo> failList =  Collections.synchronizedList(new ArrayList<UserListVo>());
     }
+
 }

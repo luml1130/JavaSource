@@ -1,5 +1,7 @@
 package com.luml.java.tools.validation;
 
+import lombok.Data;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -9,11 +11,15 @@ import javax.validation.constraints.NotNull;
  * @description
  * @date 2025/11/1
  */
+@Data
 public class User {
+
     @NotNull(message = "Name cannot be null")
     private String name;
+
     @Email(message = "Invalid email format")
     private String email;
+
     @Min(value = 18, message = "Age must be at least 18")
     private int age;
 }

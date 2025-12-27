@@ -31,6 +31,11 @@ public class NullValidation {
         System.out.println(a == null);
     }
 
+    @Test
+    public void IntegerValidation(){
+
+    }
+
     /**
      * java.lang包下面的StringUtils
      */
@@ -49,7 +54,8 @@ public class NullValidation {
      * ！=null
      * 判断对象是否存在：java.utils.Objects.isNull(guard)
      */
-    public static void objectValidation(){
+    @Test
+    public void objectValidation(){
         City city = new City();
         //null ！= object
         if(city == null){
@@ -68,7 +74,8 @@ public class NullValidation {
      * == null : 用于判断 List 集合是否已经被分配内存空间
      * list.size() == 0 : 与 isEmpty() 方法效果一致，但更推荐使用 isEmpty()
      */
-    public static void listValidation(){
+    @Test
+    public void listValidation(){
         List<Integer> list = null;//new ArrayList<>();
         /*if(CollectionUtils.isEmpty(list)){
             System.out.println("list is empth");

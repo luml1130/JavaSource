@@ -49,7 +49,7 @@ public class StreamAnyMatchTest {
     public void match(){
        Person2 p2 = new Person2("张三","zhangsan",0,10);
        List<Person2> p2List = new ArrayList<>();
-       Integer a = 1;
+       p2List.add(p2);
         boolean isHaveSyncDate =
                 p2List
                         .stream()
