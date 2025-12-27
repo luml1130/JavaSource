@@ -1,12 +1,12 @@
-package com.luml.java.collection.operate.traverse;
+package com.luml.java.collection.operate.forTest;
 
-import org.apache.commons.collections4.CollectionUtils;
+import com.luml.domain.User2;
+import org.apache.commons.collections.CollectionUtils;
+import org.junit.Test;
 
-import java.text.BreakIterator;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author luml
@@ -102,6 +102,31 @@ public class traverseListTest01 {
             System.out.println(item);
         });
 
+    }
+
+    @Test
+    public static void streamReturnBoolean(String[] args) {
+        String name = "wo";
+
+        List<User2> user2List = new ArrayList<>();
+        User2 user2 = new User2(74, "wo");
+        User2 user3 = new User2(92, "ni");
+        user2List.add(user2);
+        user2List.add(user3);
+
+        AtomicBoolean fixedName = new AtomicBoolean(true);
+        if (!CollectionUtils.isEmpty(user2List)) {
+
+            user2List.forEach(item -> {
+                if (item.getName().equals(name)) {
+                    fixedName.set(false);
+                }
+            });
+
+        }
+        if (!fixedName.get()) {
+            //return E6WrapperUtil.wrap(E6Wrapper.ILLEGAL_ARGUMENT_CODE, I.n("电子路书名称已存在"), false);
+        }
     }
 
 }
