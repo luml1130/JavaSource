@@ -1,4 +1,4 @@
-package com.luml.java.jdkNewFeature.jdk18.function;
+package com.luml.java.jdkNewFeature.jdk18.function.predicate;
 
 import org.junit.Test;
 

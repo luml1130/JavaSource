@@ -11,6 +11,7 @@ import org.omg.CORBA.INTERNAL;
 public class User2 {
     private Integer id;
     private String name;
+    private Integer age;
 
     public Integer getId() {
         return id;
@@ -26,6 +27,14 @@ public class User2 {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public User2(Integer id, String name) {
