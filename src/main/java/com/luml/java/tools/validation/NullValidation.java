@@ -2,6 +2,7 @@ package com.luml.java.tools.validation;
 
 import com.alibaba.fastjson.JSONObject;
 import com.luml.domain.City;
+import com.sun.tools.internal.ws.wsdl.document.soap.SOAPUse;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
@@ -41,12 +42,19 @@ public class NullValidation {
      */
     @Test
     public void StringValidation(){
+
         String aa = null;
         String bb = "null";
         System.out.println(StringUtils.isEmpty(aa)); //true
         System.out.println(StringUtils.isBlank(aa)); //true
-        System.out.println(StringUtils.isEmpty(bb)); //true
-        System.out.println(StringUtils.isBlank(bb)); //true
+        System.out.println(StringUtils.isEmpty(bb)); //false
+        System.out.println(StringUtils.isBlank(bb)); //false
+
+        String cc = "";
+        String dd = null;
+        System.out.println(StringUtils.isBlank(cc));//true
+        System.out.println(StringUtils.isBlank(dd));//true
+
     }
 
     /**

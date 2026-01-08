@@ -26,6 +26,21 @@ import java.util.stream.Collectors;
  */
 public class StreamTransferTest {
 
+    @Test
+    public  void objectToFiledList(){
+        java.util.List<User2> user2List = new ArrayList<User2>(){{
+            add(new User2(1,"老鲁"));
+            add(new User2(2,"桃子"));
+            //add(new Person2("四木","simu",0,20));
+        }};
+
+        List<String> names = user2List.stream()
+                .map(User2::getName)
+                .collect(Collectors.toList());
+        System.out.println(names); //[老鲁, 桃子]
+
+    }
+
     /**
      * Collectors.toMap 是 Java Stream API 中一个非常实用的终端操作，用于将流中的元素转换为 Map 集合。
      */
@@ -74,6 +89,7 @@ public class StreamTransferTest {
         //            1=Person{name='小刘', nickName='xiaoliu', gender=1, salary=30}}
 
     }
+
 
     @Test
     public void testToMap2(){

@@ -2,7 +2,10 @@ package com.luml.java.jdkNewFeature.jdk18.api.stream;
 
 import com.luml.domain.Person;
 import com.luml.domain.Person2;
+import org.junit.Test;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -28,14 +31,7 @@ public class StreamOtherTest {
 
     //reducing()
     public static void main(String[] args) {
-        List<Person2> personList = new ArrayList<Person2>(){{
-            add(new Person2("张三","zhangsan",0,100));
-            add(new Person2("李四","zhangsan",1,200));
-        }};
-        Integer sumSal = personList.stream()
-                .collect(Collectors.reducing(100, Person2::getSalary, (x, y) -> x + y - 5000));
-        //初始值100 +（100-5000) + (200-5000) =
-        System.out.println(sumSal); //-9600
+
 
         //拼接
         List<String> stringCollection = Arrays.asList("apple",
@@ -47,10 +43,14 @@ public class StreamOtherTest {
         reduced.ifPresent(System.out::println);//apple#banana#cherry#date#elderberry
 
 
+    }
+
+    @Test
+    public  void NumCount(){
         //求和（无初始值）‌
-         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
-         Optional<Integer> sum = numbers.stream().collect(Collectors.reducing((a, b) -> a + b));
-         sum.ifPresent(System.out::println); // 输出: 15
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        Optional<Integer> sum = numbers.stream().collect(Collectors.reducing((a, b) -> a + b));
+        sum.ifPresent(System.out::println); // 输出: 15
 
         //求和（有初始值）‌
         int sum2 = numbers.stream().collect(Collectors.reducing(2, (a, b) -> a + b));
@@ -63,12 +63,71 @@ public class StreamOtherTest {
         Optional<Integer> min = numbers.stream().collect(Collectors.reducing(Integer::min));
         min.ifPresent(System.out::println); // 输出: 1
 
+    }
+
+
+    @Test
+    public void objectCount(){
+        List<Person2> personList = new ArrayList<Person2>(){{
+            add(new Person2("张三","zhangsan",0,100));
+            add(new Person2("李四","zhangsan",1,200));
+        }};
+        //1、初始值100 +（100-5000) + (200-5000) =
+        Integer sumSal = personList.stream()
+                .collect(Collectors.reducing(100, Person2::getSalary, (x, y) -> x + y - 5000));
+        System.out.println(sumSal); //-9600
+
+        //2、Integer
+        Integer integerSum = personList.stream()
+                .map(Person2::getSalary)
+                .mapToInt(Integer::intValue)
+                .sum();
+        System.out.println("integerSum="+integerSum); //integerSum=300
+
+        //3、bigDecimalSum
+        List<Person2> person2List = new ArrayList<Person2>(){{
+            add(new Person2("张三",0,new BigDecimal(12.123)));
+            add(new Person2("李四",1,new BigDecimal(12.124)));
+        }};
+        Integer bigDecimalSum = person2List.stream()
+                .map(Person2::getAmount)
+                .mapToInt(BigDecimal::intValue)
+                .sum();
+        System.out.println("bigDecimalSum="+bigDecimalSum);//bigDecimalSum=24
+
+        //4、使用reduce方法来计算总和
+        // 创建一个BigDecimal的列表
+        List<BigDecimal> numbers = Arrays.asList(
+                new BigDecimal("10.5"),
+                new BigDecimal("20.3"),
+                new BigDecimal("35.7")
+        );
+        //4.1、使用reduce方法来计算总和
+       BigDecimal bigDecimalSum2 = numbers.stream()
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+        System.out.println("bigDecimalSum2="+bigDecimalSum2);
+
+        //4.2、Object
+        List<Person2> person3List = new ArrayList<Person2>(){{
+            add(new Person2("张三",0,new BigDecimal(12.123)));
+            add(new Person2("李四",1,new BigDecimal(12.124)));
+        }};
+        List<BigDecimal> amountList = person3List.stream()
+                .map(Person2::getAmount)
+                .collect(Collectors.toList());
+        BigDecimal objectDecimalSum = amountList.stream()
+                .reduce(BigDecimal.ZERO, BigDecimal::add)
+                //保留3位 四舍五入
+                .setScale(3, RoundingMode.HALF_UP);
+        System.out.println("objectDecimalSum="+objectDecimalSum);
+
 
 
     }
 
     //.joining 拼接
-    public static void main4(String[] args) {
+    @Test
+    public  void joinTest(){
         List<Person2> list = new ArrayList<Person2>(){{
             add(new Person2("张三","zhangsan",0,10));
             add(new Person2("李四","zhangsan",1,20));
@@ -77,8 +136,12 @@ public class StreamOtherTest {
             add(new Person2("三木","sanmu",0,50));
         }};
 
-        String names = list.stream().map(p -> p.getName()).collect(Collectors.joining(","));
+        String names = list.stream()
+                .map(p -> p.getName())
+                .collect(Collectors.joining(","));
         System.out.println(names); //张三,李四,王五,小刘,三木
+
+
 
     }
 

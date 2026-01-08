@@ -11,6 +11,10 @@ import org.junit.Test;
  */
 public class CreateTest {
 
+    public static void main(String[] args) {
+
+    }
+
     /*
     String:字符串，使用一对""引起来表示。
     1.String声明为final的，不可被继承

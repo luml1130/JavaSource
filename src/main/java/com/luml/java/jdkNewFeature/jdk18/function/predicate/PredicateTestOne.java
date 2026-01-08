@@ -16,6 +16,7 @@ import java.util.function.Predicate;
 public class PredicateTestOne {
 
     public static void main(String[] args) {
+
         /** 我们先采用传统的方式 */
         /**  - 1.判断传入的字符串的长度是否大于5 */
         PredicateTestOne predicateTestOne = new PredicateTestOne();

@@ -1,5 +1,6 @@
 package com.luml.domain;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,15 @@ public class Person2 {
     private int gender; //0-男  1-女
     private int salary; //薪水
 
+    private BigDecimal amount;
+
     public Person2() {
+    }
+
+    public Person2(String name,  int gender, BigDecimal amount) {
+        this.name = name;
+        this.gender = gender;
+        this.amount = amount;
     }
 
     public Person2(String name, String nickName, int gender, int salary) {
@@ -64,5 +73,13 @@ public class Person2 {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
     }
 }
