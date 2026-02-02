@@ -1,6 +1,7 @@
 package com.luml.java.jdkNewFeature.jdk18.api.stream;
 
 import com.luml.domain.Person2;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,6 +15,19 @@ import java.util.stream.Collectors;
  */
 public class StreamFilterTest {
 
+    @Test
+    public void JiaoJiTest(){
+        List<String> list1 = Arrays.asList("apple", "banana", "cherry");
+        List<String> list2 =  Arrays.asList("banana", "date", "fig");
+
+        boolean hasIntersection = list1.stream()
+                .anyMatch(list2::contains);
+
+        System.out.println("List1: " + list1);
+        System.out.println("List2: " + list2);
+        System.out.println("Has Intersection: " + hasIntersection);
+
+    }
 
     //过滤字符串列表中的特定条件
     public static void main(String[] args) {
@@ -47,7 +61,7 @@ public class StreamFilterTest {
         //Set<Integer> vehicleIds = resultRecords.stream().map(EventReportInfoPO::getVehicleId).filter(Objects::nonNull).collect(Collectors.toSet());
 
         list.stream().
-                filter(Person2 -> Person2.getGender() ==1 )
+                filter(Person2 -> Person2.getGender() == 1 )
                 .filter(Person2 -> Person2.getNickName().startsWith("x"))
                 .collect(Collectors.toList())
                 .forEach(System.out::println);

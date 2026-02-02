@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -185,6 +186,27 @@ public class StreamTransferTest {
         System.out.println(alarmStatPOMap);*/
 
     }
+
+
+    @Test
+    public void MapToStreamToListExample(){
+        Map<String, Integer> map = new HashMap<>();
+        map.put("apple", 1);
+        map.put("banana", 2);
+        map.put("cherry", 3);
+        map.put("date", 4);
+
+        // 从 Map 提取键或值的 Stream，然后转换为 List
+        List<String> keys = map.keySet().stream().collect(Collectors.toList()); // 提取键到 List
+        List<Integer> values = map.values().stream().collect(Collectors.toList()); // 提取值到 List
+        List<Map.Entry<String, Integer>> entries = map.entrySet().stream().collect(Collectors.toList()); // 提取条目到 List<Map.Entry>
+
+        // 输出 List<String>（键）和 List<Integer>（值）和 List<Map.Entry<String, Integer>>（条目）
+        System.out.println(keys); // [apple, banana, cherry, date] (顺序可能不同)
+        System.out.println(values); // [1, 2, 3, 4] (顺序可能不同)
+        System.out.println(entries); // [(apple=1), (banana=2), (cherry=3), (date=4)] (顺序可能不同)
+    }
+
 
 
 }

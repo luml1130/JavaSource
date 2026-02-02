@@ -21,6 +21,8 @@ public class LinkedHashSetDemo {
         hs.add("java");
         hs.add("world");
         hs.add("java");
+
+        System.out.println(hs.contains("hello"));
         // 遍历
         for (String s : hs) {
             System.out.println(s);

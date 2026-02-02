@@ -3,11 +3,13 @@ package com.luml.java.jdkNewFeature.jdk18.api.stream;
 import com.luml.domain.Person2;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -41,21 +43,44 @@ public class StreamFindTest {
     public void findFirst(){
         List<String> fruits = Arrays.asList("apple", "banana", "orange", "mango");
 
-        // 使用 findFirst() 获取第一个元素
+        //1、 使用 findFirst() 获取第一个元素
         Optional<String> firstFruit = fruits.stream()
                 .filter(fruit -> fruit.startsWith("a"))
                 .findFirst();
-
         // 处理结果
         firstFruit.ifPresent(System.out::println); // 输出: apple
-        //操作对象
-        //Optional<BaseE6OrganizationTreeVO> root = iTreeVOList.stream()
-                        //.filter(item -> Objects.equals(item.getId(), topOrgId))
-                        //.findFirst();
-        //Integer rootId = root.map(BaseE6OrganizationTreeVO::getPid).orElse(NumberUtils.INTEGER_ZERO);
+
+
+        //2、操作对象
+        List<Person2> person3List = new ArrayList<Person2>(){{
+            add(new Person2("张三",0,new BigDecimal(12.123)));
+            add(new Person2("李四",1,new BigDecimal(12.124)));
+        }};
+        /*Optional<String> root = person3List.stream()
+                        .map(Person2::getName)
+                        .findFirst();*/
+        String firstName = person3List.stream()
+                //.filter(f->f.getAmount().equals(1))
+                .map(Person2::getName)
+                .findFirst().orElse(null);
+        System.out.println("firstName="+firstName);
+       // Integer rootId = root.map(BaseE6OrganizationTreeVO::getPid).orElse(NumberUtils.INTEGER_ZERO);
         /*public static CustomAreaTypeImportEnum getEnum(String label) {
             return Arrays.stream(values()).filter(item-> item.label.equals(label)).findFirst().orElse(null);
         }*/
+        //Optional<BaseE6OrganizationVO> first = dept.stream().filter(item -> orgId.equals(item.getOrgId())).findFirst();
+        //3、去重
+        List<Person2> person4List = new ArrayList<Person2>(){{
+            add(new Person2("张三",0,new BigDecimal(12.123)));
+            add(new Person2("李四",1,new BigDecimal(12.124)));
+            add(new Person2("张三",1,new BigDecimal(12.124)));
+        }};
+        String goodsName = person4List.stream()
+                .map(p -> p.getName())
+                .distinct()
+                .collect(Collectors.joining(","));
+        System.out.println("goodsName="+goodsName);
+
     }
 
     /**
