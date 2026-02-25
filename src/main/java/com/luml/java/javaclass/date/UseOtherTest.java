@@ -24,6 +24,8 @@ public class UseOtherTest {
         //LocalDateTime yesterdayMAX = LocalDate.now().minusDays(1).atTime(LocalTime.MAX);
         //Date[] beginTime = new Date[2];
         Date time2 = TimeDateUtils.localDateTime2Date(localDateTime);
+        System.out.println(time2);
+
         System.out.println(time1);
         System.out.println(time2);
        // int result =  time1.compareTo(time2);

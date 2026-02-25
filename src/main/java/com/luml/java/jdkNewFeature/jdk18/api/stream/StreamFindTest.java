@@ -1,14 +1,18 @@
 package com.luml.java.jdkNewFeature.jdk18.api.stream;
 
 import com.luml.domain.Person2;
+import org.apache.commons.collections.IterableMap;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -177,6 +181,51 @@ public class StreamFindTest {
         if (isHaveSyncDate) {
             System.out.println("包含了不能");
         }
+    }
+
+
+    //去重
+    @Test
+    public void distinctObject(){
+        List<Person2> person3List = new ArrayList<Person2>(){{
+            add(new Person2(1,"张三",0));
+            add(new Person2(2,"李四",1));
+            add(new Person2(3,"张三",1));
+        }};
+
+        // 保留第一个出现的元素
+        List<Person2> uniquePersonList = person3List.stream()
+                .collect(Collectors.toMap(
+                        Person2::getName,           // 键：学生ID
+                        Function.identity(),      // 值：学生对象本身
+                        (existing, replacement) -> existing, // 冲突时保留第一个
+                        LinkedHashMap::new        // 保持插入顺序
+                ))
+                .values()
+                .stream()
+                .collect(Collectors.toList());
+        //System.out.println(uniquePersonList);
+
+        Map<String,Person2> uniquePersonMap = person3List.stream()
+                .collect(Collectors.toMap(
+                        Person2::getName,           // 键：学生ID
+                        Function.identity(),      // 值：学生对象本身
+                        (existing, replacement) -> existing, // 冲突时保留第一个
+                        LinkedHashMap::new        // 保持插入顺序
+                ))
+                .values()
+                .stream()
+                .collect(Collectors.toMap(Person2::getName, item-> item));
+        //System.out.println(uniquePersonMap);
+
+        Map<String,Person2> uniquePersonMap2 = person3List.stream()
+                .collect(Collectors.toMap(
+                        Person2::getName,
+                        Function.identity(),      // 值：学生对象本身
+                        (existing, replacement) -> existing, // 冲突时保留第一个
+                        LinkedHashMap::new        // 保持插入顺序
+                 ));
+        System.out.println(uniquePersonMap2);
     }
 
 

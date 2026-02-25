@@ -1,4 +1,4 @@
-package com.luml.java.collection.list;
+package com.luml.java.collection.operate.count;
 
 
 import org.junit.Test;
@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
  * @description  集合交集
  * @date 2020/10/12
  */
-public class oper1 {
+public class ListOper1 {
 
     public static void main(String[] args) {
         //addHead();
@@ -30,6 +30,23 @@ public class oper1 {
         }
     }
 
+    @Test
+    public void test2(){
+        List<Integer> A = new ArrayList<Integer>();
+        A.add(1);
+        A.add(2);
+        A.add(3);
+        A.add(4);
+
+        List<Integer> B = new ArrayList<Integer>();
+        B.add(2);
+        B.add(4);
+        B.add(5);
+        B.add(6);
+
+        List<Integer> reduce1 = A.stream().filter(item -> !B.contains(item)).collect(Collectors.toList());
+        System.out.println(reduce1);
+    }
 
 
     /**
@@ -79,7 +96,7 @@ public class oper1 {
     }
 
     @Test
-    public  void Test18(){
+    public  void StreamTest(){
         List<String> list1 = new ArrayList<String>();
         list1.add("1");
         list1.add("2");

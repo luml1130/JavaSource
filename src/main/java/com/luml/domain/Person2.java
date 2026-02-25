@@ -10,6 +10,7 @@ import java.util.List;
  * @date 2020/4/30 21:08
  */
 public class Person2 {
+    private Integer id;
     private String name;
     private String nickName;
     private int gender; //0-男  1-女
@@ -20,7 +21,13 @@ public class Person2 {
     public Person2() {
     }
 
-    public Person2(String name,  int gender, BigDecimal amount) {
+    public Person2(Integer id, String name, int gender) {
+        this.id = id;
+        this.name = name;
+        this.gender = gender;
+    }
+
+    public Person2(String name, int gender, BigDecimal amount) {
         this.name = name;
         this.gender = gender;
         this.amount = amount;
@@ -35,11 +42,13 @@ public class Person2 {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
+        return "Person2{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", nickName='" + nickName + '\'' +
                 ", gender=" + gender +
                 ", salary=" + salary +
+                ", amount=" + amount +
                 '}';
     }
 
