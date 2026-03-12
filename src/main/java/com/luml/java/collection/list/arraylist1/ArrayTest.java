@@ -1,5 +1,11 @@
 package com.luml.java.collection.list.arraylist1;
 
+import cn.hutool.core.date.DateUtil;
+import com.luml.java.javaclass.date.javaUtilPac.UtilDateUtils;
+import org.junit.Test;
+
+import java.util.Date;
+
 public class ArrayTest {
 
 	public static void main(String[] args) {
@@ -63,5 +69,12 @@ public class ArrayTest {
 		for(int i :arr2){
 			System.out.println(i);
 		}
+	}
+
+	@Test
+	public void arrayAdd(){
+
+
+
 	}
 }
