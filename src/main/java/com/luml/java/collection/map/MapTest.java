@@ -1,6 +1,7 @@
 package com.luml.java.collection.map;
 
 
+import com.google.common.collect.Maps;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -28,7 +29,8 @@ public class MapTest {
 
 	@Test
 	public void testEmpty(){
-		Map<Long,Object> userMap = null;
+		Map<Long,Object> userMap = new HashMap<>();
+		System.out.println(userMap.get(1));
 		// userMap.size() 空指针异常
 		System.out.println(userMap != null && userMap.size() > 0);
 

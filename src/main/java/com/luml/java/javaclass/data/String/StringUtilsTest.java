@@ -13,14 +13,20 @@ import java.util.Arrays;
  */
 public class StringUtilsTest {
     public static void main(String[] args) {
-        String permanentCode = null;
+      /*  String permanentCode = null;
         System.out.println(StringUtils.isBlank(permanentCode) ? false : true);
-        System.out.println(StringUtils.isBlank(null));
+        System.out.println(StringUtils.isBlank(null));*/
 
+        String aa = "2";
+        //if(1==1){
+            //aa.(",", "33");
+        //}
+        ;
+        System.out.println(aa.concat(","+"33"));
     }
 
     @Test
-    public void test(){
+    public void test2(){
         String accStatusStr = "wo";
         String loStatusStr = "ni";
         String lineStatusStr = "te";

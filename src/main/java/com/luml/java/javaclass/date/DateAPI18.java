@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import java.sql.Date;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoField;
 
 //Java 8 在包java.time下包含了一组全新的时间日期API。
@@ -39,4 +41,28 @@ public class DateAPI18 {
 		 DayOfWeek dayOfWeek = localDate.getDayOfWeek();
 		 int dayOfWeek1 = localDate.get(ChronoField.DAY_OF_WEEK);
 	 }
+	public static final DateTimeFormatter STANDARD_DTF = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+	@Test
+	 public void taran(){
+		String maxTime = LocalDateTime.now().format(STANDARD_DTF);
+		 LocalDateTime maxTimeOrigin = stringToLocalDateTime(maxTime,DateStyle.YYYY_MM_DD_HH_MM_SS);
+		System.out.println(maxTimeOrigin);
+		System.out.println(maxTimeOrigin.plusDays(5));
+		// minTime.plusDays(5).atTime(LocalTime.MIN);
+
+		String minTime = "2026-02-27 16:03:37.0";
+		LocalDate minTimeLocal = LocalDate.parse(minTime,STANDARD_DTF);
+		System.out.println(minTimeLocal);
+	 }
+
+	public static LocalDateTime stringToLocalDateTime(String dateStr, DateStyle dateStyle) {
+		try {
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateStyle.getValue());
+			return LocalDateTime.parse(dateStr, formatter);
+		} catch (DateTimeParseException var3) {
+			//logger.error("类型转换异常", var3);
+			return null;
+		}
+	}
 }

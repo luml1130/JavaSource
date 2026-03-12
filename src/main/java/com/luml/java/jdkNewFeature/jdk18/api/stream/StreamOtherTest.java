@@ -65,7 +65,21 @@ public class StreamOtherTest {
 
     }
 
+    @Test
+    public void objectCount2() {
+        List<Person2> personList = new ArrayList<Person2>() {{
+            add(new Person2("张三", "zhangsan", 0, 100));
+            //add(new Person2("李四", "zhangsan", 1, 200));
+        }};
 
+       /*String aa =  personList.stream()
+                .map(Person2::getSalary)
+                .collect(Collectors.joining(","));
+        System.out.println(aa);*/
+
+
+
+    }
     @Test
     public void objectCount(){
         List<Person2> personList = new ArrayList<Person2>(){{

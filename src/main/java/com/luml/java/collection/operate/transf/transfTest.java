@@ -1,6 +1,7 @@
 package com.luml.java.collection.operate.transf;
 
 import cn.hutool.core.util.StrUtil;
+import com.google.common.collect.Sets;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
@@ -87,24 +88,30 @@ public class transfTest {
      *  List转Set: new HashSet(staffsList);
      */
     @Test
-    public void test3(){
+    public void list2Set(){
         String[] staffs = new String[]{"Tom", "Bob", "Jane"};
         List staffsList = Arrays.asList(staffs);
 
         Set result = new HashSet(staffsList);
         System.out.println(result);
+
+        //使用sets方法
+        HashSet newSet = Sets.newHashSet(result);
+        System.out.println(newSet);
     }
 
     /**
      * set转List：new ArrayList<>(staffsSet)
      */
     @Test
-    public void test4(){
+    public void set2List(){
         String[] staffs = new String[]{"Tom", "Bob", "Jane"};
         Set<String> staffsSet = new HashSet<>(Arrays.asList(staffs));
 
         List<String> result = new ArrayList<>(staffsSet);
         System.out.println(result);
+
+
     }
 }
 

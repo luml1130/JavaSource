@@ -1,5 +1,10 @@
 package com.luml.java.collection.array;
 
+import org.apache.commons.lang3.math.NumberUtils;
+import org.junit.Test;
+
+import java.util.Date;
+
 /**
  * @author luml
  * @description
@@ -20,7 +25,20 @@ public class arrOper {
         System.out.println(format);
     }
 
-    public void oper(){
+    @Test
+    public void operNull(){
+        Integer[] times = {null};
+
+        Integer shipmentStartTime = 111;
+        Integer shipmentEndTime = 222;
+        if(times!=null && times.length > 0) {
+            shipmentStartTime = times[0] == null ?   shipmentStartTime : times[0] ;
+            if(times.length > 1) {
+                shipmentEndTime = times[1] == null ? shipmentEndTime : times[1];
+            }
+        }
+        System.out.println(shipmentStartTime);
+        System.out.println(shipmentEndTime);
     }
 
 

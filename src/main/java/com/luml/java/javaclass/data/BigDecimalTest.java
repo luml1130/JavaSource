@@ -17,8 +17,9 @@ public class BigDecimalTest {
 
     public static void main(String[] args) throws UnsupportedEncodingException {
         String aa= "https://xjj-goods.oss-cn-beijing.aliyuncs.com/错误数据列表.xlsx";
+        String vehicleNo="冀ER5069";
         //HttpUriRequest request = new HttpGet(aa);
-        System.out.println(URLEncoder.encode(aa,"UTF-8"));
+        System.out.println(URLEncoder.encode(vehicleNo,"UTF-8"));
 
        /* List<String> editionAgents = null;
         for(String s : editionAgents){
