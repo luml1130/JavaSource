@@ -28,11 +28,16 @@ public class UseGetTest {
 
     public static void main(String[] args) {
         //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        SimpleDateFormat dateFormat =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        System.out.println(dateFormat.format(new Date(UtilDateUtils.getFrontEndOfDay(-1))));
+       // SimpleDateFormat dateFormat =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+       // System.out.println(dateFormat.format(new Date(UtilDateUtils.getFrontEndOfDay(-1))));
 
-        System.out.println(UtilDateUtils.addDay(new Date(),365).toInstant().toEpochMilli());
+      //  System.out.println(UtilDateUtils.addDay(new Date(),365).toInstant().toEpochMilli());
+
+        Date date = new Date();
+        System.out.println(UtilDateUtils.addMinute(date, -30));;
     }
+
+
 
     @Test
     public void getStartOrEnd(){

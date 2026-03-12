@@ -272,6 +272,19 @@ public class UtilDateUtils {
         return c.getTime();
     }
 
+    public static Date addMinute(Date date, int minutes) {
+        if (minutes == 0) {
+            return date;
+        }
+        // 创建一个Calendar对象
+        Calendar c = Calendar.getInstance();
+        // 将日期对象设置到Calendar中
+        c.setTime(date);
+        // 增加30分钟
+        c.add(Calendar.MINUTE, minutes);
+        return c.getTime();
+    }
+
     /**
      *
      * @param currentDay 当前月份的某一天
