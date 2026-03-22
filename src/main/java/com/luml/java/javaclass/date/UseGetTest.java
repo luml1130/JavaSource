@@ -2,15 +2,25 @@ package com.luml.java.javaclass.date;
 
 import com.luml.java.javaclass.date.javaTimePac.TimeDateUtils;
 import com.luml.java.javaclass.date.javaUtilPac.UtilDateUtils;
+import com.luml.java.javaclass.date.other.DateStyle;
+import org.apache.commons.lang3.time.DateFormatUtils;
 import org.junit.Test;
 
+import java.sql.Time;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
+import java.time.Clock;
+import java.time.DayOfWeek;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Month;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoField;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -37,8 +47,81 @@ public class UseGetTest {
         System.out.println(UtilDateUtils.addMinute(date, -30));;
     }
 
+    @Test
+    public void clockTest() {
+        Clock clock = Clock.systemDefaultZone();
+        long millis = clock.millis();
+        Instant instant = clock.instant();
 
+        Date date = Date.from(instant);
+        System.out.println(clock);
+        System.out.println(millis);
+        System.out.println(instant);
+        System.out.println(date);
+    }
 
+    /**
+     * java获取时区
+     */
+    @Test
+    public void zoneTest(){
+        /**1、java8中基本只能通过当前位置所在城市名来获取时区 **/
+        //<1> 查看当前的时区
+        ZoneId defaultZone = ZoneId.systemDefault();
+        System.out.println(defaultZone); //此处打印为时区所在城市Asia/Shanghai
+        //<2>查看美国纽约当前的时间
+        ZoneId america = ZoneId.of("America/New_York");
+        LocalDateTime shanghaiTime = LocalDateTime.now(america);
+        System.out.println(shanghaiTime);//2021-01-24T03:34:53.796
+
+        /**2.使用SimpleDateFormat 来获取Date时区**/
+        DateFormat dateFormat = new SimpleDateFormat("Z");
+        System.out.println(dateFormat.format(new Date()));//‘z’小写CST；'Z'大写+0800
+
+        /**3、使用lang3中的org.apache.commons.lang3.time函数获取**/
+        System.out.println(DateFormatUtils.format(new Date(), "z"));//‘z’小写CST；'Z'大写 +0800
+        System.out.println(DateFormatUtils.format(new Date(), "ZZ"));//'zz'小写一样 "ZZ"大写+08:00
+
+        /***4、使用日历类来计算出传入时间所在时区***/
+        Calendar cal = Calendar.getInstance();
+        int offset = cal.get(Calendar.ZONE_OFFSET);
+        cal.add(Calendar.MILLISECOND, -offset);
+        Long timeStampUTC = cal.getTimeInMillis();
+        Long timeStamp = System.currentTimeMillis();// date.getTime();
+        Long timeZone = (timeStamp - timeStampUTC) / (1000 * 3600);
+        System.out.println(timeZone.intValue());//8
+    }
+
+    @Test
+    public void localDateTest(){
+        //获取当前年月日
+        LocalDate localDate = LocalDate.now();
+        //构造指定的年月日
+        LocalDate localDate1 = LocalDate.of(2019, 9, 10);
+        //获取年、月、日、星期几
+        int year = localDate.getYear();
+        int year1 = localDate.get(ChronoField.YEAR);
+        Month month = localDate.getMonth();
+        int month1 = localDate.get(ChronoField.MONTH_OF_YEAR);
+        int day = localDate.getDayOfMonth();
+        int day1 = localDate.get(ChronoField.DAY_OF_MONTH);
+        DayOfWeek dayOfWeek = localDate.getDayOfWeek();
+        int dayOfWeek1 = localDate.get(ChronoField.DAY_OF_WEEK);
+    }
+
+    /**
+     * 获取一天的开始时间和结束时间
+     *      1、使用Calendar calendar：UtilDateUtils.getStartOfDay()
+     *      2、使用LocalDate和LocalTime：
+     *              LocalDate.now().atStartOfDay() /atTime(LocalTime.MIN)/atTime(LocalTime.MAX)
+     *      3、使用java.time.ZoneId指定时区（可选）
+     *              LocalDate today = LocalDate.now();
+     *              ZoneId zoneId = ZoneId.of("UTC");
+     *              today.atStartOfDay(zoneId);
+     *              today.atTime(LocalTime.MIN).atZone(zoneId);
+     *              today.atTime(LocalTime.MAX).atZone(zoneId);
+     *
+     */
     @Test
     public void getStartOrEnd(){
 
@@ -61,6 +144,7 @@ public class UseGetTest {
         // 一天的结束时间（午夜前一秒）
         LocalDateTime endOfDay1 = today.atTime(LocalTime.MAX);
         System.out.println(endOfDay1); //2025-12-14T23:59:59.999999999
+
 
         //3、使用java.time.ZoneId指定时区（可选） 需要指定时区时
         // 获取当前日期和时区（例如：UTC）
@@ -113,6 +197,58 @@ public class UseGetTest {
         data3 = Date.from(zonedDateTime.toInstant()); // 获取新的Date对象
         System.out.println(data3);//Sun Dec 14 18:40:47 CST 2025
 
+    }
+
+    //TimeNanos是用于表示时间的纳秒级精度的字段，常见于时间编码和测量场景中。
+    @Test
+    public void  TimeNanosTest(){
+        System.out.println(System.currentTimeMillis());
+        //1763563120900  13位
+        System.out.println(System.nanoTime());
+        //2980026356694   13位
+    }
+
+    public static final DateTimeFormatter STANDARD_DTF = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    @Test
+    public void tranTest(){
+        //转换
+        System.out.println(UtilDateUtils.longToDate(1571916920759L));//2019-10-24 19:35:20
+        System.out.println(UtilDateUtils.longToDate(1571916920759L,"yyyy-MM-dd HH:mm:ss"));
+        //Thu Oct 24 19:35:20 CST 2019
+
+        //stringToLocalDateTime
+        String maxTime = LocalDateTime.now().format(STANDARD_DTF);
+        LocalDateTime maxTimeOrigin = TimeDateUtils.stringToLocalDateTime(maxTime, DateStyle.YYYY_MM_DD_HH_MM_SS);
+        System.out.println(maxTimeOrigin);
+        System.out.println(maxTimeOrigin.plusDays(5));
+        // minTime.plusDays(5).atTime(LocalTime.MIN);
+        String minTime = "2026-02-27 16:03:37.0";
+        LocalDate minTimeLocal = LocalDate.parse(minTime,STANDARD_DTF);
+        System.out.println(minTimeLocal);
+    }
+
+    public void before18(){
+        //1-SimpleDateFormat
+        Date currentTime = new Date();
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat formatter1 = new SimpleDateFormat("HH:mm:ss");
+        SimpleDateFormat formatter2 = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat formatter3 = new SimpleDateFormat("yyyyMMdd HHmmss");
+
+        String dateString = formatter.format(currentTime);
+        System.out.println(dateString); //2025-12-14 18:49:29
+
+        //2、compareTo
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        Date date = new Date();
+		System.out.println(sdf.format(date));
+
+		Date date1 = new Date(System.currentTimeMillis()+1000*60*60*24*10);
+
+		int num = date1.compareTo(date);
+		System.out.println(num);
     }
 
 

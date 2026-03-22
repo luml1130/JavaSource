@@ -57,6 +57,15 @@ public class UtilDateUtils {
         return strTime;
     }
 
+    public static String longToString2(Long time, String format) {
+        if (time != null) {
+            SimpleDateFormat sf = new SimpleDateFormat(format);
+            Date date = new Date(time);
+            return sf.format(date);
+        }
+        return "";
+    }
+
     /**
      * 将长整型数字转换为日期格式的字符串
      */
@@ -204,6 +213,8 @@ public class UtilDateUtils {
         calendar.set(Calendar.MILLISECOND, 59);
         return calendar.getTimeInMillis();
     }
+
+
 
 
     public static Long getCurrentWeekStartTime() {

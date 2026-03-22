@@ -1,5 +1,6 @@
 package com.luml.java.javaclass.date;
 
+import com.luml.java.javaclass.date.javaUtilPac.UtilDateUtils;
 import org.junit.Test;
 
 import java.text.ParseException;
@@ -105,7 +106,7 @@ public class DateTest {
     public static int[] getAgeAndMonthAgeByLongBirth(long birth) {
         int[] ageVal = new int[2];
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String bir = convert2String(birth, "yyyy-MM-dd");
+        String bir = UtilDateUtils.longToString2(birth, "yyyy-MM-dd");
         Date birthday = null;
         try {    //将生日 转为  日期型
             if (bir != null && !"".equals(bir)) {
@@ -130,15 +131,6 @@ public class DateTest {
             ageVal[1] = 0;
         }
         return ageVal;
-    }
-
-    public static String convert2String(Long time, String format) {
-        if (time != null) {
-            SimpleDateFormat sf = new SimpleDateFormat(format);
-            Date date = new Date(time);
-            return sf.format(date);
-        }
-        return "";
     }
 
     /**
@@ -186,6 +178,26 @@ public class DateTest {
         int monthAge = (c2.get(Calendar.YEAR) - c1.get(Calendar.YEAR)) * 12 + (c2.get(Calendar.MONTH) - c1.get(Calendar.MONTH));
         System.out.println(monthAge);
         //return monthAge;
+    }
+
+    public static String getAgeStr(Integer monthAge) {
+        String ageStr = "";
+        if (monthAge == null) {
+            return "";
+        }
+        if (monthAge > 0 && monthAge < 12) {
+            ageStr = monthAge + "/12";
+        }
+        if (monthAge >= 12) {
+            int year = monthAge / 12;
+            int month = monthAge % 12;
+            if (month > 0) {
+                ageStr = year + " " + month + "/12";
+            } else {
+                ageStr = year + "";
+            }
+        }
+        return ageStr;
     }
 
     public static float getCorporeityAge(Long birthTime, Long evalDate) {
@@ -315,25 +327,6 @@ public class DateTest {
         return age;
     }
 
-    public static String getAgeStr(Integer monthAge) {
-        String ageStr = "";
-        if (monthAge == null) {
-            return "";
-        }
-        if (monthAge > 0 && monthAge < 12) {
-            ageStr = monthAge + "/12";
-        }
-        if (monthAge >= 12) {
-            int year = monthAge / 12;
-            int month = monthAge % 12;
-            if (month > 0) {
-                ageStr = year + " " + month + "/12";
-            } else {
-                ageStr = year + "";
-            }
-        }
-        return ageStr;
-    }
 
 
 }
