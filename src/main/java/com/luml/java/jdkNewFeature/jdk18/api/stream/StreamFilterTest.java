@@ -3,9 +3,13 @@ package com.luml.java.jdkNewFeature.jdk18.api.stream;
 import com.luml.domain.Person2;
 import org.junit.Test;
 
+import javax.swing.text.html.parser.Entity;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -49,7 +53,9 @@ public class StreamFilterTest {
                 .collect(Collectors.toList());
         System.out.println(evenNumbers); // 输出: [2, 4, 6, 8, 10]
     }
-    public static void main1(String[] args) {
+
+    @Test
+    public void filterTest() {
         List<Person2> list = new ArrayList<Person2>(){{
             add(new Person2("张三","zhangsan",0,10));
             add(new Person2("李四","zhangsan",1,20));
@@ -67,10 +73,43 @@ public class StreamFilterTest {
                 .forEach(System.out::println);
         //Person{name='小刘', nickName='xiaoliu', gender=1, salary=30}
 
+        Person2 p = list.stream().
+                filter(Person2 -> Person2.getGender() == 1 )
+                .filter(Person2 -> Person2.getNickName().startsWith("x"))
+                .collect(Collectors.toList()).get(0);
+        System.out.println(p);
+
         /*List<Person2> list2 = list.stream().
                 filter(Person2 -> Person2.getGender() ==1 )
                 //filter((s) -> s.startsWith("a"))
                 .collect(Collectors.toList());*/
+
+    }
+
+
+    @Test
+    public void mapFilter(){
+        // 创建一个Map
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put("Alice", 85);
+        scores.put("Bob", 90);
+        scores.put("Charlie", 70);
+        scores.put("Diana", 95);
+        scores.put("Ethan", 60);
+
+        // 过滤出分数大于80的条目
+        Map<String, Integer> filteredScores = scores.entrySet().stream()
+                .filter(entry -> entry.getValue() > 80)
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+        // 输出结果
+        System.out.println(filteredScores);
+
+        String key =
+                scores.entrySet().stream()
+                        .filter(entry -> entry.getValue() == 98)
+                        //entry.getValue().equals()
+                        .findFirst().get().getKey();
+
 
     }
 }

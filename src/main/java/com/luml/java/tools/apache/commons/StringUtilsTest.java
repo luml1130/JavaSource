@@ -11,6 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 public class StringUtilsTest {
 
     public static void main(String[] args) {
+        System.out.println(StringUtils.isNotBlank(""));
         City c = new City();
         c.setAddress("ddd");
         //测试没有设置的属性会不会报空指针，不会
