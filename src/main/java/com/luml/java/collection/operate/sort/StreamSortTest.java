@@ -2,12 +2,17 @@ package com.luml.java.collection.operate.sort;
 
 import com.luml.domain.Person;
 import com.luml.domain.sort.PersonSort;
+import com.luml.java.javaclass.date.javaTimePac.TimeDateUtils;
 import org.junit.Test;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -37,13 +42,12 @@ public class StreamSortTest {
 
 
     @Test
-    public void sort(){
+    public void ObjectSort(){
         //对于自定义类
         List<PersonSort> personList = new ArrayList<PersonSort>(){{
             add(new PersonSort("Bob",12));
             add(new PersonSort("Alice",13));
         }};
-
         List<Person> personList2 = personList.stream()
                 .map(f -> {
                     Person vo = new Person();
@@ -56,8 +60,34 @@ public class StreamSortTest {
                 .sorted(Comparator.comparing(Person::getAge, Comparator.naturalOrder())) //naturalOrder升序
                 .collect(Collectors.toList());
         System.out.println(personList2);
+    }
 
+    /**
+     * Comparator.comparing(Function<? super T, ? extends U> keyExtractor)
+     *  默认是‌升序‌排序，
+     *  Comparator.naturalOrder()升序
+     *  Comparator.reverseOrder()降序
+     */
+    @Test
+    public void ObjectDateSort(){
 
+        //object Date sort
+        LocalDateTime localDateTime = LocalDate.now().minusDays(10).atTime(LocalTime.MIN);
+        Date date2 = TimeDateUtils.localDateTime2Date(localDateTime);
+        System.out.println(date2); //Fri Mar 13 00:00:00 CST 2026
+        List<PersonSort> personListDate2 = new ArrayList<PersonSort>(){{
+            add(new PersonSort("Bob",12,new Date()));
+            add(new PersonSort("Alice",13,date2));
+        }};
+        List<PersonSort> personList2Sort = personListDate2.stream()
+                //.sorted(Comparator.comparing(PersonSort::getBirthDay)) //默认升序
+                //.sorted(Comparator.comparing(PersonSort::getBirthDay, Comparator.naturalOrder())) //naturalOrder升序
+                .sorted(Comparator.comparing(PersonSort::getBirthDay, Comparator.reverseOrder())) //reverseOrder降序
+
+                //.sorted((s1, s2) -> s2.getAge() - s1.getAge())//年龄从大到小
+                //.sorted(Comparator.comparing(Person::getAge, Comparator.reverseOrder())) //reverseOrder降序
+                .collect(Collectors.toList());
+        System.out.println(personList2Sort);
 
     }
 

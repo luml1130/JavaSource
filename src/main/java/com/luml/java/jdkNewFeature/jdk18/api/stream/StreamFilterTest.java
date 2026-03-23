@@ -1,6 +1,7 @@
 package com.luml.java.jdkNewFeature.jdk18.api.stream;
 
 import com.luml.domain.Person2;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import javax.swing.text.html.parser.Entity;
@@ -76,8 +77,10 @@ public class StreamFilterTest {
         Person2 p = list.stream().
                 filter(Person2 -> Person2.getGender() == 1 )
                 .filter(Person2 -> Person2.getNickName().startsWith("x"))
+                //.filter(Person2 -> StringUtils.isNotBlank(Person2.getNickName()) )
                 .collect(Collectors.toList()).get(0);
-        System.out.println(p);
+        //System.out.println(p);
+
 
         /*List<Person2> list2 = list.stream().
                 filter(Person2 -> Person2.getGender() ==1 )

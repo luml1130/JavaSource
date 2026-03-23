@@ -2,6 +2,8 @@ package com.luml.domain.sort;
 
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * @author luml
  * @description
@@ -12,6 +14,7 @@ public class PersonSort implements Comparable<PersonSort> {
 
     String name;
     int age;
+    Date birthDay;
 
     public PersonSort() {
     }
@@ -19,6 +22,12 @@ public class PersonSort implements Comparable<PersonSort> {
     public PersonSort(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    public PersonSort(String name, int age, Date birthDay) {
+        this.name = name;
+        this.age = age;
+        this.birthDay = birthDay;
     }
 
     /**
