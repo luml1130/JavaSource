@@ -1,10 +1,13 @@
 package com.luml.java.jdkNewFeature.jdk18.api.stream;
 
+import book.MultiThreadProgram.Part03.chapter01.producer11.p_r_test.C;
 import com.alibaba.fastjson.JSON;
 import com.google.gson.JsonObject;
 import com.luml.domain.Person2;
 import com.luml.domain.User2;
 import com.luml.java.data.Person;
+import lombok.Data;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -185,6 +188,27 @@ public class StreamTransferTest {
         });
         System.out.println(alarmStatPOMap);*/
 
+    }
+
+    @Test
+    public  void ListToMap(){
+        Map<String,Integer> map = new HashMap<>();
+        map.put("女性",11);
+        map.put("男性",12);
+        List<CountVo> countVoList =  map.entrySet().stream()
+                .map(entry->{
+                    CountVo countVo = new CountVo();
+                    countVo.setName(entry.getKey());
+                    countVo.setCount(entry.getValue());
+                    return countVo;
+                })
+                .collect(Collectors.toList());
+        System.out.println(countVoList);
+    }
+    @Data
+    public static class CountVo{
+        private String name;
+        private Integer count;
     }
 
 

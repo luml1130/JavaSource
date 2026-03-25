@@ -96,10 +96,11 @@ public class StreamFindTest {
         List<Person2> person4List = new ArrayList<Person2>(){{
             add(new Person2("张三",0,new BigDecimal(12.123)));
             add(new Person2("",1,new BigDecimal(12.124)));
-            add(new Person2("张三",1,new BigDecimal(12.124)));
+            add(new Person2("里斯",1,new BigDecimal(12.124)));
         }};
 
         Optional<Person2> person2Optional = person4List.stream()
+                .filter(person -> person.getGender() == 1)
                 .filter(person -> person.getName() != null && !person.getName().isEmpty()) // 过滤掉名字为空的元素
                 .findFirst();
         String name = person2Optional.isPresent() ? person2Optional.get().getName() : StringUtils.EMPTY;

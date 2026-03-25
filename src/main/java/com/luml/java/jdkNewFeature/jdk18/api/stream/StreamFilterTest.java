@@ -3,8 +3,10 @@ package com.luml.java.jdkNewFeature.jdk18.api.stream;
 import com.luml.domain.Person2;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
+import sun.jvm.hotspot.gc_implementation.parallelScavenge.PSYoungGen;
 
 import javax.swing.text.html.parser.Entity;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -19,6 +21,12 @@ import java.util.stream.Collectors;
  * @date 2025/11/20
  */
 public class StreamFilterTest {
+
+    public static void main(String[] args) {
+        Integer pOrgId = -185;
+        Integer wyOrgId=-185;
+        System.out.println(pOrgId.equals(wyOrgId));
+    }
 
     @Test
     public void JiaoJiTest(){
@@ -35,7 +43,7 @@ public class StreamFilterTest {
     }
 
     //过滤字符串列表中的特定条件
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
         List<String> words = Arrays.asList("apple",
                 "banana", "cherry", "date", "elderberry");
         // 过滤出所有以 'a' 开头的字符串
@@ -47,7 +55,7 @@ public class StreamFilterTest {
     }
 
     //3、使用 filter 方法过滤偶数
-    public static void main2(String[] args) {
+    public static void main3(String[] args) {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         List<Integer> evenNumbers = numbers.stream()
                 .filter(n -> n % 2 == 0)
@@ -67,11 +75,13 @@ public class StreamFilterTest {
 
         //Set<Integer> vehicleIds = resultRecords.stream().map(EventReportInfoPO::getVehicleId).filter(Objects::nonNull).collect(Collectors.toSet());
 
-        list.stream().
+        List<Person2> newList =  list.stream().
                 filter(Person2 -> Person2.getGender() == 1 )
                 .filter(Person2 -> Person2.getNickName().startsWith("x"))
-                .collect(Collectors.toList())
-                .forEach(System.out::println);
+                .peek(Person2 -> Person2.setAmount(new BigDecimal(0.22)))
+                .collect(Collectors.toList());
+               //.forEach(System.out::println);
+        System.out.println(newList);
         //Person{name='小刘', nickName='xiaoliu', gender=1, salary=30}
 
         Person2 p = list.stream().

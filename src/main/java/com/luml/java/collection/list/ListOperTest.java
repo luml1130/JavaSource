@@ -1,9 +1,11 @@
 package com.luml.java.collection.list;
 
 import com.google.common.collect.Lists;
+import org.apache.commons.collections4.CollectionUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -58,5 +60,14 @@ public class ListOperTest {
 
             System.out.println(subVehicleIds);
         }
+    }
+
+    @Test
+    public void addTest(){
+        List<Integer> list1 =  Collections.emptyList();
+        List<Integer> list2 = new ArrayList<>();
+        list2.add(1);
+        list1.addAll(list2);
+        System.out.println(list1);
     }
 }

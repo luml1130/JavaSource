@@ -34,16 +34,19 @@ public class StringFormatOper {
      *          ：将不需要转化带%号的字符串 前面多加一个%
      * @return
      */
-    public static String formatTest(){
+    @Test
+    public void formatTest(){
         //String aa = String.format("%s修改%s为%s", 1, 2, 3);
         String aa = String.format("（%s%%～%s%%）", 80, 95);
-        return aa;
+        String bb ="尊敬的司机师傅：你的运单（T20251014EYNQ00005），车牌号（陕KL2525），卸货铅封,请重新上传照片；";
+        System.out.println(bb.length());
+
     }
 
     @Test
     public void test(){
         //String aa = String.format("（%s%%～%s%%）", 80, 95);
         //System.out.println(String.format("%s年%s月","2020","12"));
-        System.out.println(String.format("%s/%s","2020","02/03"));
+        System.out.println(String.format("%s/%s照片","2020","02/03"));
     }
 }

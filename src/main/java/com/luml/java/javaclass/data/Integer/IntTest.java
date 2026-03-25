@@ -8,7 +8,9 @@ package com.luml.java.javaclass.data.Integer;
 public class IntTest {
 
     public static void main(String[] args) {
-
+        Integer a = 1;
+        Integer b=2;
+        System.out.println(!a.equals(b));
         //System.out.println(isOdd(3));
     }
 
