@@ -1,6 +1,10 @@
 package com.luml.domain;
 
+import book.MultiThreadProgram.Part03.chapter01.interrupu05_10.waitOld.Add;
+import lombok.Data;
 import org.omg.CORBA.INTERNAL;
+
+import java.util.Optional;
 
 /**
  * @author luml
@@ -12,6 +16,9 @@ public class User2 {
     private Integer id;
     private String name;
     private Integer age;
+    //private Address address;
+    private Optional<Address> address;
+
 
     public Integer getId() {
         return id;
@@ -37,8 +44,21 @@ public class User2 {
         this.age = age;
     }
 
+    public Optional<Address> getAddress() {
+        return address;
+    }
+
+    public void setAddress(Optional<Address> address) {
+        this.address = address;
+    }
+
     public User2(Integer id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public User2(String name, Optional<Address> address) {
+        this.name = name;
+        this.address = address;
     }
 }

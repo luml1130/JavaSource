@@ -1,17 +1,51 @@
 package com.luml.java.jdkNewFeature.jdk18.function.optional;
 
+import book.MultiThreadProgram.Part03.chapter01.interrupu05_10.waitOld.Add;
+import com.luml.domain.Address;
 import com.luml.domain.User2;
 import org.junit.Test;
 
+import javax.xml.crypto.Data;
 import java.util.Optional;
 
 /**
  * @author luml
  * @description
  *
+ *  //设置位置信息
+ *      eventReportCmd.PositionInfo positionInfo = Optional.ofNullable(cmd.getPosition())
+ *                          .orElse(new EventReportCmd.PositionInfo());
+ *      Optional<BaseE6OrganizationVO> first = 。。。
+ *      if (first.isPresent()) {
+ *
+ *      private String orderNoStr;
+ *      plOrderParam.setOrderNoStr(
+ *              Optional.ofNullable(amQry.getCriteria())
+ *              .map(PageOrderAmQry::getOrderNo)
+ *              .orElse(StringUtils.EMPTY));
+ *
+ *     String name = person2Optional.isPresent() ? person2Optional.get().getNickName() : StringUtils.EMPTY;
+ *
  * @date 2025/12/27
  */
 public class OptionalTest {
+
+    public static void main(String[] args) {
+        Optional<String> optional = Optional.of("Hello");
+
+        // 判断是否存在
+        if (optional.isPresent()) {
+            System.out.println(optional.get());
+        }
+        // 使用 ifPresent
+        optional.ifPresent(System.out::println);
+
+        // 使用 orElse
+        String result = optional.orElse("Default Value");
+
+        // 使用 map
+        Optional<String> upperCase = optional.map(String::toUpperCase);
+    }
 
     /**
      * Optional 不是函数是接口，这是个用来防止NullPointerException异常的辅助类型，
@@ -26,6 +60,21 @@ public class OptionalTest {
         optional.get();                 // "bam"
         optional.orElse("fallback");    // "bam"
         optional.ifPresent((s) -> System.out.println(s.charAt(0)));     // "b"
+    }
+
+    @Test
+    public void createTest(){
+        //创建一个空的 Optional 实例。
+        Optional<String> optionalValue = Optional.empty();
+        System.out.println(optionalValue); //Optional.empty
+
+        //Optional.of 创建一个包含非空值的 Optional。如果传入的是 null，会抛出 NullPointerException。
+        Optional<String> opt = Optional.of("Hello"); // 正常 非空 Optional
+        System.out.println(opt.get()); // 输出: Hello
+
+        // Optional.ofNullable 创建一个可以包含 null 值的 Optional。如果传入的是 null，则返回一个空的 Optional。
+        Optional<String> nonNullOpt = Optional.ofNullable("Hello");
+        System.out.println(nonNullOpt.isPresent()); // true
     }
 
     /**
@@ -74,13 +123,15 @@ public class OptionalTest {
      */
     @Test
     public void testOf(){
-        // 正确用法：非空值
-        Optional<String> opt = Optional.of("Hello"); // 正常
-        System.out.println(opt.get()); // 输出: Hello
 
+        Optional<String> opt2 = Optional.ofNullable(null); // 可以为空的 Optional
+        Optional<String> opt3 = Optional.empty(); // 空 Optional
+
+        // 正确用法：非空值
+        Optional<String> opt = Optional.of("Hello"); // 正常 非空 Optional
+        System.out.println(opt.get()); // 输出: Hello
         // 错误用法：传入 null
         Optional<String> optNull = Optional.of(null); // 抛出 NullPointerException
-
 
         Optional<String> nullOpt2 = Optional.of(null);
         // 错误示例：直接使用 get()（见）
@@ -131,12 +182,81 @@ public class OptionalTest {
                 .map(User2::getId);
                // .map(User2::getAge);
         cityOpt.ifPresent(System.out::println);
+    }
+
+    /**
+     * 主要作用是：如果 Optional 包含一个非空值，则将该值传递给传入的函数（Function），
+     *          并返回一个新的 Optional 对象，
+     * 语法定义：public <U> Optional<U> map(Function<? super T, ? extends U> mapper)
+     *      T：当前 Optional 中封装的值的类型。
+     *      U：映射后的新值的类型。
+     *      mapper：一个函数，接收 T 类型的值并返回 U 类型的值。
+     */
+    @Test
+    public void mapTest(){
+        User2 user2 = getUser();
+        Optional<User2> personOptional = Optional.of(user2);
+        //personOptional 中的 User2 对象通过 User2::getName 被转换成一个新的 Optional<String>，即 nameOptional。
+        Optional<String> nameOptional = personOptional.map(User2::getName);
+        System.out.println(nameOptional.get());//
+
+        Optional<String> result = personOptional
+                .map(User2::getName)        // 第一次 map：获取姓名
+                .map(String::length)          // 第二次 map：获取姓名长度
+                .map(String::valueOf);        // 第三次 map：将长度转换为字符串
+        if(result.isPresent()){
+            System.out.println(result.get()); // 名字的长度 4
+        }
+
+        /*Optional<String> result = orderData
+                .map(data -> data.get("customerInfo")) // 返回 Optional<JsonNode>
+                .map(customerInfo -> customerInfo.get(name)) // 若 get(name) == null → 整体转为 Optional.empty()
+                .map(node -> node.textValue());*/
 
     }
 
+    /**
+     * map 和 flatMap 的一个重要区别在于返回值类型：
+     *     map：返回的是 Optional<U>，其中 U 是函数返回的值类型。
+     *     flatMap：返回的是 Optional<U>，但函数本身返回的是 Optional<U>，flatMap 会自动“解包”这个嵌套的 Optional。
+     */
+    @Test
+    public void flatMapTest(){
+        //1\
+        //Optional<User> userOptional = Optional.of(new User());
+        User2 user1 = new User2("Alice", Optional.of(new Address("Beijing","Chaoyang Road")));
+        User2 user2 = new User2("Bob", Optional.empty());
+
+        // 使用 flatMap 安全地获取用户地址的城市名
+        Optional<String> city1 = Optional.of(user1)
+                .flatMap(user21 -> user21.getAddress())  // 获取地址 Optional
+                .flatMap(address -> address.getCity()); // 获取城市 Optional
+
+        Optional<String> city2 = Optional.of(user2)
+                .flatMap(user22 -> user22.getAddress())  // 获取地址 Optional
+                .flatMap(address -> address.getCity()); // 获取城市 Optional
+
+        // 输出结果
+       // System.out.println("User1 city: " + city1.orElse("No city found")); //User1 city: Beijing
+       // System.out.println("User2 city: " + city2.orElse("No city found")); //User2 city: No city found
+
+
+    }
+
+    @Test
+    public void flatMapTest2(){
+        User2 user3 = new User2("Alice", Optional.of(new Address("Beijing","Chaoyang Road")));
+        Optional<User2> userOptional = Optional.of(user3);
+        //嵌套
+        Optional<String> addressStreetOptional = userOptional
+                .flatMap(user -> user.getAddress().map(Address::getStreet));
+        if(addressStreetOptional.isPresent()){
+            System.out.println(addressStreetOptional.get());
+        }
+    }
+
     private User2 getUser(){
-        User2 user2 = new User2(1, "lumengliang");
-        return user2 ;
+        return new User2(1, "luml");
     }
 
 }
