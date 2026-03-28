@@ -11,6 +11,9 @@ public class StringOperateTest {
 
     @Test
     public void split(){
+        String aa = "早餐，午餐，晚餐，";
+        System.out.println(aa.substring(0,aa.lastIndexOf("，")));
+
         String fullAddress = "广东省 深圳市 南山区";
         String[] addressParts = fullAddress.split(" ");
 
