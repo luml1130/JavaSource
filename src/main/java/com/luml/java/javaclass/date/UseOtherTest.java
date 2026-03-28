@@ -1,6 +1,7 @@
 package com.luml.java.javaclass.date;
 
 import com.luml.java.javaclass.date.javaTimePac.TimeDateUtils;
+import com.luml.java.javaclass.date.javaUtilPac.UtilDateUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.junit.Test;
 
@@ -23,6 +24,18 @@ import java.util.Date;
  * @date 2026/2/2
  */
 public class UseOtherTest {
+
+    /**
+     * 数据库里面有时候会存datetiem的默认值 1900-01-01 00:00:00
+     */
+    @Test
+    public void defaultTest(){
+       // this.requestDepartureTime = DateUtils.cleanDefaultDate(checkInfo.getRequestDepartureTime());
+       // this.requestArrivalTime = DateUtils.cleanDefaultDate(checkInfo.getRequestArrivalTime());
+        Date date =  UtilDateUtils.getDefaultDate();
+        System.out.println(date); //Mon Jan 01 00:00:00 CST 1900
+        System.out.println(UtilDateUtils.cleanDefaultDate(date));//null
+    }
 
     @Test
     public void compareToTest(){

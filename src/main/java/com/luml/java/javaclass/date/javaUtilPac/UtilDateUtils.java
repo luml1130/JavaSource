@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Objects;
 
 /**
  * @author luml
@@ -19,6 +20,23 @@ public class UtilDateUtils {
     public final static String DATE_CHINESE_PATTERN = "yyyy-MM";
 
     public final static String FULL_DATE_CHINESE_PATTERN = "yyyy-mm-dd hh:mm:ss";
+
+    //public static Date getDefaultDate(Logger log) {
+    public static Date getDefaultDate() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        try {
+            return simpleDateFormat.parse("1900-01-01 00:00:00");
+        } catch (ParseException var3) {
+            //log.error("获取可登录日期时出现异常", var3);
+            return new Date();
+        }
+    }
+
+    public static Date cleanDefaultDate(Date date) {
+        return !Objects.isNull(date) && date.getTime() >= 0L ? date : null;
+    }
+
 
 
     public static String formatDate(Date date, String pattern) {

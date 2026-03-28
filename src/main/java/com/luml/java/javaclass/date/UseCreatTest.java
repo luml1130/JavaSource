@@ -15,10 +15,6 @@ import java.util.List;
  */
 public class UseCreatTest {
 
-    public static void main(String[] args) {
-
-    }
-
     @Test
     public void createArray(){
 

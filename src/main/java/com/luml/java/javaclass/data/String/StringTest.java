@@ -3,6 +3,8 @@ package com.luml.java.javaclass.data.String;
 import org.junit.Test;
 
 import javax.sound.midi.Soundbank;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author luml
@@ -26,6 +28,19 @@ public class StringTest {
         String a = "222";
         String c = "333";
         System.out.println((a+c).contains("34"));
+    }
+
+    /**
+     * String.Join 是一种用于将集合或数组中的元素通过指定分隔符连接成一个字符串的方法
+     * String.Join 方法有多种重载形式，可以根据不同的参数类型和使用场景灵活调用
+     */
+    @Test
+    public void joinTest(){
+        //1、使用字符串作为分隔符连接字符串集合‌
+        List<String> fruits = new ArrayList<>();
+        fruits.add("apple");fruits.add("banana");fruits.add("cherry");
+        System.out.println(String.join(", ", fruits));//apple, banana, cherry
+
     }
 
     @Test
