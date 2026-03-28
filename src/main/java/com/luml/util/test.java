@@ -1,4 +1,4 @@
-package com.luml.util.encryption;
+package com.luml.util;
 
 import icu.xuyijie.sm4utils.util.Sm4Utils;
 
