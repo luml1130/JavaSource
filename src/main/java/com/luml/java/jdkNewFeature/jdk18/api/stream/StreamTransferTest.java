@@ -6,10 +6,13 @@ import com.google.gson.JsonObject;
 import com.luml.domain.Person2;
 import com.luml.domain.User2;
 import com.luml.java.data.Person;
+import com.luml.java.jdkNewFeature.jdk18.Fruit;
+import com.luml.java.jdkNewFeature.jdk18.FruitDto;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import javax.xml.transform.Source;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -191,7 +194,7 @@ public class StreamTransferTest {
     }
 
     @Test
-    public  void ListToMap(){
+    public  void MapToList(){
         Map<String,Integer> map = new HashMap<>();
         map.put("女性",11);
         map.put("男性",12);
@@ -213,7 +216,7 @@ public class StreamTransferTest {
 
 
     @Test
-    public void MapToStreamToListExample(){
+    public void MapStreamToListExample(){
         Map<String, Integer> map = new HashMap<>();
         map.put("apple", 1);
         map.put("banana", 2);
@@ -230,7 +233,6 @@ public class StreamTransferTest {
         System.out.println(values); // [1, 2, 3, 4] (顺序可能不同)
         System.out.println(entries); // [(apple=1), (banana=2), (cherry=3), (date=4)] (顺序可能不同)
     }
-
 
 
 }

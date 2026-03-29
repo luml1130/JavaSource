@@ -2,13 +2,17 @@ package com.luml.java.jdkNewFeature.jdk18.api.stream;
 
 import com.luml.domain.Person;
 import com.luml.domain.Person2;
+import com.luml.java.jdkNewFeature.jdk18.Fruit;
+import com.luml.java.jdkNewFeature.jdk18.FruitDto;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -172,6 +176,7 @@ public class StreamOtherTest {
         System.out.println(startsWithB);    // 3
     }
     //averagingInt/Double/Long()
+
     public static void main2(String[] args) {
         List<Person> personList = new ArrayList<>();
         Person person = new Person();
@@ -185,4 +190,98 @@ public class StreamOtherTest {
                 .collect(Collectors.averagingDouble(Person::getAge));
         System.out.println(avgAge);
     }
+
+    @Test
+    public void forEachTest(){
+        Map<String, Integer> map = new HashMap<>();
+        map.put("apple", 1);
+        map.put("banana", 2);
+        map.put("cherry", 3);
+        /*map.entrySet().forEach(
+                entry -> System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue())
+        );
+        map.values().forEach(
+                value -> System.out.println("Value = " + value)
+        );*/
+        //等价于
+        map.values().forEach(System.out::println);//2132
+
+        List<Integer> nums = Arrays.asList(1, 2, 3, 4, 5);
+        nums.parallelStream()
+                .forEach(n -> System.out.print(n + " ")); // 输出可能：3 1 4 2 5
+        nums.parallelStream()
+                .forEachOrdered(n -> System.out.print(n + " ")); // 输出：1 2 3 4 5
+
+
+
+    }
+
+    /**
+     * Stream.peek() 是 Java 8 引入的 ‌Stream API 中的一个中间操作‌，
+     *      主要用于在流处理过程中‌观察或调试元素状态‌，而‌不会修改流中的元素本身‌。
+     * 核心特性
+     *     ‌中间操作（Intermediate Operation）‌： 不会触发流的执行，必须配合终端操作（如 collect()、forEach()）才能生效。
+     *     ‌不改变流内容‌：仅用于旁路观察，适合调试、日志记录等场景。
+     *     ‌惰性求值‌：只有在终端操作被调用时，peek 中的逻辑才会执行。
+     *     ‌接收 Consumer<T> 参数‌：该函数无返回值（void），通常用于执行副作用（如打印、日志、状态检查）。
+     * 典型使用场景
+     *     ‌调试流处理过程‌:查看某一步操作后的元素状态。
+     *     ‌记录日志‌:在数据处理链中记录关键节点的值。
+     *     ‌数据验证或检查‌:在不中断流的前提下，对元素进行条件判断并输出警告。
+     */
+    @Test
+    public void peekTest1(){
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+        List<Integer> result = numbers.stream()
+                .filter(n -> n % 2 == 0)           // 过滤偶数
+                .peek(n -> System.out.println("Filtered: " + n))  // 调试点1
+                .map(n -> n * n)                   // 平方
+                .peek(n -> System.out.println("Mapped: " + n))    // 调试点2
+                .collect(Collectors.toList());
+
+        System.out.println("Result: " + result);
+
+    }
+    @Test
+    public void peekTest(){
+       /* Map<WaybillNodeOriginDocDTO, String> originDocNoMap = waybillOriginDocInfoGateway.findBatchOriginDocNo(sourceMap.keySet());
+        List<WaybillNodeOriginDocRelPO> list = sourceMap.entrySet().stream()
+                .map(entry -> {
+                    WaybillNodeOriginDocRelPO po = new WaybillNodeOriginDocRelPO();
+                    po.setId(entry.getValue());
+                    po.setWaybillId(waybillId);
+                    po.setWaybillNodeId(waybillNodeEntity.getId());
+                    po.setOriginDocType(entry.getKey().getOriginDocType());
+                    po.setOriginDocId(entry.getKey().getOriginDocId());
+                    po.setOriginNodeType(entry.getKey().getNodeType());
+                    po.setOriginDocNo(StringUtils.isBlank(entry.getKey().getOriginDocNo()) ? originDocNoMap.get(entry.getKey()) : entry.getKey().getOriginDocNo());
+                    return po;
+                })
+                // 内存
+                .peek(po -> relMap.put(po.getId(), po))
+                .collect(Collectors.toList());*/
+        FruitDto fruitDto = new FruitDto("apple",1);
+        FruitDto fruitDto1 = new FruitDto("banana",2);
+        FruitDto fruitDto2 = new FruitDto("cherry",3);
+        FruitDto fruitDto3 = new FruitDto("orange",4);
+        Map<FruitDto, String> originDocNoMap = new HashMap<>();
+        originDocNoMap.put(fruitDto, "苹果");
+        originDocNoMap.put(fruitDto1, "香蕉");
+        originDocNoMap.put(fruitDto2, "草莓");
+        originDocNoMap.put(fruitDto3, "橘子");
+
+        List<Fruit>  fruitList = originDocNoMap.entrySet().stream()
+                .map(entry ->{
+                    Fruit fruit = new Fruit();
+                    fruit.setName(entry.getKey().getFruitName());
+                    fruit.setOrder(entry.getKey().getOrderNO());
+                    fruit.setChiName(entry.getValue());
+                    return fruit;
+                })
+                //.peek(po -> relMap.put(po.getId(), po))
+                .collect(Collectors.toList());
+        // System.out.println(fruitList); 其实已经OK了
+    }
+
 }
