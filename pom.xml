@@ -85,6 +85,12 @@
             <version>2.17.1</version>
         </dependency>
 
+        <!-- Tess4J OCR 库 -->
+        <dependency>
+            <groupId>net.sourceforge.tess4j</groupId>
+            <artifactId>tess4j</artifactId>
+            <version>5.4.0</version>
+        </dependency>
 
         <!--加解密-->
         <!-- https://mvnrepository.com/artifact/com.google/guava -->
