@@ -5,6 +5,7 @@ import com.luml.domain.Person2;
 import com.luml.java.jdkNewFeature.jdk18.Fruit;
 import com.luml.java.jdkNewFeature.jdk18.FruitDto;
 import org.junit.Test;
+import org.omg.PortableInterceptor.INACTIVE;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -33,10 +34,60 @@ import java.util.stream.Collectors;
  */
 public class StreamOtherTest {
 
+    /**
+     * orElse 与 orElseGet 的区别
+     *  ‌orElse(T other)‌：无论 Optional 是否包含值，都会立即计算并返回默认值。适用于默认值计算成本较低的情况。
+     *  ‌orElseGet(Supplier<T> supplier)‌：仅在 Optional 为空时才调用 Supplier 来生成默认值。
+     *          适用于默认值计算成本较高的情况，能够避免不必要的计算。
+     */
+    @Test
+    public  void orElseGetTest(){
+        List<Integer> list = Arrays.asList(10, 20, 30);
+
+        // 使用 orElse - 即使不需要默认值，也会计算
+        int a = list.stream().reduce(Integer::sum).orElse(get("a"));
+        System.out.println(a); //60
+
+        // 使用 orElseGet - 仅在需要时才计算默认值
+        int b = list.stream().reduce(Integer::sum).orElseGet(() -> get("b"));
+        System.out.println(b);//60
+        //get("a") 会被立即执行，而 get("b") 只有在 Optional 为空时才会执行。
+    }
+    private static int get(String iam){
+        return 1;
+    }
+    @Test
+    public void orElseTest(){
+        List<Person2> personList = new ArrayList<Person2>(){{
+            add(new Person2("张三","zhangsan",0,100,false));
+            add(new Person2("李四","zhangsan",1,200,false));
+        }};
+        int dataTerminalId = personList.stream().filter(Person2::isSelect).findFirst()
+                .map(Person2::getSalary)
+                //.orElseGet()
+               // .orElseThrow()
+                .orElse(null);
+        System.out.println(dataTerminalId); //200
+
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+        String result = names.stream()
+                .filter(name -> name.equals("David"))
+                .findFirst()
+                .orElse("Unknown");
+        System.out.println(result); // 输出: Unknown
+
+        //User user = null;
+        //User result1 = Optional.ofNullable(user).orElse(new User()); // new User() 会被立即执行
+        //User result2 = Optional.ofNullable(user).orElseGet(User::new); // 仅在 user 为 null 时才创建 User 对象
+       // 在上述示例中，orElse 会始终执行 new User()，而 orElseGet 则会在需要时才调用 User::new，从而提升性能。
+
+
+    }
+
+
     //reducing()
-    public static void main(String[] args) {
-
-
+    @Test
+    public void reduceTest(){
         //拼接
         List<String> stringCollection = Arrays.asList("apple",
                 "banana", "cherry", "date", "elderberry");
@@ -45,8 +96,6 @@ public class StreamOtherTest {
                         .stream().sorted()
                         .reduce((s1, s2) -> s1 + "#" + s2);
         reduced.ifPresent(System.out::println);//apple#banana#cherry#date#elderberry
-
-
     }
 
     @Test
@@ -138,9 +187,19 @@ public class StreamOtherTest {
                 //保留3位 四舍五入
                 .setScale(3, RoundingMode.HALF_UP);
         System.out.println("objectDecimalSum="+objectDecimalSum);
+    }
 
-
-
+    //counting()：统计元素数量。
+    @Test
+    public void countTest() {
+        List<String> stringCollection = Arrays.asList("apple",
+                "banana", "cherry", "date", "elderberry");
+        long startsWithB =
+                stringCollection
+                        .stream()
+                        .filter((s) -> s.startsWith("b"))
+                        .count();
+        System.out.println(startsWithB);    // 3
     }
 
     //.joining 拼接
@@ -163,21 +222,9 @@ public class StreamOtherTest {
 
     }
 
-    //counting()：统计元素数量。
-    public static void main3(String[] args) {
-        List<String> stringCollection = Arrays.asList("apple",
-                "banana", "cherry", "date", "elderberry");
-
-        long startsWithB =
-                stringCollection
-                        .stream()
-                        .filter((s) -> s.startsWith("b"))
-                        .count();
-        System.out.println(startsWithB);    // 3
-    }
     //averagingInt/Double/Long()
-
-    public static void main2(String[] args) {
+    @Test
+    public void averagingDoubleTest() {
         List<Person> personList = new ArrayList<>();
         Person person = new Person();
         person.setAge(12);

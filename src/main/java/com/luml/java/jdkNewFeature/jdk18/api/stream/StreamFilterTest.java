@@ -63,6 +63,24 @@ public class StreamFilterTest {
         System.out.println(evenNumbers); // 输出: [2, 4, 6, 8, 10]
     }
 
+    //两次filter是且的关系哦
+    @Test
+    public void dobuleFilterTest(){
+        List<Person2> list = new ArrayList<Person2>(){{
+            add(new Person2("张三","zhangsan",0,10));
+            add(new Person2("李四","zhangsan",1,20));
+            add(new Person2("王五","wangwu",0,30));
+            add(new Person2("小刘","xiaoliu",1,30));
+            add(new Person2("三木","sanmu",0,50));
+        }};
+        List<Person2> newList =  list.stream().
+                filter(Person2 -> Person2.getGender() == 1 )
+                .filter(Person2 -> Person2.getNickName().startsWith("x"))
+                .collect(Collectors.toList());
+        System.out.println(newList);
+        //[Person2{id=null, name='小刘', nickName='xiaoliu', gender=1, salary=30, amount=null}]
+    }
+
     @Test
     public void filterTest() {
         List<Person2> list = new ArrayList<Person2>(){{

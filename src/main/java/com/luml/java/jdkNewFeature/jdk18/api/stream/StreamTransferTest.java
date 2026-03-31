@@ -34,6 +34,35 @@ import java.util.stream.Collectors;
 public class StreamTransferTest {
 
     @Test
+    public void arrayTransferTest(){
+        // 示例字符串列表
+        List<String> stringList = Arrays.asList("1", "2", "3", "4", "5");
+
+        // 使用Stream将String转换为Integer
+        List<Integer> integerList = stringList.stream()
+                .map(Integer::valueOf)
+                .collect(Collectors.toList());
+
+        // 输出结果
+        System.out.println(integerList);
+    }
+
+    @Test
+    public void objectTransferTest(){
+        java.util.List<User2> user2List = new ArrayList<User2>(){{
+            add(new User2(1,"老鲁"));
+            add(new User2(2,"桃子"));
+            //add(new Person2("四木","simu",0,20));
+        }};
+        List<String> idStringList = user2List.stream()
+                .map(User2::getId)
+                .map(String::valueOf)
+                //.map(Integer::parseInt)
+                .collect(Collectors.toList());
+        System.out.println(idStringList);
+    }
+
+    @Test
     public  void objectToFiledList(){
         java.util.List<User2> user2List = new ArrayList<User2>(){{
             add(new User2(1,"老鲁"));

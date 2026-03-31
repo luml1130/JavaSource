@@ -18,6 +18,8 @@ public class Person2 {
 
     private BigDecimal amount;
 
+    private boolean isSelect;
+
     public Person2() {
     }
 
@@ -38,6 +40,14 @@ public class Person2 {
         this.nickName = nickName;
         this.gender = gender;
         this.salary = salary;
+    }
+
+    public Person2(String name, String nickName, int gender, int salary, boolean isSelect) {
+        this.name = name;
+        this.nickName = nickName;
+        this.gender = gender;
+        this.salary = salary;
+        this.isSelect = isSelect;
     }
 
     @Override
@@ -90,5 +100,13 @@ public class Person2 {
 
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
+    }
+
+    public boolean isSelect() {
+        return isSelect;
+    }
+
+    public void setSelect(boolean select) {
+        isSelect = select;
     }
 }
