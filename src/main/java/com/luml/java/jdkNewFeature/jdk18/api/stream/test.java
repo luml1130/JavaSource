@@ -22,15 +22,4 @@ public class test {
 
 
     }
-    public static void main2(String[] args) {
-        List<Person2> list = new ArrayList<Person2>(){{
-            add(new Person2("张三","zhangsan",0,10));
-            add(new Person2("李四","zhangsan",1,20));
-            add(new Person2("王五","wangwu",0,30));
-            add(new Person2("小刘","xiaoliu",1,40));
-            add(new Person2("三木","sanmu",0,50));
-        }};
-
-
-    }
 }

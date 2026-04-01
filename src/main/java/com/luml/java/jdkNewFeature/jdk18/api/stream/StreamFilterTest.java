@@ -1,6 +1,10 @@
 package com.luml.java.jdkNewFeature.jdk18.api.stream;
 
+import com.google.common.collect.Lists;
 import com.luml.domain.Person2;
+import com.luml.java.jdkNewFeature.jdk18.domain.EventReportInfoPO;
+import com.luml.java.jdkNewFeature.jdk18.domain.ExceptReportEventExtFileVO;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import sun.jvm.hotspot.gc_implementation.parallelScavenge.PSYoungGen;
@@ -26,6 +30,37 @@ public class StreamFilterTest {
         Integer pOrgId = -185;
         Integer wyOrgId=-185;
         System.out.println(pOrgId.equals(wyOrgId));
+    }
+
+    @Test
+    public void test(){
+       /* EventReportQueryConditionDTO dto = new EventReportQueryConditionDTO();
+        dto.setBusinessId(id);
+        dto.setEventDicIdSet(Sets.newHashSet(1701, 1702));
+        List<EventReportInfoPO> reportInfoPOList = eventReportDomainService.findList(dto);*/
+        EventReportInfoPO reportInfoPO = new EventReportInfoPO();
+        List<ExceptReportEventExtFileVO> extFileVOList = new ArrayList<ExceptReportEventExtFileVO>(){{
+            add(new ExceptReportEventExtFileVO
+                    ("/e6yun/e6yun3/waybillPlatform/2026-01/e630667a9f4b499db003a3467be0fd40.png",2,1,"前灌顶铅封","",1,"40085"));
+            add(new ExceptReportEventExtFileVO
+                    ("/e6yun/e6yun3/waybillPlatform/2026-01/55610e8e17be4a26a3bdfe1be16965f1.png",2,2,"后灌顶铅封","",1,"40086"));
+        }};
+        reportInfoPO.setExtFileList(extFileVOList);
+
+        List<EventReportInfoPO> reportInfoPOList = Lists.newArrayList(reportInfoPO);
+                String sealNo = "";
+        if (CollectionUtils.isNotEmpty(reportInfoPOList)) {
+            sealNo = reportInfoPOList.stream()
+                    .filter(x -> CollectionUtils.isNotEmpty(x.getExtFileList()))
+                    .flatMap(x -> x.getExtFileList().stream())
+
+                    .map(ExceptReportEventExtFileVO::getSealNo)
+                    .filter(StringUtils::isNotBlank)
+                    .distinct()
+                    .collect(Collectors.joining("/"));
+        }
+        System.out.println(sealNo);
+        //waybillDetailVO.setSealNo(sealNo);
     }
 
     @Test
