@@ -45,6 +45,9 @@ public class StreamTransferTest {
 
         // 输出结果
         System.out.println(integerList);
+
+
+
     }
 
     @Test

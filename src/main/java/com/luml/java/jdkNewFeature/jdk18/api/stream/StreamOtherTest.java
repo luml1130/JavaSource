@@ -4,6 +4,7 @@ import com.luml.domain.Person;
 import com.luml.domain.Person2;
 import com.luml.java.jdkNewFeature.jdk18.Fruit;
 import com.luml.java.jdkNewFeature.jdk18.FruitDto;
+import org.hibernate.validator.constraints.br.TituloEleitoral;
 import org.junit.Test;
 import org.omg.PortableInterceptor.INACTIVE;
 
@@ -12,9 +13,12 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -33,6 +37,53 @@ import java.util.stream.Collectors;
  * @date 2025/12/5
  */
 public class StreamOtherTest {
+
+    @Test
+    public void distinctObjectTest(){
+        // 创建测试数据
+        List<Person> people = Arrays.asList(
+                new Person("Alice", 25),
+                new Person("Bob", 30),
+                new Person("Alice", 25), // 重复
+                new Person("Charlie", 35),
+                new Person("Bob", 30)  // 重复
+        );
+        System.out.println("原始数据:");
+        people.forEach(System.out::println);
+
+        // 方法1: 使用distinct() - 需要正确重写equals和hashCode
+       /* System.out.println("方法1 - 使用distinct():");
+        List<Person> distinctByEquals = people.stream()
+                .distinct()
+                .collect(Collectors.toList());
+        distinctByEquals.forEach(System.out::println);*/
+
+        // 方法2: 使用Collectors.toMap()按字段去重
+       /* System.out.println("\n方法2 - 使用toMap按name去重:");
+        List<Person> distinctByName = people.stream()
+                .collect(Collectors.collectingAndThen(
+                        Collectors.toMap(
+                                Person::getName,
+                                Function.identity(),
+                                (oldValue, newValue) -> oldValue // 保留第一个
+                        ),
+                        map -> new ArrayList<>(map.values())
+                ));
+        distinctByName.forEach(System.out::println);*/
+
+        // 方法3: 使用自定义distinctByKey方法
+        System.out.println("方法3 - 使用自定义distinctByKey按age去重:");
+        List<Person> distinctByAge = people.stream()
+                .filter(distinctByKey(Person::getAge))
+                .collect(Collectors.toList());
+        distinctByAge.forEach(System.out::println);
+    }
+
+    // 自定义去重方法
+    private static <T> java.util.function.Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
+        Set<Object> seen = new HashSet<>();
+        return t -> seen.add(keyExtractor.apply(t));
+    }
 
     /**
      * orElse 与 orElseGet 的区别

@@ -3,7 +3,9 @@ package com.luml.java.collection.array;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author luml
@@ -91,5 +93,13 @@ public class arrOper {
                 break;
         }
         return rangeStr;
+    }
+
+    @Test
+    public void arrayToList(){
+        String str1 = "apple,banana,orange,grape";
+        String[] array1 = str1.split(",");
+        List<String> list1 = Arrays.asList(array1);
+        System.out.println(list1);
     }
 }
