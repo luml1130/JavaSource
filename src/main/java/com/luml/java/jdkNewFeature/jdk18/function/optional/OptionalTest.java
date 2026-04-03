@@ -156,7 +156,7 @@ public class OptionalTest {
      *     ‌避免过度使用‌：仅用于方法返回值，非参数或字段（见
      */
     @Test
-    public void testOfNullable(){
+    public void OfNullableTest(){
         // 包装非 null 值
         Optional<String> nonNullOpt = Optional.ofNullable("Hello");
         System.out.println(nonNullOpt.isPresent()); // true
