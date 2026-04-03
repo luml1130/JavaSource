@@ -63,6 +63,11 @@ public class StreamTransferTest {
                 //.map(Integer::parseInt)
                 .collect(Collectors.toList());
         System.out.println(idStringList);
+        //对字段加工
+       /* waybillInfoDTOList.stream()
+                .map(dto -> UserCacheUtils.getVehicle(dto.getVehicleId()))
+                .distinct()
+                .collect(Collectors.toList());*/
     }
 
     @Test

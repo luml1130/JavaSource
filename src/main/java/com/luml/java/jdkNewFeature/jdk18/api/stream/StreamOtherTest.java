@@ -59,7 +59,7 @@ public class StreamOtherTest {
         distinctByEquals.forEach(System.out::println);*/
 
         // 方法2: 使用Collectors.toMap()按字段去重
-       /* System.out.println("\n方法2 - 使用toMap按name去重:");
+        System.out.println("\n方法2 - 使用toMap按name去重:");
         List<Person> distinctByName = people.stream()
                 .collect(Collectors.collectingAndThen(
                         Collectors.toMap(
@@ -69,7 +69,7 @@ public class StreamOtherTest {
                         ),
                         map -> new ArrayList<>(map.values())
                 ));
-        distinctByName.forEach(System.out::println);*/
+        distinctByName.forEach(System.out::println);
 
         // 方法3: 使用自定义distinctByKey方法
         System.out.println("方法3 - 使用自定义distinctByKey按age去重:");
@@ -113,7 +113,8 @@ public class StreamOtherTest {
             add(new Person2("张三","zhangsan",0,100,false));
             add(new Person2("李四","zhangsan",1,200,false));
         }};
-        int dataTerminalId = personList.stream().filter(Person2::isSelect).findFirst()
+        int dataTerminalId = personList.stream()
+                .filter(Person2::isSelect).findFirst()
                 .map(Person2::getSalary)
                 //.orElseGet()
                // .orElseThrow()
