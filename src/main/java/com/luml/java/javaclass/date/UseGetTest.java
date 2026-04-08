@@ -5,6 +5,7 @@ import com.luml.java.javaclass.date.javaUtilPac.UtilDateUtils;
 import com.luml.java.javaclass.date.other.DateStyle;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.junit.Test;
+import org.springframework.cglib.core.Local;
 
 import java.sql.Time;
 import java.text.DateFormat;
@@ -45,6 +46,15 @@ public class UseGetTest {
 
         Date date = new Date();
         System.out.println(UtilDateUtils.addMinute(date, -30));;
+    }
+    @Test
+    public void getTest(){
+        String date = UtilDateUtils.localDateToString(LocalDate.now());
+        System.out.println(date); // 2026-04-07
+        LocalDate localDate =  UtilDateUtils.stringToLocalDate("2026-05-31");
+        System.out.println(localDate.minusDays(-1).atTime(LocalTime.MIN));
+
+
     }
 
     @Test

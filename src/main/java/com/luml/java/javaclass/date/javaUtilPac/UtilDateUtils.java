@@ -5,6 +5,11 @@ import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Clock;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -128,6 +133,30 @@ public class UtilDateUtils {
         return date;
     }
 
+    public static LocalDate stringToLocalDate(String dateStr) {
+        // 定义日期格式
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        // 将字符串解析为 LocalDate 对象
+        return  LocalDate.parse(dateStr, formatter);
+        // 构造该天的最小时间（00:00:00）
+        //return date.atStartOfDay();
+    }
+
+    /**
+     * LocalDateTime now = LocalDateTime.now();
+     *
+     * @return
+     */
+    public static String localDateTimeToString(LocalDateTime now) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        return now.format(formatter);
+    }
+
+    public static String localDateToString(LocalDate now) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        return now.format(formatter);
+    }
+
 
     /**
      * formatType时间格式
@@ -187,6 +216,21 @@ public class UtilDateUtils {
 
        // Date startOfDay = calendar.getTime();  //返回Date类型
         return calendar.getTimeInMillis(); //返回long类型
+    }
+
+    /**
+     * 根据日期字符串获取该天的最小时间（即当天的 00:00:00）
+     *
+     * @param dateStr 日期字符串，格式为 'yyyy-MM-dd'
+     * @return 该天的最小时间 LocalDateTime 对象
+     */
+    public static LocalDateTime getStartOfDay(String dateStr) {
+        // 定义日期格式
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        // 将字符串解析为 LocalDate 对象
+        LocalDate date = LocalDate.parse(dateStr, formatter);
+        // 构造该天的最小时间（00:00:00）
+        return date.atStartOfDay();
     }
 
     /**

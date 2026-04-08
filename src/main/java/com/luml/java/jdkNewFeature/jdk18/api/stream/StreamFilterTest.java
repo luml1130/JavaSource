@@ -17,6 +17,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -96,6 +97,37 @@ public class StreamFilterTest {
                 .filter(n -> n % 2 == 0)
                 .collect(Collectors.toList());
         System.out.println(evenNumbers); // 输出: [2, 4, 6, 8, 10]
+    }
+    @Test
+    public void otherMapFilterTest(){
+        List<Person2> list = new ArrayList<Person2>(){{
+            add(new Person2("张三","zhangsan",0,10));
+            add(new Person2("李四","zhangsan",1,20));
+            add(new Person2("王五","wangwu",0,30));
+            add(new Person2("小刘","xiaoliu",1,30));
+            add(new Person2("三木","sanmu",0,50));
+        }};
+        List<Integer> list2 = new ArrayList<>();
+        list2.add(30);
+        list2.add(50);
+
+        list =  list.stream()
+                //list2如果为null 不影响
+                .filter(x -> !list2.contains(x.getSalary()))
+                .collect(Collectors.toList());
+        System.out.println(list);
+
+    }
+    @Test
+    public void afterNullFilterTest(){
+        List<Person2> list = new ArrayList<Person2>(){{
+            add(new Person2("张三","zhangsan",0,10));
+        }};
+        List<Person2> newList =  list.stream().
+                filter(Person2 -> Person2.getGender() == 1 )
+                .filter(Person2 -> Person2.getNickName().startsWith("x"))
+                .collect(Collectors.toList());
+        System.out.println(newList);
     }
 
     //两次filter是且的关系哦

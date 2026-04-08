@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -37,6 +38,22 @@ import java.util.stream.Collectors;
  * @date 2025/12/5
  */
 public class StreamOtherTest {
+
+    /***
+     * 在 Java 的 Stream 流中，不能直接使用 ++ 操作符对元素进行自增操作，因为 ++ 是一个‌语句级‌的操作符，通常用于变量的自增，而不是用于流处理中的元素变换。
+     * 如果你想在 Java Stream 中实现类似“自增”的效果，可以借助一些技巧来完成。例如，可以使用 AtomicInteger 或自定义累加器来实现对元素的自增编号。
+     */
+    @Test
+    public void incrementTest(){
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        AtomicInteger counter = new AtomicInteger(0);
+
+        List<Integer> incrementedNumbers = numbers.stream()
+                .map(n -> counter.incrementAndGet())
+                .collect(Collectors.toList());
+
+        System.out.println(incrementedNumbers); // 输出: [1, 2, 3, 4, 5]
+    }
 
     @Test
     public void distinctObjectTest(){

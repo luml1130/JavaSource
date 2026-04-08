@@ -66,6 +66,7 @@ public class CodeService {
     //hutool
     @Test
     public void hutoolRandom(){
+        System.out.println(RandomUtil.randomLong(1));
         System.out.println(RandomUtil.randomLong());
         //-8946490205122042415
         System.out.println(RandomUtil.randomString(5)); //z08u3

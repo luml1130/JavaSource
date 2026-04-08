@@ -82,7 +82,9 @@ public class deepCopy {
         newClassIds.add(1L);
         newClassIds.add(5L);
 
-        newClassIds.removeAll(oldClassIds);
-        System.out.println(newClassIds);
+        oldClassIds.removeAll(newClassIds);
+        System.out.println(oldClassIds);//3 7
+        //newClassIds.removeAll(oldClassIds);
+        //System.out.println(newClassIds); //null
     }
 }
