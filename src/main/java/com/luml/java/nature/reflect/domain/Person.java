@@ -1,4 +1,4 @@
-package com.luml.java.nature.reflect;
+package com.luml.java.nature.reflect.domain;
 
 /**
  * @author luml

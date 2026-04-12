@@ -27,6 +27,8 @@ public class MapTest {
 		System.out.println("--------------");
 	}
 
+
+
 	@Test
 	public void testEmpty(){
 		Map<Long,Object> userMap = new HashMap<>();
