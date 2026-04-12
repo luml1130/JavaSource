@@ -1,7 +1,9 @@
 package com.luml.java.collection.map;
 
 
+import cn.hutool.core.map.MapUtil;
 import com.google.common.collect.Maps;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -27,17 +29,36 @@ public class MapTest {
 		System.out.println("--------------");
 	}
 
+	//map的key和value互换
+	@Test
+	public void inverseTest(){
+		Map<String, Integer> map = new HashMap<>();
+		map.put("apple", 10);
+		map.put("banana", 20);
+		map.put("orange", 30);
+		map.put("grape", 40);
+		map.put("kiwi", 50);
+		Map<Integer,String> dicCache = MapUtil.inverse(map);
+		System.out.println(dicCache);
+	}
 
 
 	@Test
 	public void testEmpty(){
 		Map<Long,Object> userMap = new HashMap<>();
-		System.out.println(userMap.get(1));
+		System.out.println(userMap.get(1)); //null
 		// userMap.size() 空指针异常
-		System.out.println(userMap != null && userMap.size() > 0);
+		System.out.println(userMap != null && userMap.size() > 0); //false
 
 		Map<Long,Object> userMap2 = new HashMap<>();
-		System.out.println(userMap2.size());
+		System.out.println(userMap2.size()); //0
+
+		Map<String,String> a = new HashMap<>();
+		a.put("A",null);
+		System.out.println(a.get("A")); //null
+		if(StringUtils.isBlank(a.get("B"))) {
+			System.out.println("kong"); //打印了
+		}
 
 	}
 

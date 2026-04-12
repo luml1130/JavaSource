@@ -13,11 +13,6 @@ import java.util.Map;
 public class test {
 
     public static void main(String[] args) {
-        Map<String,String> a = new HashMap<>();
-        a.put("A",null);
-        System.out.println(a.get("A"));
-        if(StringUtils.isBlank(a.get("B"))) {
-            System.out.println("kong");
-        }
+
     }
 }
