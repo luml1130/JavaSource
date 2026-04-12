@@ -209,6 +209,22 @@ public class StreamFindTest {
         }
     }
 
+    @Test
+    public void distinctData(){
+        // 示例1: 基本类型去重
+        List<Integer> numbers = Arrays.asList(1, 2, 2, 3, 4, 4, 5);
+        List<Integer> uniqueNumbers = numbers.stream()
+                .distinct()
+                .collect(Collectors.toList());
+        System.out.println("数字去重结果: " + uniqueNumbers);
+
+        // 示例2: 字符串去重
+        List<String> names = Arrays.asList("Alice", "Bob", "Alice", "Charlie", "Bob");
+        List<String> uniqueNames = names.stream()
+                .distinct()
+                .collect(Collectors.toList());
+        System.out.println(uniqueNames);
+    }
 
     //去重
     @Test

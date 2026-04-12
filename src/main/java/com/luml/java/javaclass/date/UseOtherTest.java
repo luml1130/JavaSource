@@ -1,6 +1,6 @@
 package com.luml.java.javaclass.date;
 
-import com.luml.java.javaclass.date.util.TimeDateUtils;
+import com.luml.java.javaclass.date.util.DateTranUtils;
 import com.luml.java.javaclass.date.util.UtilDateUtils;
 import org.junit.Test;
 
@@ -43,7 +43,7 @@ public class UseOtherTest {
         LocalDateTime localDateTime = LocalDate.now().minusDays(10).atTime(LocalTime.MIN);
         //LocalDateTime yesterdayMAX = LocalDate.now().minusDays(1).atTime(LocalTime.MAX);
         //Date[] beginTime = new Date[2];
-        Date time2 = TimeDateUtils.localDateTime2Date(localDateTime);
+        Date time2 = DateTranUtils.localDateTime2Date(localDateTime);
         System.out.println(time2);
 
         System.out.println(time1);

@@ -1,6 +1,6 @@
 package com.luml.java.javaclass.date;
 
-import com.luml.java.javaclass.date.util.TimeDateUtils;
+import com.luml.java.javaclass.date.util.DateTranUtils;
 import com.luml.java.javaclass.date.util.UtilDateUtils;
 import com.luml.java.javaclass.date.other.DateStyle;
 import org.apache.commons.lang3.time.DateFormatUtils;
@@ -66,6 +66,10 @@ public class UseGetTest {
         LocalDate localDate =  UtilDateUtils.stringToLocalDate("2026-05-31");
         System.out.println(localDate.minusDays(-1).atTime(LocalTime.MIN));
 
+        Date statTime =  DateTranUtils.localDateTime2Date(LocalDateTime.now().minusDays(1));
+        Date statTime2 =  DateTranUtils.localDate2Date(LocalDate.now().minusDays(1));
+        System.out.println(statTime); //Sat Apr 11 12:50:26 CST 2026
+        System.out.println(statTime2);//这个的是分秒为00:00:00  //这个的是分秒为00:00:00
 
     }
 
@@ -186,7 +190,7 @@ public class UseGetTest {
     @Test
     public void getYest(){
         LocalDateTime yesterday = LocalDate.now().minusDays(1).atTime(LocalTime.MAX);
-        Date yesterdayDate = TimeDateUtils.localDateTime2Date(yesterday);
+        Date yesterdayDate = DateTranUtils.localDateTime2Date(yesterday);
         String yesterdayDateStr = UtilDateUtils.formatDate(yesterdayDate,"yyyy-MM-dd HH:mm:ss");
         System.out.println(yesterdayDateStr);
     }
@@ -240,7 +244,7 @@ public class UseGetTest {
 
         //stringToLocalDateTime
         String maxTime = LocalDateTime.now().format(STANDARD_DTF);
-        LocalDateTime maxTimeOrigin = TimeDateUtils.stringToLocalDateTime(maxTime, DateStyle.YYYY_MM_DD_HH_MM_SS);
+        LocalDateTime maxTimeOrigin = DateTranUtils.stringToLocalDateTime(maxTime, DateStyle.YYYY_MM_DD_HH_MM_SS);
         System.out.println(maxTimeOrigin);
         System.out.println(maxTimeOrigin.plusDays(5));
         // minTime.plusDays(5).atTime(LocalTime.MIN);

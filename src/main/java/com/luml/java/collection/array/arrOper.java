@@ -43,6 +43,14 @@ public class arrOper {
         System.out.println(shipmentEndTime);
     }
 
+    @Test
+    public void nullTest(){
+        //param.getCreatedTime() 类型 Date[]
+        /*if (Objects.isNull(param.getCreatedTime()) || param.getCreatedTime().length != INTEGER_TWO) {
+            throw new E6ArgumentException("历史数据查询必须输入查询时间");
+        }*/
+    }
+
 
     public static String[][] intakeRangeDic(String nutrientId){
         String[][] rangeStr = new String[1][2];

@@ -15,14 +15,28 @@ import java.util.Objects;
 /**
  * @author luml
  * @description
- * @date 2025/12/14
+ * @date 2026/4/12
  */
-public class TimeDateUtils {
+public class DateTranUtils {
 
+    /**
+     * localDateTime转换为Date
+     * @param localDateTime
+     */
     public static Date localDateTime2Date(LocalDateTime localDateTime) {
         ZonedDateTime zdt = localDateTime.atZone(ZoneId.systemDefault());
         return Date.from(zdt.toInstant());
     }
+
+    /**
+     * localDate转换为Date
+     * @param localDate
+     */
+    public static Date localDate2Date(LocalDate localDate) {
+        ZonedDateTime zdt = localDate.atStartOfDay(ZoneId.systemDefault());
+        return Date.from(zdt.toInstant());
+    }
+
 
     //form g7e6
     public static LocalDateTime stringToLocalDateTime(String dateStr, DateStyle dateStyle) {
@@ -48,8 +62,4 @@ public class TimeDateUtils {
             return instant.atZone(zoneId).toLocalDateTime();
         }
     }
-
-
-
-
 }

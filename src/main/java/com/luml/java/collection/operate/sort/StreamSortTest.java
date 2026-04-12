@@ -2,7 +2,7 @@ package com.luml.java.collection.operate.sort;
 
 import com.luml.domain.Person;
 import com.luml.domain.sort.PersonSort;
-import com.luml.java.javaclass.date.util.TimeDateUtils;
+import com.luml.java.javaclass.date.util.DateTranUtils;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -73,7 +73,7 @@ public class StreamSortTest {
 
         //object Date sort
         LocalDateTime localDateTime = LocalDate.now().minusDays(10).atTime(LocalTime.MIN);
-        Date date2 = TimeDateUtils.localDateTime2Date(localDateTime);
+        Date date2 = DateTranUtils.localDateTime2Date(localDateTime);
         System.out.println(date2); //Fri Mar 13 00:00:00 CST 2026
         List<PersonSort> personListDate2 = new ArrayList<PersonSort>(){{
             add(new PersonSort("Bob",12,new Date()));
