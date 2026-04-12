@@ -118,11 +118,13 @@ public class StreamFilterTest {
         System.out.println(list);
 
     }
+
     @Test
     public void afterNullFilterTest(){
         List<Person2> list = new ArrayList<Person2>(){{
             add(new Person2("张三","zhangsan",0,10));
         }};
+        //过滤完后为空
         List<Person2> newList =  list.stream().
                 filter(Person2 -> Person2.getGender() == 1 )
                 .filter(Person2 -> Person2.getNickName().startsWith("x"))

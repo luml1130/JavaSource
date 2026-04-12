@@ -39,6 +39,42 @@ import java.util.stream.Collectors;
  */
 public class StreamOtherTest {
 
+    @Test
+    public void setTest(){
+        List<Person> people = Arrays.asList(
+                new Person("Alice", 25),
+                new Person("Bob", 30)
+        );
+        //
+        /**
+         * 方法一：这种方法违背了流操作的惰性特性和不可变性原则，通常不推荐。
+         * 这种方法改变了原始对象的引用，这在多线程环境下可能会导致问题。更好的做法是使用第一种方法创建新的对象列表。
+         */
+        List<Person> people2 = Arrays.asList(new Person("Alice", 30), new Person("Bob", 20));
+        List<Person> mutablePeople = new ArrayList<>(people2); // 创建一个可变的副本
+        mutablePeople.forEach(person -> person.setAge(person.getAge() + 1)); // 直接修改属性
+
+        /**
+         * 方法二： 最直接的方法是在map操作符中创建一个新的对象，这个新对象包含了修改后的属性。
+         *   这是最符合函数式编程风格的做法，因为它不改变原始对象。
+         */
+        List<Person> updatedPeople = people.stream()
+                .map(person -> new Person(person.getName(), person.getAge() + 1)) // 修改年龄
+                .collect(Collectors.toList());
+
+        /**
+         * 使用原子类或同步块确保线程安全（如果需要）
+         */
+        people.forEach(person -> {
+            synchronized (person) {
+                person.setAge(person.getAge() + 1);
+            }
+        });
+
+
+        System.out.println(people);
+    }
+
     /***
      * 在 Java 的 Stream 流中，不能直接使用 ++ 操作符对元素进行自增操作，因为 ++ 是一个‌语句级‌的操作符，通常用于变量的自增，而不是用于流处理中的元素变换。
      * 如果你想在 Java Stream 中实现类似“自增”的效果，可以借助一些技巧来完成。例如，可以使用 AtomicInteger 或自定义累加器来实现对元素的自增编号。

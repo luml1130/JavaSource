@@ -7,6 +7,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * @author luml
@@ -44,6 +45,18 @@ public class DateTest {
         System.out.println(mouthage);
         System.out.println(CorporeityAge);
         System.out.println(getAgeStr(mouthage));*/
+    }
+
+    @Test
+    public void nullTest(){
+        Date[] dates = null;
+        System.out.println(Objects.nonNull(dates));
+        System.out.println(dates.length);
+    }
+
+    @Test
+    public void addTest(){
+        System.out.println(UtilDateUtils.addDay(new Date(), -5));
     }
 
     @Test

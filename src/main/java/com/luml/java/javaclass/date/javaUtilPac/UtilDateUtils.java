@@ -343,6 +343,19 @@ public class UtilDateUtils {
         c.setTime(date);
         c.add(Calendar.DAY_OF_YEAR, days);
         return c.getTime();
+        // return addInteger(date, 5, dayAmount);
+    }
+
+    private static java.util.Date addInteger(java.util.Date date, int dateType, int amount) {
+        Date myDate = null;
+        if (date != null) {
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date);
+            calendar.add(dateType, amount);
+            myDate = calendar.getTime();
+        }
+
+        return myDate;
     }
 
     public static Date addMinute(Date date, int minutes) {

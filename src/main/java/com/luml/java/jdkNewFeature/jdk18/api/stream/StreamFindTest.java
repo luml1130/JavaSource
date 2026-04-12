@@ -56,19 +56,7 @@ public class StreamFindTest {
         firstFruit.ifPresent(System.out::println); // 输出: apple
 
 
-        //2、操作对象
-        List<Person2> person3List = new ArrayList<Person2>(){{
-            add(new Person2("张三",0,new BigDecimal(12.123)));
-            add(new Person2("李四",1,new BigDecimal(12.124)));
-        }};
-        /*Optional<String> root = person3List.stream()
-                        .map(Person2::getName)
-                        .findFirst();*/
-        String firstName = person3List.stream()
-                //.filter(f->f.getAmount().equals(1))
-                .map(Person2::getName)
-                .findFirst().orElse(null);
-        System.out.println("firstName="+firstName);
+
        // Integer rootId = root.map(BaseE6OrganizationTreeVO::getPid).orElse(NumberUtils.INTEGER_ZERO);
         /*public static CustomAreaTypeImportEnum getEnum(String label) {
             return Arrays.stream(values()).filter(item-> item.label.equals(label)).findFirst().orElse(null);
@@ -86,6 +74,24 @@ public class StreamFindTest {
                 .collect(Collectors.joining(","));
         System.out.println("goodsName="+goodsName);
 
+    }
+
+    @Test
+    public void objectFirst(){
+        //2、操作对象
+        List<Person2> person3List = new ArrayList<Person2>(){{
+            add(new Person2("张三",0,new BigDecimal(12.123)));
+            add(new Person2("李四",1,new BigDecimal(12.124)));
+            add(new Person2("鲁五",1,new BigDecimal(12.124)));
+        }};
+        /*Optional<String> root = person3List.stream()
+                        .map(Person2::getName)
+                        .findFirst();*/
+        String firstName = person3List.stream()
+                .filter(f->f.getGender() == 1)
+                .map(Person2::getName)
+                .findFirst().orElse(null);
+        System.out.println("firstName="+firstName);
     }
 
     /**
