@@ -1,8 +1,7 @@
 package com.luml.java.javaclass.date;
 
-import com.luml.java.javaclass.date.javaTimePac.TimeDateUtils;
-import com.luml.java.javaclass.date.javaUtilPac.UtilDateUtils;
-import org.apache.commons.lang3.time.DateUtils;
+import com.luml.java.javaclass.date.util.TimeDateUtils;
+import com.luml.java.javaclass.date.util.UtilDateUtils;
 import org.junit.Test;
 
 import java.time.LocalDate;

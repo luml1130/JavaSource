@@ -1,13 +1,11 @@
 package com.luml.java.javaclass.date;
 
-import com.luml.java.javaclass.date.javaTimePac.TimeDateUtils;
-import com.luml.java.javaclass.date.javaUtilPac.UtilDateUtils;
+import com.luml.java.javaclass.date.util.TimeDateUtils;
+import com.luml.java.javaclass.date.util.UtilDateUtils;
 import com.luml.java.javaclass.date.other.DateStyle;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.junit.Test;
-import org.springframework.cglib.core.Local;
 
-import java.sql.Time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
@@ -22,6 +20,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -47,6 +46,19 @@ public class UseGetTest {
         Date date = new Date();
         System.out.println(UtilDateUtils.addMinute(date, -30));;
     }
+
+
+    @Test
+    public void addTest(){
+        System.out.println(UtilDateUtils.addDay(new Date(), -5));
+
+        //当前时间 + 30分 或 其他
+        LocalDateTime date =  LocalDateTime.now();
+        LocalDateTime date2 =  UtilDateUtils.addTime(date, ChronoUnit.MINUTES, 30);
+        System.out.println(date2);
+    }
+
+
     @Test
     public void getTest(){
         String date = UtilDateUtils.localDateToString(LocalDate.now());

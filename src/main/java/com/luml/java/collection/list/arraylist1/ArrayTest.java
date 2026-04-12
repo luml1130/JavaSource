@@ -1,10 +1,6 @@
 package com.luml.java.collection.list.arraylist1;
 
-import cn.hutool.core.date.DateUtil;
-import com.luml.java.javaclass.date.javaUtilPac.UtilDateUtils;
 import org.junit.Test;
-
-import java.util.Date;
 
 public class ArrayTest {
 

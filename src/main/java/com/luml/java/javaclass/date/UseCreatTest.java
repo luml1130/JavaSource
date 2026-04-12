@@ -18,6 +18,13 @@ public class UseCreatTest {
     @Test
     public void createArray(){
 
+        Date startTime = null;//waybillVo.getShipmentStartTime();
+        Date endTime = null;
+        Date[] beginDates = {startTime, endTime};
+        // or
+       // item.setTrackTime(new Date[] {trackBeginTime,trackEndTime});
+
+
         //1、 创建一个Date数组
         Date[] dates = new Date[3];
         // 填充日期数组

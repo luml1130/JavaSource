@@ -1,18 +1,16 @@
-package com.luml.java.javaclass.date.javaUtilPac;
+package com.luml.java.javaclass.date.util;
 
 import lombok.SneakyThrows;
 import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Clock;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.Objects;
 
 /**
@@ -324,7 +322,23 @@ public class UtilDateUtils {
 
 
 
-    //--------------add
+    // --------------  add --------------  --------------
+    public static LocalDateTime addTime(LocalDateTime localDateTime, ChronoUnit chronoUnit, int num) {
+        return localDateTime.plus((long)num, chronoUnit);
+    }
+
+    public static LocalDate addOrSubTime(LocalDate localDate, ChronoUnit chronoUnit, int num) {
+        return localDate.plus((long)num, chronoUnit);
+    }
+
+    public static Date addOrSubDate(Date date, int calendarField, int num) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(calendarField, num);
+        return calendar.getTime();
+    }
+
+
     public static Date addMonth(Date date, int months) {
         if (months == 0) {
             return date;

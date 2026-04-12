@@ -1,10 +1,12 @@
 package com.luml.java.javaclass.date;
 
-import com.luml.java.javaclass.date.javaUtilPac.UtilDateUtils;
+import com.luml.java.javaclass.date.util.UtilDateUtils;
 import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
@@ -52,11 +54,6 @@ public class DateTest {
         Date[] dates = null;
         System.out.println(Objects.nonNull(dates));
         System.out.println(dates.length);
-    }
-
-    @Test
-    public void addTest(){
-        System.out.println(UtilDateUtils.addDay(new Date(), -5));
     }
 
     @Test
