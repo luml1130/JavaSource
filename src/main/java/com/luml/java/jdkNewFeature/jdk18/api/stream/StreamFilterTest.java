@@ -110,14 +110,14 @@ public class StreamFilterTest {
         System.out.println(filtered);  // 输出: [banana]
 
         //2、
-        List<String> likeList = null;//Arrays.asList("an", "pp");
+        List<String> likeList = new ArrayList<>();// null;//Arrays.asList("an", "pp");
         /*List<String> likeFilter = strings.stream()
                 .filter(s -> likeList.contains(s))
                 .collect(Collectors.toList());
         System.out.println("likeFilter="+likeFilter); */ //不行
         List<String> likeFilter3 = strings.stream()
-                .filter(s -> (CollectionUtils.isNotEmpty(likeList)
-                        && likeList.stream().anyMatch(key-> s.contains(key)) == true))
+                .filter(s -> CollectionUtils.isEmpty(likeList)
+                        || (CollectionUtils.isNotEmpty(likeList) && likeList.stream().anyMatch(key-> s.contains(key)) == true))
                 .collect(Collectors.toList());
         System.out.println("likeFilter3="+likeFilter3);  //likeFilter3=[apple, banana]
 

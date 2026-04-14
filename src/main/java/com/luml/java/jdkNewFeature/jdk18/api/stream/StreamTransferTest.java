@@ -85,6 +85,10 @@ public class StreamTransferTest {
 
     }
 
+    public  void smallListTranAndToBigList(){
+
+    }
+
     /**
      * Collectors.toMap 是 Java Stream API 中一个非常实用的终端操作，用于将流中的元素转换为 Map 集合。
      */
