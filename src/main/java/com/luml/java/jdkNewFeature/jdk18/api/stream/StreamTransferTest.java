@@ -231,6 +231,30 @@ public class StreamTransferTest {
     }
 
     @Test
+    public  void smallListToBigList(){
+        List<String> nameList = Arrays.asList("Alice","Bob","Charlie","jake");
+
+        List<Person> peopleList = com.sun.tools.javac.util.List.of(
+                new Person(1, 12,"Alice"),
+                new Person(2, 15,"Bob"),
+                new Person(3, 9,"Charlie")
+        );
+       Map<String,Person> peopleMap =  peopleList.stream()
+               .collect(Collectors.toMap(Person::getFullName, Person->Person));
+
+        List<Person> bigPeopleList = nameList.stream()
+                .map(x->{
+                    Person person = peopleMap.get(x);
+                    if(Objects.isNull(person)){
+                        person = new Person(4, 45,x);
+                    }
+                    return person;
+                })
+                .collect(Collectors.toList());
+        System.out.println(bigPeopleList); // "Alice","Bob","Charlie","jake" 四个人
+    }
+
+    @Test
     public  void MapToList(){
         Map<String,Integer> map = new HashMap<>();
         map.put("女性",11);
@@ -245,6 +269,8 @@ public class StreamTransferTest {
                 .collect(Collectors.toList());
         System.out.println(countVoList);
     }
+
+
     @Data
     public static class CountVo{
         private String name;

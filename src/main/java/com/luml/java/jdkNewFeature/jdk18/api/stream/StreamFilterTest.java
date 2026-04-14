@@ -98,6 +98,40 @@ public class StreamFilterTest {
                 .collect(Collectors.toList());
         System.out.println(evenNumbers); // 输出: [2, 4, 6, 8, 10]
     }
+
+    @Test
+    public void likeFilter(){
+        List<String> strings = Arrays.asList("apple", "banana", "cherry", "date");
+        String searchTerm = "an";
+        //1、
+        List<String> filtered = strings.stream()
+                .filter(s -> s.contains(searchTerm))
+                .collect(Collectors.toList());
+        System.out.println(filtered);  // 输出: [banana]
+
+        //2、
+        List<String> likeList = null;//Arrays.asList("an", "pp");
+        /*List<String> likeFilter = strings.stream()
+                .filter(s -> likeList.contains(s))
+                .collect(Collectors.toList());
+        System.out.println("likeFilter="+likeFilter); */ //不行
+        List<String> likeFilter3 = strings.stream()
+                .filter(s -> (CollectionUtils.isNotEmpty(likeList)
+                        && likeList.stream().anyMatch(key-> s.contains(key)) == true))
+                .collect(Collectors.toList());
+        System.out.println("likeFilter3="+likeFilter3);  //likeFilter3=[apple, banana]
+
+
+        //3、
+        /*String key = "an,pp";
+        List<String> likeFilter2 = strings.stream()
+                .filter(s -> key.contains(s))
+                .collect(Collectors.toList());
+        System.out.println("likeFilter2="+likeFilter2); */ //不行
+
+
+    }
+
     @Test
     public void otherMapFilterTest(){
         List<Person2> list = new ArrayList<Person2>(){{
