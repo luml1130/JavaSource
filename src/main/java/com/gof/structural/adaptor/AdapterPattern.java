@@ -1,4 +1,4 @@
-package com.luml.gof.structural.adaptor;
+package com.gof.structural.adaptor;
 
 // 目标接口（客户端期望的接口）
 interface Target {
