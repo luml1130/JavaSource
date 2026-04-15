@@ -157,6 +157,13 @@
             <systemPath>${project.basedir}/lib/SM4Utils-2.0.0.jar</systemPath>
         </dependency>-->
 
+        <!-- https://mvnrepository.com/artifact/icu.xuyijie/SM4Utils -->
+        <dependency>
+            <groupId>icu.xuyijie</groupId>
+            <artifactId>SM4Utils</artifactId>
+            <version>1.4.8</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-crypto</artifactId>
