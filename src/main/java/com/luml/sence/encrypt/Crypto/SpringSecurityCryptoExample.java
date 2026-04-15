@@ -1,4 +1,4 @@
-package com.luml.sence.encrypt;
+package com.luml.sence.encrypt.Crypto;
 
 import org.junit.Test;
 import org.springframework.security.crypto.encrypt.Encryptors;
