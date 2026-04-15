@@ -32,25 +32,6 @@ public class test {
 
     }
 
-    public static final String GET_EXTERNAL_USER_LIST_URL = "/qw-platform/api/v1/mix/getExternalUserList?suiteId=%s&unionId=%s&openId=%s&corpId=%s";
-
-    public static void main6(String[] args) {
-        Long[] department = new Long[]{3L};
-        List<Long> newRelationList = Arrays.asList(department);
-        System.out.println(newRelationList);
-    }
-
-
-    public static void main5(String[] args) {
-        Map map = new HashMap(2);
-        map.put("wxCorpId","ss");
-        map.put("messageBus","agree_external_userid_migration");
-        map.put("messageType","business_data_migration_finished");
-        map.put("business","UC");
-        System.out.println(JSON.toJSONString(map));
-    }
-
-
     public static void main4(String[] args) {
 
         List<String> externalUserIds = new ArrayList<>();

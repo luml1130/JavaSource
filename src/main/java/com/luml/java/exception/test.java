@@ -1,4 +1,4 @@
-package com.luml.java.develop;
+package com.luml.java.exception;
 
 import java.util.ArrayList;
 import java.util.List;

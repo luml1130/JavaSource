@@ -1,4 +1,4 @@
-package com.luml.java.Serializable;
+package com.luml.java.nature.Serializable;
 
 
 /**

@@ -1,4 +1,4 @@
-package com.luml.java.Thread;
+package com.luml.thread;
 
 
 import java.util.Date;

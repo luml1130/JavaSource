@@ -1,5 +1,9 @@
 package com.gof.structural.adaptor;
 
+/**
+ * 适配器模式
+ */
+
 // 目标接口（客户端期望的接口）
 interface Target {
     void request();

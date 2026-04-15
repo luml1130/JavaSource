@@ -1,4 +1,4 @@
-package com.luml.java.Serializable;
+package com.luml.java.nature.Serializable;
 
 import org.apache.commons.lang3.SerializationUtils;
 
@@ -19,8 +19,8 @@ public class SerializationUtilsTest01 {
         System.out.println("Original Person: " + originalPerson);
         System.out.println("Cloned Person: " + clonedPerson);
         /**
-         * Original Person: com.luml.java.Serializable.Person@49c2faae
-         * Cloned Person: com.luml.java.Serializable.Person@6267c3bb
+         * Original Person: com.luml.java.nature.Serializable.Person@49c2faae
+         * Cloned Person: com.luml.java.nature.Serializable.Person@6267c3bb
          */
     }
 }

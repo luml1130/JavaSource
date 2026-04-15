@@ -157,6 +157,12 @@
             <systemPath>${project.basedir}/lib/SM4Utils-2.0.0.jar</systemPath>
         </dependency>-->
 
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+            <version>5.2.4.RELEASE</version>
+        </dependency>
+
 
     </dependencies>
 

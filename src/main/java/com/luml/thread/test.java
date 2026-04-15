@@ -1,4 +1,4 @@
-package com.luml.java.Thread;
+package com.luml.thread;
 
 import com.luml.thread.method.ExecutorServiceTest;
 import com.sun.jmx.snmp.tasks.ThreadService;
