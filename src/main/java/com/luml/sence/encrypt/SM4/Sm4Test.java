@@ -1,4 +1,4 @@
-package com.luml.sence.encrypt;
+package com.luml.sence.encrypt.SM4;
 
 import icu.xuyijie.sm4utils.util.SM4Utils;
 import org.junit.Test;
