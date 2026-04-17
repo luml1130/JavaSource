@@ -1,9 +1,7 @@
-package com.luml.sence.uniquecode;
+package com.luml.sence.uniquecode.g7e6;
 
-import cn.hutool.core.util.RandomUtil;
 import com.luml.domain.enu.UniqueCodeTypeEnum;
-import com.luml.util.RandomUtils;
-import org.apache.commons.lang3.RandomStringUtils;
+import com.luml.sence.uniquecode.random.RandomUtils;
 import org.junit.Test;
 
 /**
@@ -11,7 +9,7 @@ import org.junit.Test;
  * @description
  * @date 2026/3/28
  */
-public class CodeService {
+public class waybillNo {
 
     private static final Integer INCREMENT_MAX_ID_LENGTH = 5;
 
@@ -56,24 +54,6 @@ public class CodeService {
         //return prefix.concat(maxIdStr);
     }
 
-    @Test
-    public void getRandom(){
-        System.out.println(RandomUtils.getRandomString(5));
-        //RMKDW
-
-    }
-
-    //hutool
-    @Test
-    public void hutoolRandom(){
-        System.out.println(RandomUtil.randomLong(1));
-        System.out.println(RandomUtil.randomLong());
-        //-8946490205122042415
-        System.out.println(RandomUtil.randomString(5)); //z08u3
-        System.out.println(RandomUtil.randomString("LUML",8));//5-LMLLU. 8-UMMUMLLL
-        System.out.println(RandomUtil.randomStringUpper(5)); //CMZW2
-
-    }
 
 
 }
