@@ -1,4 +1,4 @@
-package com.luml.juc.lock.LockSupport;
+package com.luml.juc.tools.LockSupport;
 
 import java.util.concurrent.locks.LockSupport;
 

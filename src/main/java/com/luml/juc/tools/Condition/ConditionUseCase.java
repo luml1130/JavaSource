@@ -1,4 +1,4 @@
-package com.luml.juc.lock.Condition;
+package com.luml.juc.tools.Condition;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

@@ -1,4 +1,4 @@
-package com.luml.juc.Collections.forkjoin;
+package com.luml.threadPool.forkjoin;
 
 import java.util.concurrent.RecursiveTask;
 

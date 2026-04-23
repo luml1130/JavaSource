@@ -1,4 +1,4 @@
-package com.luml.juc.Collections.forkjoin;
+package com.luml.threadPool.forkjoin;
 
 import java.time.Duration;
 import java.time.Instant;

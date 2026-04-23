@@ -1,14 +1,16 @@
-package com.luml.juc.lock.synchronized2;
+package com.luml.juc.lock.keyword.synchronizedTest;
 
 /**
  * @author luml
- * @description：
- *  https://blog.csdn.net/baidu_38083619/article/details/82527461
- * @date 2021/7/28 下午10:17
+ * @description:
+ * 尝试将synchronizrd去掉，看看结果得到的是不是1000
+ * @date 2021/8/22 下午5:17
  */
 public class Demo {
 
+
     private static int count=0;
+
 
     public static void main(String[] args) throws InterruptedException {
         for(int i=0;i<1000;i++){

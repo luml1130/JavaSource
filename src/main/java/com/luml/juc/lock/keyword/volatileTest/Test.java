@@ -1,4 +1,4 @@
-package com.luml.juc.lock.volatileTest;
+package com.luml.juc.lock.keyword.volatileTest;
 
 /**
  * @author luml

@@ -1,4 +1,4 @@
-package com.luml.juc.lock.synchronized2;
+package com.luml.juc.lock.keyword.synchronized2;
 
 //import org.openjdk.jol.info.ClassLayout;
 
