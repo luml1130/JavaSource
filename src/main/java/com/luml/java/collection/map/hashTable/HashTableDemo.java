@@ -1,4 +1,4 @@
-package com.luml.java.collection.map.hashTable.Demo;
+package com.luml.java.collection.map.hashTable;
 
 import java.util.Scanner;
 
