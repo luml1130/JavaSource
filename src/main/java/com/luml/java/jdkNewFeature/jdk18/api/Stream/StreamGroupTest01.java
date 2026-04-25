@@ -1,4 +1,4 @@
-package com.luml.java.jdkNewFeature.jdk18.api.stream;
+package com.luml.java.jdkNewFeature.jdk18.api.Stream;
 
 import com.luml.domain.Person2;
 

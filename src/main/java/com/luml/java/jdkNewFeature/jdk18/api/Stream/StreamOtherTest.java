@@ -1,12 +1,10 @@
-package com.luml.java.jdkNewFeature.jdk18.api.stream;
+package com.luml.java.jdkNewFeature.jdk18.api.Stream;
 
 import com.luml.domain.Person;
 import com.luml.domain.Person2;
 import com.luml.java.jdkNewFeature.jdk18.Fruit;
 import com.luml.java.jdkNewFeature.jdk18.FruitDto;
-import org.hibernate.validator.constraints.br.TituloEleitoral;
 import org.junit.Test;
-import org.omg.PortableInterceptor.INACTIVE;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -358,16 +356,17 @@ public class StreamOtherTest {
         //等价于
         map.values().forEach(System.out::println);//2132
 
+        /**
+         * // 无序输出 list.parallelStream().forEach(System.out::println);
+         * //有序输出list.parallelStream().forEachOrdered(System.out::println);
+         */
         List<Integer> nums = Arrays.asList(1, 2, 3, 4, 5);
         nums.parallelStream()
                 .forEach(n -> System.out.print(n + " ")); // 输出可能：3 1 4 2 5
         nums.parallelStream()
                 .forEachOrdered(n -> System.out.print(n + " ")); // 输出：1 2 3 4 5
-
-
-
     }
-
+    
     /**
      * Stream.peek() 是 Java 8 引入的 ‌Stream API 中的一个中间操作‌，
      *      主要用于在流处理过程中‌观察或调试元素状态‌，而‌不会修改流中的元素本身‌。

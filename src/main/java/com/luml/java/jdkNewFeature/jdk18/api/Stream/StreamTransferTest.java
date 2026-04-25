@@ -1,22 +1,14 @@
-package com.luml.java.jdkNewFeature.jdk18.api.stream;
+package com.luml.java.jdkNewFeature.jdk18.api.Stream;
 
-import book.MultiThreadProgram.Part03.chapter01.producer11.p_r_test.C;
 import com.alibaba.fastjson.JSON;
-import com.google.gson.JsonObject;
 import com.luml.domain.Person2;
 import com.luml.domain.User2;
 import com.luml.java.data.Person;
-import com.luml.java.jdkNewFeature.jdk18.Fruit;
-import com.luml.java.jdkNewFeature.jdk18.FruitDto;
 import lombok.Data;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
-import javax.xml.transform.Source;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;

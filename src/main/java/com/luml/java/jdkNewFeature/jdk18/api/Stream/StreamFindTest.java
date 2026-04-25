@@ -1,7 +1,6 @@
-package com.luml.java.jdkNewFeature.jdk18.api.stream;
+package com.luml.java.jdkNewFeature.jdk18.api.Stream;
 
 import com.luml.domain.Person2;
-import org.apache.commons.collections.IterableMap;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
@@ -11,7 +10,6 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;

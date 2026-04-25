@@ -1,4 +1,4 @@
-package com.luml.java.jdkNewFeature.jdk18.api.stream;
+package com.luml.java.jdkNewFeature.jdk18.api.Stream;
 
 import com.google.common.collect.Lists;
 import com.luml.domain.Person2;
@@ -7,17 +7,13 @@ import com.luml.java.jdkNewFeature.jdk18.domain.ExceptReportEventExtFileVO;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
-import sun.jvm.hotspot.gc_implementation.parallelScavenge.PSYoungGen;
 
-import javax.swing.text.html.parser.Entity;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
