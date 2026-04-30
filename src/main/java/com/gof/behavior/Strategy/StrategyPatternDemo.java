@@ -2,6 +2,11 @@ package com.gof.behavior.Strategy;
 
 /**
  * 策略模式示例：模拟不同会员等级的折扣计算
+ * 该代码展示了策略模式的核心结构：
+ *      通过DiscountStrategy接口定义算法族，NormalMemberStrategy等具体类封装不同折扣算法，
+ *      ShoppingCart作为上下文环境持有策略引用并执行计算。
+ *          这种设计消除了复杂的if-else判断，使得新增会员等级（新策略）时无需修改现有代码，符合开闭原则，
+ *          实现了算法的动态切换和解耦。
  */
 
 // 1. 定义策略接口
