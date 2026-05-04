@@ -1,6 +1,8 @@
 package com.luml.java.tools.guava;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Sets;
 import com.luml.domain.Person;
 
 import java.util.ArrayList;
@@ -13,7 +15,7 @@ import java.util.List;
  *      ImmutableList.of() 适用于快速创建小规模、不可变的列表场景，强调安全性和性能。若需处理大数据量或更复杂的构建逻辑，可考虑其他 Guava 方法或 Java 9+ 的原生选项。‌
  * @date 2025/12/6
  */
-public class ImmutableListTest {
+public class ImmutableTest {
 
 
     public static void main(String[] args) {
@@ -31,4 +33,6 @@ public class ImmutableListTest {
 
 
     }
+
+
 }
