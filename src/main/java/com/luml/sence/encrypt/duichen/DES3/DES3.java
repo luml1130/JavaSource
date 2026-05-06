@@ -1,4 +1,4 @@
-package com.luml.sence.encrypt.DES3;
+package com.luml.sence.encrypt.duichen.DES3;
 
 import org.apache.commons.codec.binary.Base64;
 

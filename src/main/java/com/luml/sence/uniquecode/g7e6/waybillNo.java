@@ -1,7 +1,7 @@
 package com.luml.sence.uniquecode.g7e6;
 
 import com.luml.domain.enu.UniqueCodeTypeEnum;
-import com.luml.sence.uniquecode.random.RandomUtils;
+import com.luml.sence.uniquecode.random.RandomUtils_Commons_lang3_Test;
 import org.junit.Test;
 
 /**
@@ -48,7 +48,7 @@ public class waybillNo {
             maxIdStr = maxIdStr.length() < INCREMENT_MAX_ID_LENGTH ? String.format("%05d", maxId) : maxIdStr;
         } catch (Exception e) {
             //E6Exception.switchLog(log, e, "redis获取编码规则出错");
-            maxIdStr = RandomUtils.getRandomString(INCREMENT_MAX_ID_LENGTH);
+            maxIdStr = RandomUtils_Commons_lang3_Test.getRandomString(INCREMENT_MAX_ID_LENGTH);
         }
         System.out.println(prefix.concat(maxIdStr));//T20260328EYNQ00001
         //return prefix.concat(maxIdStr);

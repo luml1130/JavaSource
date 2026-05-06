@@ -3,7 +3,7 @@
  * All Rights Reserved
  */
 
-package com.luml.java.tools.Sercuity.uem;
+package com.luml.sence.encrypt.MD5;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

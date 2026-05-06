@@ -1,25 +1,21 @@
-package com.luml.java.tools.Sercuity;
-
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
-import org.apache.commons.codec.binary.Base64;
+package com.luml.sence.encrypt.Base64;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * @author luml
- * @description
- * @date 2021/12/23
- */
+import org.apache.commons.codec.binary.Base64;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class BASE64Uem {
 
-    private static final Logger logger = LoggerFactory.getLogger(BASE64Uem.class);
+    private static final Logger logger = LoggerFactory.getLogger(BASE64.class);
 
     /**
      * BASE64解码
+     *
      * @param key
      * @return
      * @throws Exception
@@ -30,6 +26,7 @@ public class BASE64Uem {
 
     /**
      * BASE64解码
+     *
      * @param key
      * @return
      * @throws Exception
@@ -47,6 +44,8 @@ public class BASE64Uem {
 
     /**
      * BASE64解码
+     *
+     * @param
      * @return
      * @throws Exception
      */
@@ -56,6 +55,7 @@ public class BASE64Uem {
 
     /**
      * BASE64编码
+     *
      * @param key
      * @return
      * @throws Exception
@@ -66,6 +66,8 @@ public class BASE64Uem {
 
     /**
      * BASE64编码
+     *
+     * @param
      * @return
      * @throws Exception
      */
@@ -75,6 +77,7 @@ public class BASE64Uem {
 
     /**
      * BASE64编码
+     *
      * @param key
      * @return
      * @throws Exception
@@ -87,6 +90,7 @@ public class BASE64Uem {
      * <p>
      * 将文件转成base64 字符串
      * </p>
+     *
      * @param filePath 文件路径
      * @return
      * @throws Exception
@@ -102,6 +106,7 @@ public class BASE64Uem {
         } catch (IOException e) {
             logger.error("Error Detail");
         }
+
         return new String(Base64.encodeBase64(data));//返回Base64编码过的字节数组字符串
     }
 
@@ -109,6 +114,7 @@ public class BASE64Uem {
      * <p>
      * 将base64字符解码保存文件
      * </p>
+     *
      * @param base64Code
      * @param targetPath
      * @throws Exception
@@ -129,6 +135,7 @@ public class BASE64Uem {
      * <p>
      * 将base64字符保存文本文件
      * </p>
+     *
      * @param base64Code
      * @param targetPath
      * @throws Exception

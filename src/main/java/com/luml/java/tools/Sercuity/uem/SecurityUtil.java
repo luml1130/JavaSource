@@ -1,5 +1,7 @@
 package com.luml.java.tools.Sercuity.uem;
 
+import com.luml.sence.encrypt.MD5.MD5;
+import com.luml.sence.encrypt.Base64.BASE64;
 import org.springframework.util.StringUtils;
 
 import javax.crypto.Cipher;

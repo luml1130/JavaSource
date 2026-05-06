@@ -1,7 +1,6 @@
 package com.luml.sence.uniquecode.random;
 
 import cn.hutool.core.util.RandomUtil;
-import com.luml.sence.uniquecode.random.RandomUtils;
 import org.junit.Test;
 
 /**
@@ -9,14 +8,8 @@ import org.junit.Test;
  * @description
  * @date 2026/4/17
  */
-public class RandomTest {
+public class RandomTest_Hutool_Test {
 
-    @Test
-    public void getRandom(){
-        System.out.println(RandomUtils.getRandomString(5));
-        //RMKDW
-
-    }
 
     //hutool
     @Test
