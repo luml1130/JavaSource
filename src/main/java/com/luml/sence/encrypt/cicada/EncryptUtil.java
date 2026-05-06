@@ -1,4 +1,4 @@
-package com.luml.java.tools.Sercuity.cicada;
+package com.luml.sence.encrypt.cicada;
 
 import sun.misc.BASE64Decoder;
 

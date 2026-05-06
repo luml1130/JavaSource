@@ -12,4 +12,6 @@ public class Constant {
     public static final String other_pay_for_app_success = "2$pay_for_app_success";
     public static final String other_change_editon = "2$change_editon";
     public static final String other_refund = "2$refund";
+
+    public static final String WEBUI_ACCESS_TOKEN_KEY = "nationsky";                 // WebUI 颁发的 webToken key
 }

@@ -1,4 +1,4 @@
-package com.luml.java.tools.Sercuity;
+package com.luml.sence.encrypt.message.Digest;
 
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.io.IOUtils;
@@ -15,10 +15,11 @@ import java.security.NoSuchAlgorithmException;
  * @description: DigestUtils-EMM
  * @date 2021/12/23
  */
-public class DigestUtils {
+public class DigestUtils_UEM {
 
     /**
      * 根据输入流获取文件的MD5 摘要
+     *
      * @param data
      * @return
      * @throws NoSuchAlgorithmException
@@ -27,8 +28,10 @@ public class DigestUtils {
     public static String md5Hex(InputStream data) throws NoSuchAlgorithmException, IOException {
         return digestStream(data, "MD5");
     }
+
     /**
      * 根据输入流获取文件的SHA 摘要
+     *
      * @param data
      * @return
      * @throws NoSuchAlgorithmException
@@ -37,8 +40,10 @@ public class DigestUtils {
     public static String shaHex(InputStream data) throws NoSuchAlgorithmException, IOException {
         return digestStream(data, "SHA");
     }
+
     /**
      * 获取文件的MD5 摘要
+     *
      * @param data
      * @return
      * @throws NoSuchAlgorithmException
@@ -50,6 +55,7 @@ public class DigestUtils {
 
     /**
      * 获取文件的SHA 摘要
+     *
      * @param data
      * @return
      * @throws NoSuchAlgorithmException
@@ -61,6 +67,7 @@ public class DigestUtils {
 
     /**
      * 获取文件摘要，支持 MD5,SHA
+     *
      * @param data
      * @param algorithm
      * @return
@@ -76,24 +83,29 @@ public class DigestUtils {
 
     /**
      * 获取输入流摘要，支持 MD5,SHA
-     * @param is
+     *
+     * @param
      * @param algorithm
      * @return
      * @throws NoSuchAlgorithmException
      * @throws IOException
      */
     private static String digestStream(InputStream is, String algorithm) throws NoSuchAlgorithmException, IOException {
+
         MessageDigest msgDigest = MessageDigest.getInstance(algorithm);
+
         byte[] buffer = new byte[1024];
         int numRead = 0;
         while ((numRead = is.read(buffer)) > 0) {
             msgDigest.update(buffer, 0, numRead);
         }
+
         return new String(Hex.encodeHex(msgDigest.digest()));
     }
 
     /**
      * 获取byte数组md5摘要
+     *
      * @param data
      * @return
      */
@@ -103,6 +115,7 @@ public class DigestUtils {
 
     /**
      * 获取字符串md5摘要
+     *
      * @param data
      * @return
      */
@@ -112,6 +125,7 @@ public class DigestUtils {
 
     /**
      * 获取byte数组sha摘要
+     *
      * @param data
      * @return
      */
@@ -121,6 +135,7 @@ public class DigestUtils {
 
     /**
      * 获取字符串sha摘要
+     *
      * @param data
      * @return
      */

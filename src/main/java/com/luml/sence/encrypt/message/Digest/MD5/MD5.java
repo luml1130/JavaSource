@@ -3,7 +3,7 @@
  * All Rights Reserved
  */
 
-package com.luml.sence.encrypt.MD5;
+package com.luml.sence.encrypt.message.Digest.MD5;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

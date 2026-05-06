@@ -1,6 +1,5 @@
-package com.luml.java.tools.Sercuity.uem;
+package com.luml.sence.encrypt.duichen.DES;
 
-import com.luml.sence.encrypt.MD5.MD5;
 import com.luml.sence.encrypt.Base64.BASE64;
 import org.springframework.util.StringUtils;
 
@@ -16,48 +15,37 @@ import java.security.spec.AlgorithmParameterSpec;
 /**
  * @author luml
  * @description
- * @date 2022/6/26
+ * @date 2026/5/6
  */
-public class SecurityUtil {
-
-    public static final String SELF_USER_PASSWORD_SUFFIX = "^Sky"; 							//密码后缀
-    public static final String SELF_USER_PASSWORD_PREFIX = "NQ_";  							//密码前缀
-
+public class DesEncryptUtil_UEM {
     /**
      * 默认的密钥
      */
     private static final byte[] SECRET_KEY_NORMAL = digest("nq");
 
-    public static String encryptPasswordWithMD5(String password) {
-        return MD5.md5(SELF_USER_PASSWORD_PREFIX + password +
-                SELF_USER_PASSWORD_SUFFIX);
+    public static void main(String[] args) throws Exception {
+        System.out.print(encrypt("123456"));
+        System.out.print(decrypt("RJKctynh0Ps="));
     }
 
     /**
-     * 对称加密 密码
-     * @param password
-     * @return
+     * MD5加密
      */
-    public static String encryptPassword(String password) {
-        return encrypt(password);
-    }
-
-    /**
-     * 解密密码
-     * @param password
-     * @return
-     */
-    public static String decryptPassword(String password) {
-        return decrypt(password);
+    public static byte[] digest(String text) {
+        try {
+            byte[] b = MessageDigest.getInstance("md5").digest(text.getBytes());
+            return b;
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
      * 字符串加密
      */
     public static String encrypt(String value) {
-        if (value == null) {
+        if (value == null)
             return null;
-        }
         byte[] bytes = value.getBytes();
 
         try {
@@ -83,31 +71,17 @@ public class SecurityUtil {
     }
 
     /**
-     * MD5加密
-     */
-    public static byte[] digest(String text) {
-        try {
-            byte[] b = MessageDigest.getInstance("md5").digest(text.getBytes());
-            return b;
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    /**
      * 字符串解密
      * @throws Exception
      */
-    public static String decrypt(String encValue) {
-        if (!StringUtils.hasText(encValue)) {
+    public static String decrypt(String encValue) throws Exception {
+        if (!StringUtils.hasText(encValue))
             return "";
-        }
-        try {
-            byte[] bytes = BASE64.decryptBASE64(encValue);
-            if (bytes == null) {
-                return "";
-            }
+        byte[] bytes = BASE64.decryptBASE64(encValue);
+        if (bytes == null)
+            return "";
 
+        try {
             int keySpilt = SECRET_KEY_NORMAL.length / 2;
             byte[] key = new byte[keySpilt];
             byte[] iv = new byte[keySpilt];
@@ -121,11 +95,11 @@ public class SecurityUtil {
             Cipher cipher = Cipher.getInstance("DES/CBC/PKCS5Padding");
             cipher.init(Cipher.DECRYPT_MODE, securekey, ivParameterSpec);
             bytes = cipher.doFinal(bytes);
-            if (bytes == null) {
+            if (bytes == null)
                 return "";
-            }
             return new String(bytes, "UTF-8");
         } catch (Exception e) {
+            //Log.e("Utils>>decrypt", "des failer:", e);
             return "";
         }
     }
