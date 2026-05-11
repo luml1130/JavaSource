@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
 public class CglibMainTest {
     public static void main(String[] args) {
         // 生成 Cglib 代理类
-        com.luml.gof.structural.proxy.Engineer engineerProxy = (com.luml.gof.structural.proxy.Engineer) com.luml.gof.structural.proxy.CglibProxy.getProxy(new com.luml.gof.structural.proxy.Engineer());
+        Engineer engineerProxy = (Engineer) CglibProxy.getProxy(new Engineer());
         // 调用相关方法
         engineerProxy.eat();
     }
@@ -64,7 +64,7 @@ class CglibProxy implements MethodInterceptor {
         // 设置需要代理的对象
         enhancer.setSuperclass(target.getClass());
         // 设置代理人
-        enhancer.setCallback(new com.luml.gof.structural.proxy.CglibProxy(target));
+        enhancer.setCallback(new CglibProxy(target));
         return enhancer.create();
     }
 }

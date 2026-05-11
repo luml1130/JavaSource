@@ -38,7 +38,7 @@ interface UserService2 {
 }
 
 // 2. 真实业务类
-class UserServiceImpl2 implements com.luml.gof.structural.proxy.UserService2 {
+class UserServiceImpl2 implements UserService2 {
     @Override
     public void addUser(String name) {
         System.out.println("添加用户: " + name);
@@ -48,7 +48,7 @@ class UserServiceImpl2 implements com.luml.gof.structural.proxy.UserService2 {
 // 4. 测试类
 public class Static_Proxy_AspectJ_Demo {
     public static void main(String[] args) {
-        com.luml.gof.structural.proxy.UserService2 service = new com.luml.gof.structural.proxy.UserServiceImpl2();
+       UserService2 service = new UserServiceImpl2();
         // 经过 ajc 编译后，service 对象的方法调用会被织入切面逻辑
         service.addUser("Alice");
     }

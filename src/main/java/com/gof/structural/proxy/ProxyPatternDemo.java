@@ -12,7 +12,7 @@ public class ProxyPatternDemo {
      * @param args
      */
     public static void main(String[] args) {
-        com.luml.gof.structural.proxy.Image image = new com.luml.gof.structural.proxy.ProxyImage("test_10mb.jpg");
+        Image image = new ProxyImage("test_10mb.jpg");
         image.display();  // 图像将从磁盘加载
         System.out.println("");
         image.display();  // 图像不需要从磁盘加载
@@ -26,7 +26,7 @@ interface Image {
 /**
  * :创建实现接口的实体类。
  */
-class RealImage implements com.luml.gof.structural.proxy.Image {
+class RealImage implements Image {
     private String fileName;
     public RealImage(String fileName){
         this.fileName = fileName;
@@ -44,8 +44,8 @@ class RealImage implements com.luml.gof.structural.proxy.Image {
 /**
  * 创建代理类
  */
-class ProxyImage implements com.luml.gof.structural.proxy.Image {
-    private com.luml.gof.structural.proxy.RealImage realImage;
+class ProxyImage implements Image {
+    private RealImage realImage;
     private String fileName;
     public ProxyImage(String fileName){
         this.fileName = fileName;
@@ -53,7 +53,7 @@ class ProxyImage implements com.luml.gof.structural.proxy.Image {
     @Override
     public void display() {
         if(realImage == null){
-            realImage = new com.luml.gof.structural.proxy.RealImage(fileName);
+            realImage = new RealImage(fileName);
         }
         realImage.display();
     }

@@ -12,11 +12,11 @@ import java.lang.reflect.Proxy;
 public class JdkProxy {
     public static void main(String[] args) {
         //真实对象
-        com.luml.gof.structural.proxy.Subject realSubject =  new com.luml.gof.structural.proxy.RealSubject();
-        com.luml.gof.structural.proxy.MyInvocationHandler myInvocationHandler = new com.luml.gof.structural.proxy.MyInvocationHandler(realSubject);
+        Subject realSubject =  new RealSubject();
+        MyInvocationHandler myInvocationHandler = new MyInvocationHandler(realSubject);
         //代理对象
-        com.luml.gof.structural.proxy.Subject proxyClass = (com.luml.gof.structural.proxy.Subject) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(),
-                new Class[]{com.luml.gof.structural.proxy.Subject.class}, myInvocationHandler);
+        Subject proxyClass = (Subject) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(),
+                new Class[]{Subject.class}, myInvocationHandler);
         proxyClass.sellBooks();
         proxyClass.speak();
     }
@@ -41,7 +41,7 @@ interface Subject {
 /**
  * 真实对象：RealSubject.java
  */
-class RealSubject implements com.luml.gof.structural.proxy.Subject {
+class RealSubject implements Subject {
     @Override
     public int sellBooks() {
         System.out.println("卖书");
@@ -58,8 +58,8 @@ class RealSubject implements com.luml.gof.structural.proxy.Subject {
  * 处理器对象：MyInvocationHandler.java; * 因为需要处理真实角色，所以要把真实角色传进来
  */
 class MyInvocationHandler implements InvocationHandler {
-    com.luml.gof.structural.proxy.Subject realSubject ;
-    public MyInvocationHandler(com.luml.gof.structural.proxy.Subject realSubject) {
+    Subject realSubject ;
+    public MyInvocationHandler(Subject realSubject) {
         this.realSubject = realSubject;
     }
     @Override
