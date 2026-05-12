@@ -1,4 +1,4 @@
-package com.luml.java.tools;
+package com.luml.java.tools.java;
 
 import java.util.Collections;
 import java.util.Set;
@@ -6,7 +6,8 @@ import java.util.Set;
 /**
  * @author luml
  * @description
- *  1、ava.util.Collections
+ *  1、Java.util.Collections
+ *      sort\
  * @date 2025/10/29
  */
 public class CollectionsUtilTest01 {
