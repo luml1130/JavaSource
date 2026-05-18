@@ -1,4 +1,4 @@
-package com.luml.juc.third.disruptor;
+package com.luml.threadOther.third.disruptor;
 
 import com.lmax.disruptor.*;
 import com.lmax.disruptor.dsl.Disruptor;
