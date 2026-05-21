@@ -1,4 +1,4 @@
-package com.luml.thread.method;
+package com.luml.thread.method.interrupt;
 
 import java.util.concurrent.TimeUnit;
 
