@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    const uploadBtn = document.getElementById('uploadBtn');
+    //代码示例（GET 请求）
+    uploadBtn.addEventListener('click', function() {
+        // 1. 创建对象
+        const xhr = new XMLHttpRequest();
+
+        // 2. 配置请求 (方法, URL, 是否异步)
+        xhr.open('GET', 'https://api.example.com/data', true);
+
+        // 3. 设置响应类型 (可选，例如设置为 json 以便自动解析)
+        xhr.responseType = 'json';
+
+        // 4. 监听状态变化
+        xhr.onreadystatechange = function() {
+            // readyState === 4 表示请求已完成
+            if (xhr.readyState === 4) {
+                // status === 200 表示 HTTP 请求成功
+                if (xhr.status === 200) {
+                    console.log('成功获取数据:', xhr.response);
+                } else {
+                    console.error('请求失败，状态码:', xhr.status);
+                }
+            }
+        };
+
+        // 监听网络错误
+        xhr.onerror = function() {
+            console.error('发生网络错误');
+        };
+
+        // 5. 发送请求
+        xhr.send();
+    });
+
+    //代码示例（POST 请求）
+    uploadBtn.addEventListener('click', function() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://api.example.com/submit', true);
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 201) {
+                console.log('提交成功:', xhr.responseText);
+            }
+        };
+
+        xhr.send(JSON.stringify({ name: "Example", value: 123 }));
+
+    });
+
+</script>
+
+
+</body>
+</html>

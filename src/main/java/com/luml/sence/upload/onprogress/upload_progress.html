@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件上传进度条演示</title>
+    <!-- 引入 Tailwind CSS 进行快速样式设计 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Font Awesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 自定义进度条动画 */
+        .progress-bar-striped {
+            background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+            background-size: 1rem 1rem;
+            animation: progress-bar-stripes 1s linear infinite;
+        }
+        @keyframes progress-bar-stripes {
+            0% { background-position: 1rem 0; }
+            100% { background-position: 0 0; }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-white rounded-xl shadow-lg w-full max-w-md p-8 fade-in">
+        <div class="text-center mb-6">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 text-blue-600 mb-4">
+                <i class="fas fa-cloud-upload-alt text-3xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-800">文件上传</h2>
+            <p class="text-gray-500 text-sm mt-1">支持 JPG, PNG, PDF 等格式</p>
+        </div>
+
+        <!-- 上传区域 -->
+        <div class="mb-6">
+            <label for="fileInput" class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-300 group">
+                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                    <i class="fas fa-file-import text-gray-400 text-2xl mb-2 group-hover:text-blue-500 transition-colors"></i>
+                    <p class="mb-1 text-sm text-gray-500"><span class="font-semibold">点击上传</span> 或拖拽文件</p>
+                    <p class="text-xs text-gray-400">最大文件限制 10MB</p>
+                </div>
+                <input id="fileInput" type="file" class="hidden" />
+            </label>
+        </div>
+
+        <!-- 文件信息显示 -->
+        <div id="fileInfo" class="hidden mb-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3 overflow-hidden">
+                    <i class="fas fa-file-alt text-blue-500"></i>
+                    <span id="fileName" class="text-sm font-medium text-gray-700 truncate max-w-[200px]">filename.jpg</span>
+                </div>
+                <span id="fileSize" class="text-xs text-gray-500">0 KB</span>
+            </div>
+        </div>
+
+        <!-- 进度条区域 -->
+        <div id="progressContainer" class="hidden mb-6">
+            <div class="flex justify-between mb-1">
+                <span class="text-xs font-medium text-blue-700">上传中...</span>
+                <span id="progressPercent" class="text-xs font-medium text-blue-700">0%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
+                <div id="progressBar" class="bg-blue-600 h-2.5 rounded-full transition-all duration-300 ease-out progress-bar-striped" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- 状态消息 -->
+        <div id="statusMessage" class="hidden text-center text-sm mb-4"></div>
+
+        <!-- 按钮 -->
+        <button id="uploadBtn" disabled class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-md hover:shadow-lg">
+            开始上传
+        </button>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const fileInfo = document.getElementById('fileInfo');
+        const fileName = document.getElementById('fileName');
+        const fileSize = document.getElementById('fileSize');
+        const progressContainer = document.getElementById('progressContainer');
+        const progressBar = document.getElementById('progressBar');
+        const progressPercent = document.getElementById('progressPercent');
+        const statusMessage = document.getElementById('statusMessage');
+
+        let selectedFile = null;
+
+        // 格式化文件大小
+        function formatBytes(bytes, decimals = 2) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const dm = decimals < 0 ? 0 : decimals;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+        }
+
+        // 监听文件选择
+        fileInput.addEventListener('change', function(e) {
+            if (e.target.files.length > 0) {
+                selectedFile = e.target.files;
+                
+                // 显示文件信息
+                fileName.textContent = selectedFile.name;
+                fileSize.textContent = formatBytes(selectedFile.size);
+                fileInfo.classList.remove('hidden');
+                
+                // 启用上传按钮
+                uploadBtn.disabled = false;
+                uploadBtn.textContent = "开始上传";
+                uploadBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                uploadBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                
+                // 重置进度条
+                resetProgress();
+            }
+        });
+
+        function resetProgress() {
+            progressContainer.classList.add('hidden');
+            progressBar.style.width = '0%';
+            progressPercent.textContent = '0%';
+            statusMessage.classList.add('hidden');
+            statusMessage.className = 'hidden text-center text-sm mb-4';
+        }
+
+        // 上传逻辑
+        uploadBtn.addEventListener('click', function() {
+            if (!selectedFile) return;
+
+            const formData = new FormData();
+            formData.append('file', selectedFile);
+
+            // 显示进度条
+            progressContainer.classList.remove('hidden');
+            uploadBtn.disabled = true;
+            uploadBtn.textContent = "上传中...";
+            statusMessage.classList.add('hidden');
+
+            const xhr = new XMLHttpRequest();
+            
+            // 替换为你的实际后端上传接口地址
+            // 注意：如果是本地测试，可以使用 https://httpbin.org/post 模拟接收
+            const uploadUrl = '/api/upload'; 
+
+            xhr.open('POST', uploadUrl, true);
+
+            // 关键：监听上传进度
+            xhr.upload.onprogress = function(e) {
+                if (e.lengthComputable) {
+                    const percentComplete = Math.round((e.loaded / e.total) * 100);
+                    progressBar.style.width = percentComplete + '%';
+                    progressPercent.textContent = percentComplete + '%';
+                }
+            };
+
+            // 上传完成
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    showStatus('上传成功！', 'success');
+                    progressBar.classList.remove('progress-bar-striped');
+                    progressBar.classList.add('bg-green-500');
+                    uploadBtn.textContent = "上传完成";
+                } else {
+                    showStatus('上传失败: ' + xhr.statusText, 'error');
+                    resetButton();
+                }
+            };
+
+            // 上传错误
+            xhr.onerror = function() {
+                showStatus('网络错误，请重试', 'error');
+                resetButton();
+            };
+
+            xhr.send(formData);
+        });
+
+        function showStatus(message, type) {
+            statusMessage.textContent = message;
+            statusMessage.classList.remove('hidden', 'text-green-600', 'text-red-600');
+            if (type === 'success') {
+                statusMessage.classList.add('text-green-600');
+            } else {
+                statusMessage.classList.add('text-red-600');
+            }
+        }
+
+        function resetButton() {
+            uploadBtn.disabled = false;
+            uploadBtn.textContent = "重新上传";
+        }
+    </script>
+</body>
+</html>
