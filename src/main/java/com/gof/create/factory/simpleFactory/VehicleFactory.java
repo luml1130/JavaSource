@@ -1,4 +1,4 @@
-package com.gof.create.create.factory.simpleFactory;
+package com.gof.create.factory.simpleFactory;
 
 /**
  * @author ASUS

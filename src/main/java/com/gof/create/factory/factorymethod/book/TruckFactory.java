@@ -1,4 +1,4 @@
-package com.gof.create.create.factory.factorymethod.book;
+package com.gof.create.factory.factorymethod.book;
 
 public class TruckFactory extends VehicleFactory {
 	@Override

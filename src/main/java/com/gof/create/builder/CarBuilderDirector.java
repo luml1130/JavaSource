@@ -1,4 +1,4 @@
-package com.gof.create.create.builder;
+package com.gof.create.builder;
 
 /**
  * @author luml

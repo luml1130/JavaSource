@@ -1,4 +1,4 @@
-package com.gof.create.create.single;
+package com.gof.create.single;
 
 public class Demo1_Single_D25 {
 	public static void main(String[] args) {

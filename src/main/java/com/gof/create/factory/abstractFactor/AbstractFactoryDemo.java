@@ -1,4 +1,4 @@
-package com.gof.create.create.factory.factorymethod;
+package com.gof.create.factory.abstractFactor;
 
 /**
  * 抽象工厂模式 (Abstract Factory Pattern) Java 案例
@@ -18,7 +18,7 @@ package com.gof.create.create.factory.factorymethod;
  *          Application类依赖于抽象工厂接口，从而实现了与具体产品类的解耦。
  * 这种设计保证了产品族内部的一致性，并使得切换整体风格变得非常简单，只需替换工厂对象即可。
  */
-
+/*-------------- 一、 抽象产品--------------*/
 // 1. 抽象产品角色：按钮
 interface Button {
     void render();
@@ -31,6 +31,7 @@ interface Checkbox {
     void switchState();
 }
 
+/*-------------- 二、 具体产品--------------*/
 // 3. 具体产品：Windows 风格按钮
 class WindowsButton implements Button {
     @Override
@@ -83,12 +84,14 @@ class MacCheckbox implements Checkbox {
     }
 }
 
+/*-------------- 三、 抽象工厂--------------*/
 // 7. 抽象工厂接口：定义创建一族产品的方法
 interface GUIFactory {
     Button createButton();
     Checkbox createCheckbox();
 }
 
+/*-------------- 四、 具体工厂--------------*/
 // 8. 具体工厂：Windows 工厂
 class WindowsFactory implements GUIFactory {
     @Override

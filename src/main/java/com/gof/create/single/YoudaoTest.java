@@ -1,7 +1,4 @@
-package com.gof.create.create.single;
-
-import com.luml.juc.lock.keyword.synchronized2.TestSynchronized;
-import lombok.Synchronized;
+package com.gof.create.single;
 
 /**
  * 首选：懒汉式单例方法2：双重检查锁定

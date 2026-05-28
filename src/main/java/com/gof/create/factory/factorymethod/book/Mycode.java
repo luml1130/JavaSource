@@ -1,4 +1,4 @@
-package com.gof.create.create.factory.factorymethod.book;
+package com.gof.create.factory.factorymethod.book;
 
 /**
  * 工厂方法模式是在 简单工厂模式-静态工厂模式上的改进

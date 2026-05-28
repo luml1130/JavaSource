@@ -1,4 +1,4 @@
-package com.gof.create.create.factory.factorymethod;
+package com.gof.create.factory.factorymethod;
 
 /**
  * 工厂方法模式 (Factory Method Pattern) Java 案例
