@@ -1,4 +1,4 @@
-package com.luml.threadOther.CompletableFuture;
+package com.luml.threadPool.Executor.CompletableFuture;
 
 import java.util.Arrays;
 import java.util.List;

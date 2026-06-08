@@ -1,4 +1,4 @@
-package com.luml.threadPool.Executor;
+package com.luml.threadPool.Executor.Future;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
