@@ -10,8 +10,8 @@ import java.util.Queue;
  * @description
  * @date 2026/5/23
  */
-public class PriorityQueue‌ {
-
+//public class PriorityQueue‌ {
+/*
     public static void main(String[] args) {
         Queue<Integer> priorityQueue = new PriorityQueue<>();
         // 入队
@@ -75,7 +75,10 @@ public class PriorityQueue‌ {
             System.out.println(tasks.poll());
         }
     }
-}
+
+ */
+//}
+/*
 class Task implements Comparable<Task> {
     String name;
     int priority; // 数字越小优先级越高
@@ -95,3 +98,4 @@ class Task implements Comparable<Task> {
         return name + "(P:" + priority + ")";
     }
 }
+*/

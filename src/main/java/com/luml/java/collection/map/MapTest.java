@@ -62,14 +62,19 @@ public class MapTest {
 
 	}
 
+	/**
+	 * HashMap 循环遍历
+	 */
 	@Test
 	public void mapBianLi(){
 		Map<Integer, String> map = createMap();
 
-		//方法一、通过Map.entrySet遍历key和value
+		//方法一、通过Map.entrySet 遍历key和value（推荐，性能较好）
 		for (Entry<Integer, String> entry : map.entrySet()) {
 			System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
 		}
+
+
 		//方法二、在for-each循环中遍历keySet或values。
 		for (Integer key : map.keySet()) {  //遍历map中的键
 			System.out.println("Key = " + key);
@@ -86,7 +91,12 @@ public class MapTest {
 			Entry<Integer, String> entry = iter.next();
 			System.out.println(entry.getKey()+"---"+entry.getValue());
 		}
-		//map.forEach();
+
+
+		// 4. forEach (Java 8+)
+		//map.forEach((k, v) -> System.out.println(k + ": " + v));
+		map.forEach((k,v)-> System.out.println(k + ':' + v));
+
 	}
 
 	@Test
