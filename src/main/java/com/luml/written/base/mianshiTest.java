@@ -22,37 +22,7 @@ public class mianshiTest {
         return ins;
     }
     //一、 基础语法与运算符陷阱
-    @Test
-    //1. 自增运算符优先级
-    public void test(){
-        int k = 0;
-        int ret = ++k + k++ + ++k + k;
-        System.out.println(ret);
-        /**
-         * ++k：先自增再取值。k 变为 1，取值为 1。
-         * k++：先取值再自增。取值为 1，k 变为 2。
-         * ++k：先自增再取值。k 变为 3，取值为 3。
-         * k：当前 k 为 3，取值为 3。
-         * 计算：1 + 1 + 3 + 3 = 8。
-         */
-    }
-    //2. 字符串连接与运算优先级
-    @Test
-    //todo 2个int+--字符串？？
-    public void yunSuanTest(){
-        int i1 = 10, i2 = 10;
-        System.out.println("i1 + i2 = " + i1 + i2);//20
-        System.out.println("i1 * i2 = " + i1 * i2);//100
-        // System.out.println("i1 - i2 = " + i1 - i2); // 编译错误
-        /**
-         * 第一行：+ 从左到右执行。 "i1 + i2 = " + 10 变成字符串 "i1 + i2 = 10"，再 + 10 变成 "i1 + i2 = 1010"。
-         * 第二行：* 优先级高于 +。先计算 10 * 10 = 100，然后 "i1 * i2 = " + 100 变成 "i1 * i2 = 100"。
-         * 第三行（注释部分）：- 不能用于字符串和数字之间，会编译报错。
-         * ‌答案‌：
-         * i1 + i2 = 1010
-         * i1 * i2 = 100
-         */
-    }
+
 
     //3. 方法重载与 null
     @Test

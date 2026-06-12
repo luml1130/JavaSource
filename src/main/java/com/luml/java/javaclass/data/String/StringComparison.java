@@ -2,8 +2,6 @@ package com.luml.java.javaclass.data.String;
 
 import org.junit.Test;
 
-import java.util.Arrays;
-
 /**
  * @author luml
  * @description
@@ -40,23 +38,7 @@ public class StringComparison {
     }
 
 
-    @Test
-    public void lengthTest(){
-        StringBuffer sb = new StringBuffer();
-        sb.append("abcd");
-        System.out.println(sb.length());//返回当前length  4
-        System.out.println(sb.capacity());//初始化长度 默认16
 
-        StringBuffer stringBuffer = new StringBuffer(10);
-        stringBuffer.append("abcd");
-        System.out.println(stringBuffer.length());//返回当前length 4
-        System.out.println(stringBuffer.capacity());//10  不用扩容
-
-        StringBuffer stringBuffer1 = new StringBuffer(10);
-        stringBuffer1.append("abcd");
-        System.out.println(stringBuffer1.length());//返回当前length 4
-        System.out.println(stringBuffer1.capacity());//10  不用扩容
-    }
 
     //扩容伪代码逻辑
     /*
