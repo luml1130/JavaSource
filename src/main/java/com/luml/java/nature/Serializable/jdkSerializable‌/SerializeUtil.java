@@ -1,4 +1,4 @@
-package com.luml.java.nature.Serializable;
+package com.luml.java.nature.Serializable.jdkSerializable‌;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
