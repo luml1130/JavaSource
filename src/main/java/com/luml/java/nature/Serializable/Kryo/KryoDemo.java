@@ -1,5 +1,10 @@
 package com.luml.java.nature.Serializable.Kryo;
 
+import com.esotericsoftware.kryo.Kryo;
+import com.esotericsoftware.kryo.io.Input;
+import com.esotericsoftware.kryo.io.Output;
+import com.luml.domain.User;
+
 /**
  * @author luml
  * @description
@@ -13,7 +18,9 @@ public class KryoDemo {
 
         // 2. 序列化：对象 -> 字节数组
         Output output = new Output(1024);
-        kryo.writeObject(output, user);
+        //我加的
+        User user1 = new User();
+        kryo.writeObject(output, user1);
         byte[] bytes = output.toBytes();
         output.close();
 
