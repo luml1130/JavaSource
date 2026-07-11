@@ -1,9 +1,9 @@
 package com.gof._2_behavior._9_Strategy.use2;
 
-import com.luml.gof.behavior.Strategy.AliPayStrategy;
-import com.luml.gof.behavior.Strategy.PayStrategy;
-import com.luml.gof.behavior.Strategy.UnionPayStrategy;
-import com.luml.gof.behavior.Strategy.common.PayType;
+import com.gof._2_behavior._9_Strategy.AliPayStrategy;
+import com.gof._2_behavior._9_Strategy.PayStrategy;
+import com.gof._2_behavior._9_Strategy.UnionPayStrategy;
+import com.gof._2_behavior._9_Strategy.common.PayType;
 
 import java.util.Objects;
 
@@ -33,7 +33,7 @@ public class Client {
 
         if (PayType.UNION.getCode().equals(code)) {
             //组装为银联支付策略
-            payStrategy = new com.luml.gof.behavior.Strategy.UnionPayStrategy();
+            payStrategy = new UnionPayStrategy();
             // 构造银联支付请求参数
             //request = new UnionPayRequest();
         }

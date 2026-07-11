@@ -1,4 +1,4 @@
-package com.luml.thread.other;
+package com.luml.threadOther.threadLocal;
 
 import com.luml.domain.User;
 

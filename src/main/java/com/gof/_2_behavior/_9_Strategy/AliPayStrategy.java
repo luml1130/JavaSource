@@ -5,7 +5,7 @@ package com.gof._2_behavior._9_Strategy;
  * @description
  * @date 2020/12/8
  */
-public class AliPayStrategy implements com.luml.gof.behavior.Strategy.PayStrategy {
+public class AliPayStrategy implements PayStrategy {
     @Override
     public void pay(Float cost) {
         System.out.println("通过支付宝支付了" + cost + "元.");

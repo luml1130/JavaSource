@@ -1,7 +1,7 @@
 package com.gof._2_behavior._9_Strategy.use;
 
-import com.luml.gof.behavior.Strategy.PayStrategy;
-import com.luml.gof.behavior.Strategy.common.Goods;
+import com.gof._2_behavior._9_Strategy.PayStrategy;
+import com.gof._2_behavior._9_Strategy.common.Goods;
 
 import java.util.ArrayList;
 import java.util.List;

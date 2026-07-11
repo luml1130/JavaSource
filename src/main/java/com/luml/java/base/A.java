@@ -1,7 +1,5 @@
 package com.luml.java.base;
 
-import com.luml.thread.other.DeadLock2;
-
 /**
  * @author luml
  * @description

@@ -1,8 +1,9 @@
 package com.gof._2_behavior._9_Strategy.use;
 
-import com.luml.gof.behavior.Strategy.AliPayStrategy;
-import com.luml.gof.behavior.Strategy.WeChatPayStrategy;
-import com.luml.gof.behavior.Strategy.common.Goods;
+
+import com.gof._2_behavior._9_Strategy.AliPayStrategy;
+import com.gof._2_behavior._9_Strategy.WeChatPayStrategy;
+import com.gof._2_behavior._9_Strategy.common.Goods;
 
 /**
  * @author luml

@@ -1,4 +1,4 @@
-package com.luml.thread.other;
+package com.luml.threadOther.deadLock;
 
 import java.util.concurrent.locks.ReentrantLock;
 

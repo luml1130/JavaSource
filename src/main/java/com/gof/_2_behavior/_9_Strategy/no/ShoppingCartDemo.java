@@ -1,6 +1,6 @@
 package com.gof._2_behavior._9_Strategy.no;
 
-import com.luml.gof.behavior.Strategy.common.Goods;
+import com.gof._2_behavior._9_Strategy.common.Goods;
 
 /**
  * @author luml
