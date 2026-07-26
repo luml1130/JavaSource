@@ -1,4 +1,4 @@
-package com.luml.javaIO.simple;
+package com.luml.java.javaIO.simple;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

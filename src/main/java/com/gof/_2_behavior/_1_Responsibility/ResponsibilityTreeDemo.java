@@ -5,7 +5,10 @@ import java.util.Map;
 
 /**
  * @author luml
- * @description
+ * @description 责任书模式：
+ *  假设场景：一个电商订单处理系统，需要根据 ‌版本号 (Version)‌ 和 ‌订单类型 (OrderType)‌ 进行不同的处理。
+ *      V1 版本：普通订单走流程 A，VIP 订单走流程 B。
+ *      V2 版本：所有订单走统一流程 C，但大额订单需额外审计。
  * @date 2026/7/24
  */
 public class ResponsibilityTreeDemo {
@@ -49,7 +52,7 @@ interface StrategyHandler<T, R> {
      */
     R apply(T param);
 }
-//
+//2. 请求上下文对象
 class OrderContext {
     private String version;
     private String orderType;
@@ -135,6 +138,7 @@ class VersionRouter extends AbstractStrategyRouter<OrderContext, String> {
         return (ctx) -> map.get(ctx.getVersion());
     }
 }
+
 //第二层：V1 版本下，根据 OrderType 路由
 class V1OrderRouter extends AbstractStrategyRouter<OrderContext, String> {
     private final StrategyHandler<OrderContext, String> normalHandler;
