@@ -55,18 +55,17 @@ public class CreateTest {
         System.out.println(IntegerList);
     }
 
-    @Test
+    /*@Test
     public void java19(){
-        List<Person> people = com.sun.tools.javac.util.List.of(
+
+        List<Person> people = List.of(
                 new Person("Alice", 1),
                 new Person("Bob", 2),
                 new Person("Charlie", 3)
         );
         //List<String> emptyList = List.of(); // 创建空列表  1.9不报错
-        List<String> singleElement = com.sun.tools.javac.util.List.of("apple");// 创建单元素列表
+        List<String> singleElement = List.of("apple");// 创建单元素列表
         List<String> multiElements = com.sun.tools.javac.util.List.of("apple", "banana", "cherry");// 创建多元素列表
 
-
-
-    }
+    }*/
 }

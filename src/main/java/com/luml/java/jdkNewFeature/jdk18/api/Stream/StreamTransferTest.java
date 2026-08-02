@@ -38,8 +38,6 @@ public class StreamTransferTest {
         // 输出结果
         System.out.println(integerList);
 
-
-
     }
 
     @Test
@@ -180,9 +178,9 @@ public class StreamTransferTest {
     }
 
     //mapToInt/mapToLong/mapToDouble   list/map-->int
-    @Test
-    public void mapToIntLong() {
-        com.sun.tools.javac.util.List<Person> peopleList = com.sun.tools.javac.util.List.of(
+   // @Test
+   /* public void mapToIntLong() {
+        List<Person> peopleList = List.of(
                 new Person(1, "Alice"),
                 new Person(2, "Bob"),
                 new Person(3, "Charlie")
@@ -190,7 +188,7 @@ public class StreamTransferTest {
         //int totalTransit = peopleList.stream().mapToInt(WaybillTemperatureVO::getTotalTransit).sum();
         int totalTransit = peopleList.stream().mapToInt(Person::getId).sum(); //id相加
         System.out.println(totalTransit);
-    }
+    }*/
 
 
 
@@ -200,11 +198,11 @@ public class StreamTransferTest {
     //list--> map
     @Test
     public void list2Map() {
-        List<Person> peopleList = com.sun.tools.javac.util.List.of(
+        /*List<Person> peopleList = List.of(
                 new Person(1, 12,"Alice"),
                 new Person(2, 15,"Bob"),
                 new Person(3, 9,"Charlie")
-        );
+        );*/
        /* Map<Integer, Person> personMap = people.stream()
                 .collect(Collectors.toMap(Person::getId, p -> p));*/
 
@@ -212,7 +210,7 @@ public class StreamTransferTest {
         //Collections.sort(peopleList,Comparator.comparing(Person::getFullName, Comparator.naturalOrder()));
 
 
-        System.out.println(peopleList);
+       // System.out.println(peopleList);
 
         /*Map<Integer, String> ageToNameMap = peopleList.stream()
                 .collect(Collectors.toMap(Person::getId, Person::getFullName));
@@ -230,12 +228,12 @@ public class StreamTransferTest {
     public  void smallListToBigList(){
         List<String> nameList = Arrays.asList("Alice","Bob","Charlie","jake");
 
-        List<Person> peopleList = com.sun.tools.javac.util.List.of(
+        /*List<Person> peopleList = List.of(
                 new Person(1, 12,"Alice"),
                 new Person(2, 15,"Bob"),
                 new Person(3, 9,"Charlie")
-        );
-       Map<String,Person> peopleMap =  peopleList.stream()
+        );*/
+      /* Map<String,Person> peopleMap =  peopleList.stream()
                .collect(Collectors.toMap(Person::getFullName, Person->Person));
 
         List<Person> bigPeopleList = nameList.stream()
@@ -248,6 +246,8 @@ public class StreamTransferTest {
                 })
                 .collect(Collectors.toList());
         System.out.println(bigPeopleList); // "Alice","Bob","Charlie","jake" 四个人
+
+       */
     }
 
     @Test

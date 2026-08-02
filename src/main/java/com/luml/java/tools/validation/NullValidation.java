@@ -2,7 +2,6 @@ package com.luml.java.tools.validation;
 
 import com.alibaba.fastjson.JSONObject;
 import com.luml.domain.City;
-import com.sun.tools.internal.ws.wsdl.document.soap.SOAPUse;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 

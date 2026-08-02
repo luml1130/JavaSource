@@ -12,7 +12,7 @@ import java.util.Comparator;
  */
 public class ArraysTest {
 
-    @Test
+    @org.testng.annotations.Test
     public void toStringTest(){
         //Arrays.toString
     }

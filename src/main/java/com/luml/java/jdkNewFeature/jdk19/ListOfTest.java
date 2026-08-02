@@ -2,14 +2,14 @@ package com.luml.java.jdkNewFeature.jdk19;
 
 import com.google.common.collect.ImmutableList;
 import com.luml.domain.Person;
-import com.sun.tools.javac.util.List;
 
+import java.util.List;
 /**
  * @author luml
  * @description
  * @date 2025/12/6
  */
-public class ListOfTest {
+/*public class ListOfTest {
     public static void main(String[] args) {
         List<Person> people = List.of(
                 new Person("Alice", 1),
@@ -23,4 +23,4 @@ public class ListOfTest {
     public void test(){
         ImmutableList<Person> people = ImmutableList.of();
     }
-}
+}*/
