@@ -55,7 +55,7 @@ public class CreateTest {
         System.out.println(IntegerList);
     }
 
-    /*@Test
+    @Test
     public void java19(){
 
         List<Person> people = List.of(
@@ -65,7 +65,7 @@ public class CreateTest {
         );
         //List<String> emptyList = List.of(); // 创建空列表  1.9不报错
         List<String> singleElement = List.of("apple");// 创建单元素列表
-        List<String> multiElements = com.sun.tools.javac.util.List.of("apple", "banana", "cherry");// 创建多元素列表
+        List<String> multiElements = List.of("apple", "banana", "cherry");// 创建多元素列表
 
-    }*/
+    }
 }

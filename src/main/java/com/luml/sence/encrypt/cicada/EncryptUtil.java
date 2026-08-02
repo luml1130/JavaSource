@@ -1,13 +1,11 @@
 package com.luml.sence.encrypt.cicada;
 
-import sun.misc.BASE64Decoder;
-
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
+import java.util.Base64;
 
 /**
  * 功能描述
@@ -82,17 +80,14 @@ public class EncryptUtil {
      */
     public static String decrypt(String xmlStr) throws Exception {
         // base64解码
-        BASE64Decoder decoder = new BASE64Decoder();
-
-
+       /* BASE64Decoder decoder = new BASE64Decoder();
         byte[] encBuf = null;
-
-
         try {
-            encBuf = null; //BaseEncoding.base64Url().decode(xmlStr);
+            encBuf = BaseEncoding.base64Url().decode(xmlStr);
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
+        byte[] encBuf = Base64.getDecoder().decode(xmlStr);
 
         // 取密钥和偏转向量
         byte[] key = new byte[8];
@@ -355,13 +350,14 @@ public class EncryptUtil {
      */
     public static void getKeyIV(String encryptKey, byte[] key, byte[] iv) {
         // 密钥Base64解密
-        BASE64Decoder decoder = new BASE64Decoder();
+       /* BASE64Decoder decoder = new BASE64Decoder();
         byte[] buf = null;
         try {
             buf = decoder.decodeBuffer(encryptKey);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
+        byte[] buf = Base64.getDecoder().decode(encryptKey);
         // 前8位为key
         int i;
         for (i = 0; i < key.length; i++) {

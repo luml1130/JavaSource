@@ -1,12 +1,5 @@
 package com.luml.thread;
 
-import com.luml.thread.method.ExecutorServiceTest;
-import com.sun.jmx.snmp.tasks.ThreadService;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
-
 /**
  * @author luml
  * @description

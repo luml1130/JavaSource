@@ -1,9 +1,5 @@
 package com.luml.domain;
 
-import book.MultiThreadProgram.Part03.chapter01.interrupu05_10.waitOld.Add;
-import lombok.Data;
-import org.omg.CORBA.INTERNAL;
-
 import java.util.Optional;
 
 /**

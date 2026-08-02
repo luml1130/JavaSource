@@ -9,19 +9,25 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+        <maven.compiler.source>1.21</maven.compiler.source>
+        <maven.compiler.target>1.21</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.21</maven.compiler.compilerVersion>
         <bouncycastle.version>1.75</bouncycastle.version>
     </properties>
 
     <dependencies>
+        <!--从JDK9开始，Java 引入了模块系统，javax.annotation 包不再默认包含在 JDK 中。-->
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-io</artifactId>
             <version>1.3.2</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -32,7 +38,6 @@
             <artifactId>commons-collections4</artifactId>
             <version>4.4</version> <!-- 使用当前最新的稳定版本 -->
         </dependency>
-
 
 
         <dependency>
@@ -112,7 +117,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.6</version>
+            <version>1.18.34</version>
         </dependency>
 
         <!--三、Json操作工具类-->
@@ -233,10 +238,26 @@
             <version>4.13.1</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.42</version>
+            <scope>provided</scope>
+        </dependency>
 
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>9</source>
+                    <target>9</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
-
-    
 </project>

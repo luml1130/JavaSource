@@ -30,11 +30,11 @@ public class DesensitizeOtherCommonDrivers extends DesensitizeOperator {
         List<String> desensitizedList = Arrays.stream(items).map(deliveryman -> {
             final String[] NAME_PHONE = StringUtils.split(deliveryman, StrUtil.C_SPACE);
             if (NAME_PHONE.length == 2) {
-                NAME_PHONE[0] = MaskingTool.mask(NAME_PHONE[0], MaskingType.NAME);
-                NAME_PHONE[1] = MaskingTool.mask(NAME_PHONE[1], MaskingType.PHONE_NUMBER);
+                //NAME_PHONE[0] = MaskingTool.mask(NAME_PHONE[0], MaskingType.NAME);
+                //NAME_PHONE[1] = MaskingTool.mask(NAME_PHONE[1], MaskingType.PHONE_NUMBER);
                 return StringUtils.join(NAME_PHONE, StrUtil.C_SPACE);
             } else {
-                return MaskingTool.mask(deliveryman, MaskingType.OTHERS);
+                return null;//MaskingTool.mask(deliveryman, MaskingType.OTHERS);
             }
         }).collect(Collectors.toList());
         return StringUtils.join(desensitizedList, SEMICOLON);
