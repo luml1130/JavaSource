@@ -1,0 +1,13 @@
+<code_scheme name="Diva Java formatter" version="173">
+    <option name="RIGHT_MARGIN" value="180"/>
+    <codeStyleSettings  language="Groovy">
+        <option name="RIGHT_MARGIN" value="220" />
+        <option name="ALIGN_MULTILINE_CHAINED_METHODS" value="true" />
+    </codeStyleSettings>
+    <codeStyleSettings  language="Java">
+        <option name="ALIGN_MULTILINE_CHAINED_METHODS" value="true" />
+    </codeStyleSettings>
+    <codeStyleSettings  language="Scala">
+        <option name="ALIGN_MULTILINE_CHAINED_METHODS" value="true" />
+    </codeStyleSettings>
+</code_scheme>

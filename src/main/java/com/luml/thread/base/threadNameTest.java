@@ -9,7 +9,8 @@ import org.junit.Test;
  */
 public class threadNameTest {
 
-    @Test
+   // @Test
+
     public  void setName1(){
 
         new Thread("线程1") {

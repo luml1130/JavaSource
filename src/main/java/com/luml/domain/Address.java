@@ -1,14 +1,11 @@
 package com.luml.domain;
 
-import lombok.Data;
 
 import java.util.Optional;
 
-/**
- * @author luml
- * @description
- * @date 2026/3/28
- */
+/// @author luml
+/// @description
+/// @date 2026/3/28
 public class Address {
     private String city;
     private String street;
