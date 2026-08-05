@@ -1,4 +1,4 @@
-package com.luml.util;
+package com.luml.utiltools;
 
 /**
  * @author luml

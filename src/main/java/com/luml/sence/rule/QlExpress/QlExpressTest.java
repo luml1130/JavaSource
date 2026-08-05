@@ -1,6 +1,6 @@
 package com.luml.sence.rule.QlExpress;
 
-import com.luml.util.MathUtils;
+import com.luml.utiltools.MathUtils;
 import com.ql.util.express.DefaultContext;
 import com.ql.util.express.ExpressRunner;
 import org.junit.Test;

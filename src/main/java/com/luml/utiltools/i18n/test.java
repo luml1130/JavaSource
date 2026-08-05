@@ -1,4 +1,4 @@
-package com.luml.util.i18n;
+package com.luml.utiltools.i18n;
 
 import com.google.common.collect.Lists;
 
