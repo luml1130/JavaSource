@@ -13,6 +13,7 @@
         <maven.compiler.target>1.21</maven.compiler.target>
         <maven.compiler.compilerVersion>1.21</maven.compiler.compilerVersion>
         <bouncycastle.version>1.75</bouncycastle.version>
+        <Junit5.version>5.8.2</Junit5.version>
     </properties>
 
     <dependencies>
@@ -253,7 +254,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.8.2</version>
+            <version>${Junit5.version}</version>
             <scope>test</scope>
         </dependency>
         <!--2 JUnit5 Jupiter API -->
@@ -291,6 +292,14 @@
             <version>4.5.1</version> <!-- 请检查最新版本 -->
             <scope>test</scope>
         </dependency>
+        <!-- AssertJ 用于Java 的流式断言库 -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.27.6</version> <!-- 请使用最新稳定版本 -->
+            <scope>test</scope>
+        </dependency>
+
 
 
         <dependency>
