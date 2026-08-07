@@ -14,6 +14,8 @@
         <maven.compiler.compilerVersion>1.21</maven.compiler.compilerVersion>
         <bouncycastle.version>1.75</bouncycastle.version>
         <Junit5.version>5.8.2</Junit5.version>
+        <groovy.version>4.0.23</groovy.version>
+        <spock.version>2.3-groovy-4.0</spock.version>
     </properties>
 
     <dependencies>
@@ -292,7 +294,7 @@
             <version>4.5.1</version> <!-- 请检查最新版本 -->
             <scope>test</scope>
         </dependency>
-        <!-- AssertJ 用于Java 的流式断言库 -->
+        <!-- 5、AssertJ 用于Java 的流式断言库 -->
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
@@ -300,17 +302,32 @@
             <scope>test</scope>
         </dependency>
 
-
-
+        <!-- 6、Spock：基于 Groovy 的测试框架+ JUnit -->
         <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+            <version>${spock.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- spock依赖groovy -->
+        <dependency>
+            <groupId>org.apache.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <version>${groovy.version}</version>
+        </dependency>
+
+
+        <!--<dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy</artifactId>
             <version>3.0.17</version>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
 
 
     </dependencies>
+
+
     <build>
         <plugins>
             <plugin>
