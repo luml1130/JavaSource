@@ -20,10 +20,6 @@ import java.util.Set;
  * @date 2025/12/15
  */
 public class CreateTest {
-    public static void main(String[] args) {
-
-    }
-
     /**
      * Google Guava
      */

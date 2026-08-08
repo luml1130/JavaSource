@@ -1,5 +1,6 @@
-package com.luml.test;
+package com.test;
 
+import com.luml.test.Calculator1;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

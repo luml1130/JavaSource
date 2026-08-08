@@ -1,6 +1,8 @@
-package com.luml.test;
+package com.test;
 
 
+import com.luml.test.Database;
+import com.luml.test.Mockito1;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

@@ -1,6 +1,7 @@
-package com.luml.test;
+package com.test;
 
 
+import com.luml.test.Calculator1;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 

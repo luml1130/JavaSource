@@ -1,4 +1,4 @@
-package com.luml.test;
+package com.test;
 
 import com.luml.domain.User;
 import org.junit.jupiter.api.Test;
@@ -161,7 +161,6 @@ public class asserTjTest {
     @Test
     void testOptionalAssertions() {
         Optional<String> optionalValue = Optional.of("Hello");
-
         assertThat(optionalValue).isPresent()
                 .contains("Hello")
                 .hasValue("Hello");
