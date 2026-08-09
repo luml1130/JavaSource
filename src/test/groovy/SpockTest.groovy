@@ -1,4 +1,4 @@
-package com.test
+
 
 import spock.lang.Specification
 import spock.lang.Unroll

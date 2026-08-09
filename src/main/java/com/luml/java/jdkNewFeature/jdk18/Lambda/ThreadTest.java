@@ -28,4 +28,13 @@ public class ThreadTest {
             System.out.println(Thread.currentThread().getName()+":使用lambda表达式创建线程");
         }).start();
     }
+
+    class Test implements Runnable{
+        @Override
+        public void run() {
+            System.out.println(Thread.currentThread().getName()+":使用内部类创建线程");
+        }
+    }
+
+
 }

@@ -16,6 +16,8 @@
         <Junit5.version>5.8.2</Junit5.version>
         <groovy.version>4.0.23</groovy.version>
         <spock.version>2.3-groovy-4.0</spock.version>
+        <line.coverage.constant>0.80</line.coverage.constant>
+        <branch.coverage.constant>0.70</branch.coverage.constant>
     </properties>
 
     <dependencies>
@@ -329,16 +331,158 @@
 
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.gmavenplus</groupId>
+                <artifactId>gmavenplus-plugin</artifactId>
             </plugin>
         </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.gmavenplus</groupId>
+                    <artifactId>gmavenplus-plugin</artifactId>
+                    <version>3.0.2</version>
+                    <configuration>
+                        <testSources>
+                            <testSource>
+                                <directory>${project.basedir}/src/test/groovy</directory>
+                                <includes>
+                                    <include>**/*.groovy</include>
+                                </includes>
+                            </testSource>
+                        </testSources>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>generateStubs</goal>
+                                <goal>compile</goal>
+                                <goal>compileTests</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.2.5</version>
+                    <configuration>
+                        <testFailureIgnore>false</testFailureIgnore>
+                        <forkCount>1</forkCount>
+                        <reuseForks>true</reuseForks>
+                        <useModulePath>false</useModulePath>
+                        <includes>
+                            <include>**/*Test.java</include>
+                            <include>**/*Tests.java</include>
+                            <include>**/*TestCase.java</include>
+                            <include>**/*Spec.groovy</include>
+                        </includes>
+                        <!-- 系统属性 -->
+                        <systemPropertyVariables>
+                            <property>
+                                <name>project.build.directory</name>
+                                <value>${project.build.directory}</value>
+                            </property>
+                        </systemPropertyVariables>
+                        <argLine>-Dfile.encoding=UTF-8</argLine>
+                        <!-- 指定测试源目录 -->
+                        <testSourceDirectory>src/test/java</testSourceDirectory> <!-- 可选 -->
+                        <!-- 指定扫描依赖以查找测试 //使用自定义的测试运行器（例如：JUnit 5） -->
+                        <dependenciesToScan> <!-- 可选，指定扫描依赖以查找测试 -->
+                            <dependency>junit:junit</dependency> <!-- 针对JUnit 4 -->
+                        </dependenciesToScan>
+                    </configuration>
+                </plugin>
+
+                <!-- JaCoCo 插件配置 -->
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.8.11</version>
+
+                    <executions>
+                        <execution>
+                            <id>jacoco-agent</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                            <configuration>
+                                <destFile>${project.build.directory}/jacoco.exec</destFile>
+                                <append>true</append>
+                                <propertyName>jacocoArgLine</propertyName>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <id>jacoco-site</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                        </execution>
+
+                        <execution>
+                            <id>jacoco-check</id>
+                            <phase>verify</phase> <!---->
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                            <configuration>
+                                <rules>
+                                    <rule>
+                                        <element>BUNDLE</element>
+                                        <limits>
+                                            <limit>
+                                                <counter>LINE</counter>
+                                                <value>COVEREDRATIO</value>
+                                                <minimum>${line.coverage.constant}</minimum>
+                                                <!--  <minimum>0.80</minimum> 设置最低覆盖率为 80% -->
+                                            </limit>
+                                            <!-- 设置最低分支覆盖率为 70% -->
+                                            <limit>
+                                                <counter>BRANCH</counter>
+                                                <value>COVEREDRATIO</value>
+                                                <minimum>${branch.coverage.constant}</minimum>
+                                            </limit>
+                                        </limits>
+                                    </rule>
+                                </rules>
+                            </configuration>
+                        </execution>
+
+                    </executions>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
     </build>
 
 
