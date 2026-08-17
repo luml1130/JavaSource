@@ -1,4 +1,4 @@
-package com.luml.java.data;
+package com.luml.source.domain;
 
 import java.util.List;
 

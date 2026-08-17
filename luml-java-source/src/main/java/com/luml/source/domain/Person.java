@@ -1,4 +1,4 @@
-package com.luml.domain;
+package com.luml.source.domain;
 
 public class Person { // ctrl + m全屏
 	private String name;

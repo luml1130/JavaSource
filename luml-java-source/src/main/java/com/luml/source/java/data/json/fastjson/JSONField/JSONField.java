@@ -1,4 +1,4 @@
-package com.luml.java.data.json.fastjson.JSONField;
+package com.luml.source.java.data.json.fastjson.JSONField;
 
 /**
  * FieldInfo可以配置在getter/setter⽅法或者字段上

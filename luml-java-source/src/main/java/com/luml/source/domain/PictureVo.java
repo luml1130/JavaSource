@@ -1,4 +1,4 @@
-package com.luml.java.data.json;
+package com.luml.source.domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +11,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class picureVo {
+public class PictureVo {
     private String url;
     private Integer urlType;
     private String remark;

@@ -1,4 +1,4 @@
-package com.luml.java.data.json.fastjson.Serializer.e6yun;
+package com.luml.source.java.data.json.fastjson.Serializer.e6yun;
 
 /**
  * @author xiqiang@e6yun.com

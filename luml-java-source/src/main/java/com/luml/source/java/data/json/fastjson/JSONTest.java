@@ -1,8 +1,8 @@
-package com.luml.java.data.json.fastjson;
+package com.luml.source.java.data.json.fastjson;
 
 
 import com.alibaba.fastjson.JSON;
-import com.luml.java.data.Person;
+import com.luml.source.java.data.Person;
 import org.junit.Before;
 import org.junit.Test;
 

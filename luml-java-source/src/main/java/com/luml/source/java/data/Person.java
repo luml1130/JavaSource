@@ -1,5 +1,4 @@
-package com.luml.java.data;
-
+package com.luml.source.java.data;
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 

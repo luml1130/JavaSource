@@ -1,4 +1,4 @@
-package com.luml.java.data.json.fastjson.Serializer.e6yun;
+package com.luml.source.java.data.json.fastjson.Serializer.e6yun;
 
 import com.alibaba.fastjson.parser.deserializer.EnumDeserializer;
 import com.google.common.collect.Lists;

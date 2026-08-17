@@ -1,4 +1,4 @@
-package com.luml.java.data.json.fastjson.JSONField;
+package com.luml.source.java.data.json.fastjson.JSONField;
 
 /**
  * @author luml

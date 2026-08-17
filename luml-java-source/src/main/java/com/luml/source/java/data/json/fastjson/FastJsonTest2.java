@@ -1,9 +1,9 @@
-package com.luml.java.data.json.fastjson;
+package com.luml.source.java.data.json.fastjson;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.luml.java.data.UserVo;
-import com.luml.java.data.json.picureVo;
+import com.luml.source.domain.PictureVo;
+import com.luml.source.domain.UserVo;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -22,7 +22,7 @@ public class FastJsonTest2 {
         //List2Str();
         String json ="[{\"url\":\"\",\"url_type\":1,\"remark\":\"\"}," +
                 "{\"url\":\"\",\"url_type\":1,\"remark\":\"太模糊了\"}]";
-        List<picureVo> bb = JSONObject.parseArray(json,picureVo.class);
+        List<PictureVo> bb = JSONObject.parseArray(json,PictureVo.class);
         System.out.println(bb.size());
         System.out.println(bb);
     }
