@@ -17,6 +17,7 @@
         <maven.compiler.source>1.21</maven.compiler.source>
         <maven.compiler.target>1.21</maven.compiler.target>
         <maven.compiler.compilerVersion>1.21</maven.compiler.compilerVersion>
+        <LangChain4j.Version>0.31.0</LangChain4j.Version>
         <bouncycastle.version>1.75</bouncycastle.version>
         <Junit5.version>5.8.2</Junit5.version>
         <groovy.version>4.0.23</groovy.version>
@@ -216,20 +217,6 @@
             <artifactId>cglib</artifactId>
             <version>3.3.0</version>
         </dependency>
-
-        <!-- LangChain4j Core -->
-        <dependency>
-            <groupId>dev.langchain4j</groupId>
-            <artifactId>langchain4j</artifactId>
-            <version>0.31.0</version>
-        </dependency>
-
-        <!-- LangChain4j Ollama Integration -->
-        <dependency>
-            <groupId>dev.langchain4j</groupId>
-            <artifactId>langchain4j-ollama</artifactId>
-            <version>0.31.0</version>
-        </dependency>
         <!-- 序列化 -->
         <dependency>
             <groupId>com.esotericsoftware</groupId>
@@ -333,6 +320,23 @@
 
 
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- LangChain4j Core -->
+            <dependency>
+                <groupId>dev.langchain4j</groupId>
+                <artifactId>langchain4j</artifactId>
+                <version>${LangChain4j.Version}</version>
+            </dependency>
+            <!-- LangChain4j Ollama Integration -->
+            <dependency>
+                <groupId>dev.langchain4j</groupId>
+                <artifactId>langchain4j-ollama</artifactId>
+                <version>${LangChain4j.Version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 
     <build>

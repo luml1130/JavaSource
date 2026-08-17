@@ -1,7 +1,6 @@
 package com.luml.sence.count;
 
 import java.util.concurrent.atomic.AtomicInteger;
-
 /**
  * @author luml
  * @description
