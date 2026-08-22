@@ -1,4 +1,4 @@
-package com.luml.java.data.enumT.test;
+package com.luml.source.data.enumT.test;
 
 import java.util.Arrays;
 import java.util.HashMap;

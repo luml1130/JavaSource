@@ -1,4 +1,4 @@
-package com.luml.java.jdkNewFeature.jdk19;
+package com.luml.source.jdkNewFeature.jdk19;
 
 import com.google.common.collect.ImmutableList;
 import com.luml.domain.Person;

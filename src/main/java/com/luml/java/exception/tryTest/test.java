@@ -1,4 +1,4 @@
-package com.luml.java.exception.tryTest;
+package com.luml.source.exception.tryTest;
 
 //import org.apache.log4j.Logger;
 

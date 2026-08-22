@@ -1,4 +1,4 @@
-package com.luml.java.collection.queue;
+package com.luml.source.collection.queue;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;

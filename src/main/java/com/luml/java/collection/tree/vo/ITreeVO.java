@@ -1,4 +1,4 @@
-package com.luml.java.collection.tree.vo;
+package com.luml.source.collection.tree.vo;
 
 import java.util.List;
 

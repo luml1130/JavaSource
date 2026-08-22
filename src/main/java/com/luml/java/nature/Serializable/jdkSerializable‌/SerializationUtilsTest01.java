@@ -1,4 +1,4 @@
-package com.luml.java.nature.Serializable.jdkSerializable‌;
+package com.luml.source.nature.Serializable.jdkSerializable‌;
 
 import org.apache.commons.lang3.SerializationUtils;
 

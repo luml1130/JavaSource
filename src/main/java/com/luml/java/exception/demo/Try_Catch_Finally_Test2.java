@@ -1,4 +1,4 @@
-package com.luml.java.exception.demo;
+package com.luml.source.exception.demo;
 
 import org.junit.Test;
 

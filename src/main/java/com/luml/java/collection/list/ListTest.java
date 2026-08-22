@@ -1,4 +1,4 @@
-package com.luml.java.collection.list;
+package com.luml.source.collection.list;
 
 
 import com.alibaba.fastjson.JSON;

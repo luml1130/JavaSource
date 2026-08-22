@@ -1,4 +1,4 @@
-package com.luml.java.data.xml;
+package com.luml.source.data.xml;
 
 import org.jdom2.Document;
 import org.jdom2.Element;

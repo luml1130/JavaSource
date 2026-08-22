@@ -1,4 +1,4 @@
-package com.luml.java.collection.list.arraylist1;
+package com.luml.source.collection.list.arraylist1;
 
 public class Rect extends Shape{
 	

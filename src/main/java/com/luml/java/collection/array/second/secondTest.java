@@ -1,4 +1,4 @@
-package com.luml.java.collection.array.second;
+package com.luml.source.collection.array.second;
 
 /**
  * @author luml

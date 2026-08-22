@@ -1,4 +1,4 @@
-package com.luml.java.data.enumT;
+package com.luml.source.data.enumT;
 
 import lombok.Getter;
 

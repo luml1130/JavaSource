@@ -1,4 +1,4 @@
-package com.luml.java.exception.tryTest;
+package com.luml.source.exception.tryTest;
 
 public class Demo5_Exception {
 	public static void main(String[] args) throws Exception {

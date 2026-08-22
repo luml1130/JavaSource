@@ -1,4 +1,4 @@
-package com.luml.java.tools;
+package com.luml.source.tools;
 
 import cn.hutool.core.util.IdUtil;
 import org.junit.Test;

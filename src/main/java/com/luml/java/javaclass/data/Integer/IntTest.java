@@ -1,4 +1,4 @@
-package com.luml.java.javaclass.data.Integer;
+package com.luml.source.javaclass.data.Integer;
 
 /**
  * @author luml

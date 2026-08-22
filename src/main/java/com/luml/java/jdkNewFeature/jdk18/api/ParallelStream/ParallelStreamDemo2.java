@@ -1,4 +1,4 @@
-package com.luml.java.jdkNewFeature.jdk18.api.ParallelStream;
+package com.luml.source.jdkNewFeature.jdk18.api.ParallelStream;
 
 import org.junit.Test;
 

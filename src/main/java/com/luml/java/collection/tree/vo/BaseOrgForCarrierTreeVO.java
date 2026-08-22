@@ -1,4 +1,4 @@
-package com.luml.java.collection.tree.vo;
+package com.luml.source.collection.tree.vo;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Getter;

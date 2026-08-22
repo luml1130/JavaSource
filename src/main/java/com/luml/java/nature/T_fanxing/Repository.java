@@ -1,4 +1,4 @@
-package com.luml.java.nature.T_fanxing;
+package com.luml.source.nature.T_fanxing;
 
 import com.luml.domain.User;
 

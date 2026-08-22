@@ -1,4 +1,4 @@
-package com.luml.java.collection.tree.RedBlackTree;
+package com.luml.source.collection.tree.RedBlackTree;
 
 /**
  * @author luml

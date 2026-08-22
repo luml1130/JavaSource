@@ -1,4 +1,4 @@
-package com.luml.java.collection.map.safe;
+package com.luml.source.collection.map.safe;
 
 /**
  * @author luml

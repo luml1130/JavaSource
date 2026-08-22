@@ -1,4 +1,4 @@
-package com.luml.java.collection.map.hashMap;
+package com.luml.source.collection.map.hashMap;
 
 /**
  * @author luml

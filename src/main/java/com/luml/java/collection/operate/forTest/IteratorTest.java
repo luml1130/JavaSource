@@ -1,4 +1,4 @@
-package com.luml.java.collection.operate.forTest;
+package com.luml.source.collection.operate.forTest;
 
 import org.junit.Test;
 

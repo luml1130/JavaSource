@@ -1,7 +1,7 @@
 package com.luml.source.java.data.json.fastjson;
 
 import com.alibaba.fastjson.JSON;
-import com.luml.domain.UserJson;
+import com.luml.source.domain.UserJson;
 
 /**
  * @author luml

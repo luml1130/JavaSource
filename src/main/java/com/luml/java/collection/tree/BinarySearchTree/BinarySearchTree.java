@@ -1,4 +1,4 @@
-package com.luml.java.collection.tree.BinarySearchTree;
+package com.luml.source.collection.tree.BinarySearchTree;
 
 /**
  * @author luml

@@ -1,6 +1,6 @@
-package com.luml.java.javaclass.date.util;
+package com.luml.source.javaclass.date.util;
 
-import com.luml.java.javaclass.date.other.DateStyle;
+import com.luml.source.javaclass.date.other.DateStyle;
 
 import java.time.Instant;
 import java.time.LocalDate;

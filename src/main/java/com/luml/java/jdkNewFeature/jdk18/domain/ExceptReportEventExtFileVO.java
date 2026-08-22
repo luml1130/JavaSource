@@ -1,4 +1,4 @@
-package com.luml.java.jdkNewFeature.jdk18.domain;
+package com.luml.source.jdkNewFeature.jdk18.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

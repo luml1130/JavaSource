@@ -1,7 +1,7 @@
-package com.luml.java.tools.validation;
+package com.luml.source.tools.validation;
 
 import com.google.common.collect.Lists;
-import com.luml.java.tools.validation.domain.UserVal;
+import com.luml.source.tools.validation.domain.UserVal;
 import org.junit.Test;
 
 import javax.validation.ConstraintViolation;

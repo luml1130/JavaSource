@@ -1,4 +1,4 @@
-package com.luml.java.collection.operate.create;
+package com.luml.source.collection.operate.create;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;

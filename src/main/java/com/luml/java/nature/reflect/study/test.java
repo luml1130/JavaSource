@@ -1,6 +1,6 @@
-package com.luml.java.nature.reflect.study;
+package com.luml.source.nature.reflect.study;
 
-import com.luml.java.nature.reflect.domain.Person;
+import com.luml.source.nature.reflect.domain.Person;
 import org.junit.Test;
 
 import java.lang.reflect.Field;

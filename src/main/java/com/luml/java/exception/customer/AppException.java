@@ -1,4 +1,4 @@
-package com.luml.java.exception.customer;
+package com.luml.source.exception.customer;
 
 public class AppException extends RuntimeException{
 

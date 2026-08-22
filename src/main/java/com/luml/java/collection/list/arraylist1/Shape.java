@@ -1,4 +1,4 @@
-package com.luml.java.collection.list.arraylist1;
+package com.luml.source.collection.list.arraylist1;
 
 /*
  * 类声明中加上abstract关键字，这个类就是抽象类

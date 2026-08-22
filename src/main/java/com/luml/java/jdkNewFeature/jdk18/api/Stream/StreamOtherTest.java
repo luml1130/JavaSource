@@ -1,9 +1,9 @@
-package com.luml.java.jdkNewFeature.jdk18.api.Stream;
+package com.luml.source.jdkNewFeature.jdk18.api.Stream;
 
 import com.luml.domain.Person;
 import com.luml.domain.Person2;
-import com.luml.java.jdkNewFeature.jdk18.Fruit;
-import com.luml.java.jdkNewFeature.jdk18.FruitDto;
+import com.luml.source.jdkNewFeature.jdk18.Fruit;
+import com.luml.source.jdkNewFeature.jdk18.FruitDto;
 import org.junit.Test;
 
 import java.math.BigDecimal;

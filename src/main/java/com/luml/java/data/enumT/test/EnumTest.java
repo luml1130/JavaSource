@@ -1,12 +1,12 @@
-package com.luml.java.data.enumT.test;
+package com.luml.source.data.enumT.test;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
 import com.luml.domain.Person;
-import com.luml.java.data.enumT.DisposedTypeEnum;
-import com.luml.java.data.enumT.ScoreEnum;
-import com.luml.java.data.enumT.TableAlignTypeEnum;
-import com.luml.java.data.enumT.UserPo;
+import com.luml.source.data.enumT.DisposedTypeEnum;
+import com.luml.source.data.enumT.ScoreEnum;
+import com.luml.source.data.enumT.TableAlignTypeEnum;
+import com.luml.source.data.enumT.UserPo;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 

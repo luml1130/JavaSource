@@ -1,4 +1,4 @@
-package com.luml.java.collection.array;
+package com.luml.source.collection.array;
 
 import org.apache.commons.lang3.math.NumberUtils;
 import org.junit.Test;

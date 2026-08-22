@@ -2,7 +2,7 @@ package com.luml.source.java.data.json.fastjson;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.luml.domain.City;
+import com.luml.source.domain.City;
 
 /**
  * @author luml

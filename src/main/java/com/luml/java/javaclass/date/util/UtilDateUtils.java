@@ -1,4 +1,4 @@
-package com.luml.java.javaclass.date.util;
+package com.luml.source.javaclass.date.util;
 
 import lombok.SneakyThrows;
 import org.junit.Test;

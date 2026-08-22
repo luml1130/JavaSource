@@ -1,4 +1,4 @@
-package com.luml.java.tools.beanCopy;
+package com.luml.source.tools.beanCopy;
 
 //import org.springframework.beans.BeanUtils;
 

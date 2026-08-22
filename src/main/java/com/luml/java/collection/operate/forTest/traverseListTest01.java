@@ -1,4 +1,4 @@
-package com.luml.java.collection.operate.forTest;
+package com.luml.source.collection.operate.forTest;
 
 import com.luml.domain.User2;
 import org.apache.commons.collections.CollectionUtils;

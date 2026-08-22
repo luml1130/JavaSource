@@ -1,4 +1,4 @@
-package com.luml.java.collection.operate;
+package com.luml.source.collection.operate;
 
 import cn.hutool.core.map.MapUtil;
 import org.apache.commons.collections4.MapUtils;

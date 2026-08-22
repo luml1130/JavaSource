@@ -1,4 +1,4 @@
-package com.luml.java.collection.operate.sort;
+package com.luml.source.collection.operate.sort;
 
 import java.util.ArrayList;
 import java.util.Collections;

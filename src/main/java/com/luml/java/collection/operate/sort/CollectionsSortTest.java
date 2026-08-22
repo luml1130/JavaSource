@@ -1,4 +1,4 @@
-package com.luml.java.collection.operate.sort;
+package com.luml.source.collection.operate.sort;
 
 import com.luml.domain.sort.Book;
 import com.luml.domain.sort.Student;

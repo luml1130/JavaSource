@@ -1,4 +1,4 @@
-package com.luml.java.collection.map.safe;
+package com.luml.source.collection.map.safe;
 
 import java.util.HashMap;
 import java.util.Map;

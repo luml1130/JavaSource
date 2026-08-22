@@ -1,4 +1,4 @@
-package com.luml.java.collection.map.safe;
+package com.luml.source.collection.map.safe;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;

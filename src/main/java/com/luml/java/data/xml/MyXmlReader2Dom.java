@@ -1,4 +1,4 @@
-package com.luml.java.data.xml;
+package com.luml.source.data.xml;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;

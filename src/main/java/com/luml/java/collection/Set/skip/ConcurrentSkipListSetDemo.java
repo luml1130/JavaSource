@@ -1,4 +1,4 @@
-package com.luml.java.collection.Set.skip;
+package com.luml.source.collection.Set.skip;
 
 import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.ExecutorService;

@@ -1,4 +1,4 @@
-package com.luml.java.collection.list.synchronizedList;
+package com.luml.source.collection.list.synchronizedList;
 
 import java.util.ArrayList;
 import java.util.Collections;

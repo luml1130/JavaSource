@@ -1,4 +1,4 @@
-package com.luml.java.javaclass;
+package com.luml.source.javaclass;
 
 import java.math.BigDecimal;
 

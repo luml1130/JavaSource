@@ -1,4 +1,4 @@
-package com.luml.java.javaclass.date;
+package com.luml.source.javaclass.date;
 import java.util.TimeZone;
 import java.util.Date;
 import java.text.SimpleDateFormat;

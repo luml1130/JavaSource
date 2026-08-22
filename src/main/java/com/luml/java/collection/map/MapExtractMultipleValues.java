@@ -1,4 +1,4 @@
-package com.luml.java.collection.map;
+package com.luml.source.collection.map;
 
 import java.util.Arrays;
 import java.util.Collection;

@@ -1,4 +1,4 @@
-package com.luml.java.collection.operate;
+package com.luml.source.collection.operate;
 
 import java.util.Collections;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.luml.java.javaclass.studyD10;
+package com.luml.source.javaclass.studyD10;
 
 class Demo6_Super {
 	public static void main(String[] args) {

@@ -1,7 +1,7 @@
-package com.luml.java.jdkNewFeature.jdk18.api.Stream;
+package com.luml.source.jdkNewFeature.jdk18.api.Stream;
 
 import com.luml.domain.Person2;
-import com.luml.java.data.enumT.DepartmentTypeEnum;
+import com.luml.source.data.enumT.DepartmentTypeEnum;
 
 import java.util.ArrayList;
 import java.util.Arrays;

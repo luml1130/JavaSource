@@ -1,4 +1,4 @@
-package com.luml.java.collection.operate.count;
+package com.luml.source.collection.operate.count;
 
 import com.luml.domain.User2;
 import org.junit.Test;

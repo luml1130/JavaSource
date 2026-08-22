@@ -1,4 +1,4 @@
-package com.luml.java.exception.threadExeption;
+package com.luml.source.exception.threadExeption;
 
 import java.util.concurrent.*;
 

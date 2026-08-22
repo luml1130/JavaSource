@@ -1,4 +1,4 @@
-package com.luml.java.jdkNewFeature.jdk18.function;
+package com.luml.source.jdkNewFeature.jdk18.function;
 
 import java.util.function.Consumer;
 import java.util.function.Function;

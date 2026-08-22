@@ -1,4 +1,4 @@
-package com.luml.java.javaclass.separarors;
+package com.luml.source.javaclass.separarors;
 
 /**
  * @author luml

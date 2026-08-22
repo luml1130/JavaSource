@@ -1,4 +1,4 @@
-package com.luml.java.collection.operate.copy;
+package com.luml.source.collection.operate.copy;
 
 import org.junit.Test;
 

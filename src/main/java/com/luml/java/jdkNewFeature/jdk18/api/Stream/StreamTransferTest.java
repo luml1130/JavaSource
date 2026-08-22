@@ -1,9 +1,9 @@
-package com.luml.java.jdkNewFeature.jdk18.api.Stream;
+package com.luml.source.jdkNewFeature.jdk18.api.Stream;
 
 import com.alibaba.fastjson.JSON;
 import com.luml.domain.Person2;
 import com.luml.domain.User2;
-import com.luml.java.data.Person;
+import com.luml.source.data.Person;
 import lombok.Data;
 import org.junit.Test;
 

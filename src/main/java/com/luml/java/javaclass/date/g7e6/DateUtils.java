@@ -1,6 +1,6 @@
-package com.luml.java.javaclass.date.g7e6;
+package com.luml.source.javaclass.date.g7e6;
 
-import com.luml.java.javaclass.date.other.DateStyle;
+import com.luml.source.javaclass.date.other.DateStyle;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

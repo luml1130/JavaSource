@@ -1,4 +1,4 @@
-package com.luml.java.jdkNewFeature.jdk18.Lambda;
+package com.luml.source.jdkNewFeature.jdk18.Lambda;
 
 /**
  * @author luml

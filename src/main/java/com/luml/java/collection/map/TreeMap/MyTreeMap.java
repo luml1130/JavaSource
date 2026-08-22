@@ -1,4 +1,4 @@
-package com.luml.java.collection.map.TreeMap;
+package com.luml.source.collection.map.TreeMap;
 
 import java.util.TreeMap;
 

@@ -1,4 +1,4 @@
-package com.luml.java.collection.list.arraylist2;
+package com.luml.source.collection.list.arraylist2;
 
 public class Reserch extends Dept {
 	public Reserch() {

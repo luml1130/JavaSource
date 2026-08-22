@@ -1,4 +1,4 @@
-package com.luml.java.nature.Serializable.Kryo;
+package com.luml.source.nature.Serializable.Kryo;
 
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;

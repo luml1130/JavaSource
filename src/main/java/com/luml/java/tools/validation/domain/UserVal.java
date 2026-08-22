@@ -1,4 +1,4 @@
-package com.luml.java.tools.validation.domain;
+package com.luml.source.tools.validation.domain;
 
 import javax.validation.constraints.Size;
 import java.util.List;

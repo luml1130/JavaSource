@@ -1,4 +1,4 @@
-package com.luml.java.collection.operate.compare;
+package com.luml.source.collection.operate.compare;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package com.luml.java.collection.operate.stream;
+package com.luml.source.collection.operate.stream;
 
 import org.junit.Test;
 

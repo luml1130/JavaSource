@@ -1,4 +1,4 @@
-package com.luml.java.javaclass.data.String;
+package com.luml.source.javaclass.data.String;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;

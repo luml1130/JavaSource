@@ -1,4 +1,4 @@
-package com.luml.java.tools.validation;
+package com.luml.source.tools.validation;
 
 import com.alibaba.fastjson.JSONObject;
 import com.luml.domain.City;

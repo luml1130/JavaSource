@@ -1,4 +1,4 @@
-package com.luml.java.base;
+package com.luml.source.base;
 
 /**
  * @author luml

@@ -1,4 +1,4 @@
-package com.luml.java.keyword;
+package com.luml.source.keyword;
 
 
 import org.junit.Test;

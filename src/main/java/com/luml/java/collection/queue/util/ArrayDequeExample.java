@@ -1,4 +1,4 @@
-package com.luml.java.collection.queue.util;
+package com.luml.source.collection.queue.util;
 
 import org.junit.Test;
 

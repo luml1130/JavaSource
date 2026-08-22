@@ -1,4 +1,4 @@
-package com.luml.java.javaclass.Object;
+package com.luml.source.javaclass.Object;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
  */
 public class finalizeTest {
     public static void main(String[] args) throws IOException {
-        com.luml.java.javaclass.Object.M m = new com.luml.java.javaclass.Object.M();
+        com.luml.source.javaclass.Object.M m = new com.luml.source.javaclass.Object.M();
         m = null;
         System.gc();
         //阻塞Main线程，给垃圾回收线程时间执行

@@ -1,9 +1,9 @@
-package com.luml.java.jdkNewFeature.jdk18.api.Stream;
+package com.luml.source.jdkNewFeature.jdk18.api.Stream;
 
 import com.google.common.collect.Lists;
 import com.luml.domain.Person2;
-import com.luml.java.jdkNewFeature.jdk18.domain.EventReportInfoPO;
-import com.luml.java.jdkNewFeature.jdk18.domain.ExceptReportEventExtFileVO;
+import com.luml.source.jdkNewFeature.jdk18.domain.EventReportInfoPO;
+import com.luml.source.jdkNewFeature.jdk18.domain.ExceptReportEventExtFileVO;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;

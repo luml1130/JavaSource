@@ -1,4 +1,4 @@
-package com.luml.java.collection.queue.Deque;
+package com.luml.source.collection.queue.Deque;
 
 import org.junit.Test;
 

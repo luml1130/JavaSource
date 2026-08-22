@@ -1,4 +1,4 @@
-package com.luml.java.javaclass.date.other;
+package com.luml.source.javaclass.date.other;
 
 /**
  * @author houjun@e6yun.com

@@ -1,4 +1,4 @@
-package com.luml.java.collection.operate.copy;
+package com.luml.source.collection.operate.copy;
 
 import com.luml.domain.Person;
 import org.junit.Test;

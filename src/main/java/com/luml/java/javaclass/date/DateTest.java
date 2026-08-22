@@ -1,6 +1,6 @@
-package com.luml.java.javaclass.date;
+package com.luml.source.javaclass.date;
 
-import com.luml.java.javaclass.date.util.UtilDateUtils;
+import com.luml.source.javaclass.date.util.UtilDateUtils;
 import org.junit.Test;
 
 import java.text.ParseException;

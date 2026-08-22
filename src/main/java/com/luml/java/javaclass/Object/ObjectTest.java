@@ -1,4 +1,4 @@
-package com.luml.java.javaclass.Object;
+package com.luml.source.javaclass.Object;
 
 import com.luml.domain.User;
 

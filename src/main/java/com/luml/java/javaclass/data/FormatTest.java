@@ -1,4 +1,4 @@
-package com.luml.java.javaclass.data;
+package com.luml.source.javaclass.data;
 
 import org.junit.Test;
 

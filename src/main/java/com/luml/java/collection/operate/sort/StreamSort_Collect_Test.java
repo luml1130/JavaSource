@@ -1,7 +1,7 @@
-package com.luml.java.collection.operate.sort;
+package com.luml.source.collection.operate.sort;
 
 import com.luml.domain.sort.PersonNoCompare;
-import com.luml.java.data.Person;
+import com.luml.source.data.Person;
 import org.hibernate.validator.constraints.br.TituloEleitoral;
 import org.junit.Test;
 

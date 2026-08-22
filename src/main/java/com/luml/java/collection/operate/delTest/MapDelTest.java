@@ -1,4 +1,4 @@
-package com.luml.java.collection.operate.delTest;
+package com.luml.source.collection.operate.delTest;
 
 import org.junit.Test;
 

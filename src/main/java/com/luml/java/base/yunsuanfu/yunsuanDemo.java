@@ -1,4 +1,4 @@
-package com.luml.java.base.yunsuanfu;
+package com.luml.source.base.yunsuanfu;
 
 import org.junit.Test;
 

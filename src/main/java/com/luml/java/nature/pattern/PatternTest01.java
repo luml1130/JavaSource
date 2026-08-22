@@ -1,4 +1,4 @@
-package com.luml.java.nature.pattern;
+package com.luml.source.nature.pattern;
 
 import org.junit.Test;
 

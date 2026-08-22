@@ -1,6 +1,6 @@
-package com.luml.java.data.enumT;
+package com.luml.source.data.enumT;
 
-import com.luml.java.keyword.SwitchTest;
+import com.luml.source.keyword.SwitchTest;
 import org.springframework.util.StringUtils;
 
 public enum ScoreEnum implements Printable{
