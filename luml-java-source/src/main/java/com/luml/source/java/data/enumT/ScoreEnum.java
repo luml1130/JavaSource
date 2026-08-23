@@ -1,6 +1,5 @@
 package com.luml.source.java.data.enumT;
 
-import com.luml.source.keyword.SwitchTest;
 import org.springframework.util.StringUtils;
 
 public enum ScoreEnum implements Printable{
@@ -8,10 +7,15 @@ public enum ScoreEnum implements Printable{
     A("A"),
     B("B"),
     C("C"),
-    D("D");
+    D("D"),
+    E("E");
     private String desc;
 
     ScoreEnum(String a) {
+    }
+
+    public String getDesc() {
+        return desc;
     }
 
     public static String getDescByValue(Integer score) {

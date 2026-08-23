@@ -1,0 +1,34 @@
+@startuml
+title 用户登录流程时序图
+autonumber
+
+note left: 手动创建空白puml 手写的
+
+' 定义参与者
+actor "用户" as User
+participant "前端页面" as Frontend
+participant "认证服务" as AuthService
+database "用户数据库" as DB
+
+' 交互流程
+User -> Frontend : 输入账号密码
+activate Frontend
+Frontend -> AuthService : 发送登录请求
+activate AuthService
+
+AuthService -> DB : 查询用户信息
+activate DB
+DB --> AuthService : 返回用户数据
+deactivate DB
+
+alt 验证成功
+    AuthService --> Frontend : 返回 Token
+    Frontend --> User : 登录成功，跳转首页
+else 验证失败
+    AuthService --> Frontend : 返回错误信息
+    Frontend --> User : 提示账号或密码错误
+end
+
+deactivate AuthService
+deactivate Frontend
+@enduml

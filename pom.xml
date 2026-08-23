@@ -11,6 +11,7 @@
     <modules>
         <module>luml-java-source</module>
         <module>luml-java-test</module>
+        <module>luml-auto-test-service</module>
     </modules>
 
     <properties>
@@ -368,11 +369,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.14.1</version>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.gmavenplus</groupId>
-                <artifactId>gmavenplus-plugin</artifactId>
-            </plugin>
         </plugins>
+
 
         <pluginManagement>
             <plugins>
