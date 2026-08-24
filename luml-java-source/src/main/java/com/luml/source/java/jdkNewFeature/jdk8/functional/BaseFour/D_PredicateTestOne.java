@@ -13,13 +13,13 @@ import java.util.function.Predicate;
  *     3.判断数字是否大于10
  * @date 2022/4/5
  */
-public class PredicateTestOne {
+public class D_PredicateTestOne {
 
     public static void main(String[] args) {
 
         /** 我们先采用传统的方式 */
         /**  - 1.判断传入的字符串的长度是否大于5 */
-        PredicateTestOne predicateTestOne = new PredicateTestOne();
+        D_PredicateTestOne predicateTestOne = new D_PredicateTestOne();
         System.out.println(predicateTestOne.judgeStringLength("hello"));
         System.out.println(predicateTestOne.judgenumbersOdds(4));
         System.out.println(predicateTestOne.judgeSpecialNumbers(-1));
@@ -30,7 +30,7 @@ public class PredicateTestOne {
      */
     @Test
     public void test() {
-        PredicateTestOne predicate = new PredicateTestOne();
+        D_PredicateTestOne predicate = new D_PredicateTestOne();
         /** - 1.判断传入的字符串的长度是否大于5 */
         System.out.println(predicate.judgeConditionByFunction(12345,value -> String.valueOf(value).length() > 5));
         /** - 2.判断传入的参数是否是奇数 */

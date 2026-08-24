@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import java.util.function.Supplier;
 
-public class SupplierTest {
+public class B_SupplierTest {
 
     public static void main(String[] args) {
         Supplier<String> supplier = () -> "小小水";

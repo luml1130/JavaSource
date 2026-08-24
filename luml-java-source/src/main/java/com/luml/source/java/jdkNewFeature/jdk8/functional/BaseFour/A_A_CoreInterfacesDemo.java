@@ -10,7 +10,7 @@ import java.util.function.Supplier;
  * @description
  * @date 2026/6/11
  */
-public class CoreInterfacesDemo {
+public class A_A_CoreInterfacesDemo {
     /**
      * 四大核心基础接口
      * @param args

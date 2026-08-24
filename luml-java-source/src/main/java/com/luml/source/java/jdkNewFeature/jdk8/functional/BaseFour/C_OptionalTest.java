@@ -27,7 +27,7 @@ import java.util.Optional;
  *
  * @date 2025/12/27
  */
-public class OptionalTest {
+public class C_OptionalTest {
 
     public static void main(String[] args) {
         Optional<String> optional = Optional.of("Hello");

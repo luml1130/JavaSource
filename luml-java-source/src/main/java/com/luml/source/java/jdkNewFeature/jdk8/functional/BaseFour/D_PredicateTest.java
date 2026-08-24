@@ -9,13 +9,13 @@ import java.util.function.Predicate;
  * @description
  * @date 2022/4/5
  */
-public class PredicateTest {
+public class D_PredicateTest {
 
 
     @Test
     public void test01(){
 
-        PredicateTest predicateTestOne = new PredicateTest();
+        D_PredicateTest predicateTestOne = new D_PredicateTest();
 
         Predicate<String> predicate = new Predicate<String>() {
             @Override
