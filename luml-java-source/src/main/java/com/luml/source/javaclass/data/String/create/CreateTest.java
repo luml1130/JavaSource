@@ -1,6 +1,6 @@
 package com.luml.source.javaclass.data.String.create;
 
-import com.luml.domain.Person;
+import com.luml.source.domain.Person;
 import org.junit.Test;
 
 /**

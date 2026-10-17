@@ -1,6 +1,6 @@
 package com.luml.source.javaclass.data.String;
 
-import com.luml.domain.Person;
+import com.luml.source.domain.Person;
 
 /**
  * @author luml

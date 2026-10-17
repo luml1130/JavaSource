@@ -12,6 +12,7 @@
         <module>luml-java-source</module>
         <module>luml-java-test</module>
         <module>luml-auto-test-service</module>
+        <module>luml_java_other</module>
     </modules>
 
     <properties>

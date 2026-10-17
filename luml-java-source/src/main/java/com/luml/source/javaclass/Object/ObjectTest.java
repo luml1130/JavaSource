@@ -1,6 +1,6 @@
 package com.luml.source.javaclass.Object;
 
-import com.luml.domain.User;
+import com.luml.source.domain.User;
 
 /**
  * @author luml

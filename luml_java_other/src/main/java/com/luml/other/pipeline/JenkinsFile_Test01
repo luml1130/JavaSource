@@ -1,0 +1,64 @@
+pipeline {
+    agent any
+    environment {
+        // 定义环境变量，可根据实际情况修改
+        APP_NAME = 'my-spring-app'
+        SERVER_USER = 'deployer'
+        SERVER_HOST = '192.168.1.100'
+        DEPLOY_PATH = '/opt/apps'
+    }
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build & Test') {
+            steps {
+                script {
+                    // 使用 Maven 进行编译和单元测试
+                    sh 'mvn clean package -DskipTests=false'
+                }
+            }
+            post {
+                success {
+                    archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+                }
+            }
+        }
+
+        stage('Deploy to Server') {
+            steps {
+                script {
+                    // 获取构建生成的 jar 包文件名
+                    def jarFile = sh(script: 'ls target/*.jar', returnStdout: true).trim()
+
+                    // 使用 SSH 发送文件并重启服务
+                    sshagent(['your-ssh-credential-id']) {
+                        sh """
+                            scp ${jarFile} ${SERVER_USER}@${SERVER_HOST}:${DEPLOY_PATH}/
+                            ssh ${SERVER_USER}@${SERVER_HOST} "
+                                cd ${DEPLOY_PATH} &&
+                                pkill -f '${APP_NAME}' || true &&
+                                nohup java -jar ${jarFile} > app.log 2>&1 &
+                            "
+                        """
+                    }
+                }
+            }
+        }
+    }
+    post {
+        always {
+            echo 'Pipeline finished.'
+        }
+        success {
+            echo 'Deployment successful!'
+        }
+        failure {
+            echo 'Deployment failed! Check logs.'
+        }
+    }
+}
