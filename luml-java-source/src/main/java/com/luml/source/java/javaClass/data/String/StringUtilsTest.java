@@ -1,0 +1,36 @@
+package com.luml.source.java.javaClass.data.String;
+
+import com.google.common.collect.Lists;
+import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
+
+import java.util.Arrays;
+
+/**
+ * @author luml
+ * @description
+ * @date 2022/11/9
+ */
+public class StringUtilsTest {
+    public static void main(String[] args) {
+      /*  String permanentCode = null;
+        System.out.println(StringUtils.isBlank(permanentCode) ? false : true);
+        System.out.println(StringUtils.isBlank(null));*/
+
+        String aa = "2";
+        //if(1==1){
+            //aa.(",", "33");
+        //}
+        ;
+        System.out.println(aa.concat(","+"33"));
+    }
+
+    @Test
+    public void test2(){
+        String accStatusStr = "wo";
+        String loStatusStr = "ni";
+        String lineStatusStr = "te";
+        String status = StringUtils.join(Arrays.asList(accStatusStr,loStatusStr,lineStatusStr),",");
+        System.out.println(status);
+    }
+}

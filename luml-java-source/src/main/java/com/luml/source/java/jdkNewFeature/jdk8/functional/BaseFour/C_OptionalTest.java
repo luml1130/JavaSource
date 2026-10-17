@@ -11,6 +11,10 @@ import java.util.Optional;
  * @author luml
  * @description
  *
+ * public T orElseGet(Supplier<? extends T> supplier)
+ *  > 如果 Optional **有值** → 返回内部的值，**supplier 不会执行**；
+ *  > 如果 Optional **为空 (null)** → 执行 supplier，返回 supplier 产生的默认值（懒加载 lazy）菜鸟教程
+ *
  *  //设置位置信息
  *      eventReportCmd.PositionInfo positionInfo = Optional.ofNullable(cmd.getPosition())
  *                          .orElse(new EventReportCmd.PositionInfo());
@@ -44,6 +48,44 @@ public class C_OptionalTest {
 
         // 使用 map
         Optional<String> upperCase = optional.map(String::toUpperCase);
+    }
+
+    /**
+     *  * public T orElseGet(Supplier<? extends T> supplier)
+     *        > 如果 Optional **有值** → 返回内部的值，**supplier 不会执行**；
+     *        > 如果 Optional **为空 (null)** → 执行 supplier，返回 supplier 产生的默认值（懒加载 lazy）
+     *  orElse vs orElseGet
+     *      - `orElse(T other)`：**立即求值（eager）**，不管 optional 有没有值，括号里面表达式**一定执行**。适合常量简单默认值。
+     *      - `orElseGet(Supplier)`：**延迟求值（lazy）**，**只有为空才执行**supplier。适合昂贵操作：查 DB、调用接口、新建对象。
+     *      生产坑：orElse 里面放方法调用，会带来**多余数据库请求 / 副作用**，查库、远程调用一律用`orElseGet`
+     */
+    @Test
+    public void orElseTest(){
+
+        // 为空场景
+        Optional<String> opt1 = Optional.ofNullable(null);
+        String val1 = opt1.orElseGet(() -> "default"); //使用 orElseGet 提供默认值
+        System.out.println(val1); // default
+
+        // 有值场景，lambda不会跑
+        Optional<String> opt2 = Optional.of("hello");
+        String val2 = opt2.orElseGet(() -> {
+            System.out.println("执行supplier");
+            return "default";
+        });
+        System.out.println(val2); // hello，控制台不会打印“执行supplier
+
+        //2、orElse vs orElseGet【面试高频】
+        // orElse：optional有值，heavyQuery依然执行！
+        Optional.of("exist").orElse(heavyQuery());//下面heavyQuery会打印
+
+        // orElseGet：optional有值，heavyQuery完全不执行
+        Optional.of("exist").orElseGet(() -> heavyQuery());
+
+    }
+    private static String heavyQuery() {
+        System.out.println("查询数据库");
+        return "db-default";
     }
 
     /**
