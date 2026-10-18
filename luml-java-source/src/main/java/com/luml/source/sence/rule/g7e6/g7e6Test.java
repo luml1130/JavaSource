@@ -1,12 +1,6 @@
-package com.luml.source.sence.rule.QlExpress;
+package com.luml.source.sence.rule.g7e6;
 
-import com.alibaba.fastjson.JSONObject;
-import com.luml.source.sence.rule.QlExpress.g7e6.ExpressEngine;
-import com.ql.util.express.DefaultContext;
 import com.ql.util.express.ExpressRunner;
-import org.apache.commons.lang3.StringUtils;
-
-import java.util.List;
 
 /**
  * @author luml

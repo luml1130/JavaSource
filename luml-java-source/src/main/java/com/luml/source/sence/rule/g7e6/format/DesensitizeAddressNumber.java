@@ -1,6 +1,5 @@
-package com.luml.source.sence.rule.QlExpress.g7e6.format;
+package com.luml.source.sence.rule.g7e6.format;
 
-import cn.hutool.core.util.DesensitizedUtil;
 /*
 import com.chinawayltd.ops.security.masking.MaskingTool;
 import com.chinawayltd.ops.security.masking.MaskingType;

@@ -200,11 +200,11 @@
             <version>3.3.2</version>
         </dependency>
 
-        <dependency>
+      <!--  <dependency>
             <groupId>com.chinawayltd.ops.security</groupId>
             <artifactId>masking-tool</artifactId>
             <version>1.0.1</version>
-        </dependency>
+        </dependency>-->
 
 
         <dependency>

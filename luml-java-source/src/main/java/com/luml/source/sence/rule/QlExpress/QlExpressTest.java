@@ -15,6 +15,30 @@ public class QlExpressTest {
         System.out.println("22");
     }
 
+    @Test
+    public void test1() throws Exception {
+       /* ExpressRunner runner = new ExpressRunner();
+        DefaultContext<String, Object> context = new DefaultContext<>();
+        context.put("a", 10);
+        context.put("b", 20);
+
+        Object result = runner.execute("a + b * 2", context, null, true, false);
+        System.out.println("result="+result);*/ // 输出: 50
+
+        // 1. 创建执行器和上下文
+        ExpressRunner runner = new ExpressRunner();
+        DefaultContext<String, Object> context = new DefaultContext<>();
+        // 2. 传入变量
+        context.put("商品原价", 100);
+        context.put("促销折扣", 0.8);
+        // 3. 执行表达式
+        String rule = "商品原价 * 促销折扣";
+        Object result = runner.execute(rule, context, null, true, false);
+        // 结果输出 80
+        System.out.println("result=" + result);
+
+    }
+
     /**
      * 调用自定义函数‌
      */

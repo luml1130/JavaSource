@@ -1,4 +1,4 @@
-package com.luml.source.sence.rule.QlExpress.g7e6.format;
+package com.luml.source.sence.rule.g7e6.format;
 
 import com.ql.util.express.Operator;
 import org.springframework.util.Assert;

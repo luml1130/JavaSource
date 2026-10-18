@@ -1,4 +1,4 @@
-package com.luml.source.sence.rule.QlExpress.g7e6.check;
+package com.luml.source.sence.rule.g7e6.check;
 
 import com.ql.util.express.Operator;
 import com.ql.util.express.exception.QLException;

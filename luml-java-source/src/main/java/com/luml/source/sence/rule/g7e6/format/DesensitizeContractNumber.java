@@ -1,9 +1,7 @@
-package com.luml.source.sence.rule.QlExpress.g7e6.format;
+package com.luml.source.sence.rule.g7e6.format;
 
 /*import com.chinawayltd.ops.security.masking.MaskingTool;
 import com.chinawayltd.ops.security.masking.MaskingType;*/
-
-import cn.hutool.core.util.DesensitizedUtil;
 
 public class DesensitizeContractNumber extends DesensitizeOperator {
 

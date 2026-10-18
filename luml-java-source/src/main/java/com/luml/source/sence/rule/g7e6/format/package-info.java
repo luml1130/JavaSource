@@ -4,4 +4,4 @@
  * @author xiqiang@e6yun.com
  * @date 2022/7/18
  */
-package com.luml.source.sence.rule.QlExpress.g7e6.format;
+package com.luml.source.sence.rule.g7e6.format;

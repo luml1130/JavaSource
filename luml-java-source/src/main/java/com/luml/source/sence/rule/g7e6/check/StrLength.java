@@ -1,4 +1,4 @@
-package com.luml.source.sence.rule.QlExpress.g7e6.check;
+package com.luml.source.sence.rule.g7e6.check;
 
 import cn.hutool.core.util.StrUtil;
 import com.ql.util.express.exception.QLException;

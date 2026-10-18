@@ -1,10 +1,9 @@
-package com.luml.source.sence.rule.QlExpress.g7e6.format.special;
+package com.luml.source.sence.rule.g7e6.format.special;
 
-import cn.hutool.core.util.DesensitizedUtil;
 import cn.hutool.core.util.StrUtil;
 /*import com.chinawayltd.ops.security.masking.MaskingTool;
 import com.chinawayltd.ops.security.masking.MaskingType;*/
-import com.luml.source.sence.rule.QlExpress.g7e6.format.DesensitizeOperator;
+import com.luml.source.sence.rule.g7e6.format.DesensitizeOperator;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Arrays;

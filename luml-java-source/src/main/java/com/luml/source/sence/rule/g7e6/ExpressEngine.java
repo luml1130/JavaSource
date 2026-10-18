@@ -1,25 +1,25 @@
-package com.luml.source.sence.rule.QlExpress.g7e6;
+package com.luml.source.sence.rule.g7e6;
 
-import com.luml.source.sence.rule.QlExpress.g7e6.format.DesensitizeAddressNumber;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.DesensitizeBankCardNumber;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.DesensitizeCarNumber;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.DesensitizeCertificateValidityOrExpirationDate;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.DesensitizeContractNumber;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.DesensitizeDriverLicenseNumber;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.DesensitizeEmail;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.DesensitizeIdentificationNumber;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.DesensitizeOthers;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.DesensitizePersonalName;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.DesensitizePhoneNumber;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.DesensitizeVehicleEngineNumber;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.DesensitizeVehicleIdentificationNumber;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.DesensitizeWechatOrAlipayNumber;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.FormatUpdateColumn;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.special.DesensitizeDeliverymanList;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.special.DesensitizeMainDriver;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.special.DesensitizeOtherCommonDrivers;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.special.DesensitizePersonalNameList;
-import com.luml.source.sence.rule.QlExpress.g7e6.format.special.DesensitizeVehicleNumberList;
+import com.luml.source.sence.rule.g7e6.format.DesensitizeAddressNumber;
+import com.luml.source.sence.rule.g7e6.format.DesensitizeBankCardNumber;
+import com.luml.source.sence.rule.g7e6.format.DesensitizeCarNumber;
+import com.luml.source.sence.rule.g7e6.format.DesensitizeCertificateValidityOrExpirationDate;
+import com.luml.source.sence.rule.g7e6.format.DesensitizeContractNumber;
+import com.luml.source.sence.rule.g7e6.format.DesensitizeDriverLicenseNumber;
+import com.luml.source.sence.rule.g7e6.format.DesensitizeEmail;
+import com.luml.source.sence.rule.g7e6.format.DesensitizeIdentificationNumber;
+import com.luml.source.sence.rule.g7e6.format.DesensitizeOthers;
+import com.luml.source.sence.rule.g7e6.format.DesensitizePersonalName;
+import com.luml.source.sence.rule.g7e6.format.DesensitizePhoneNumber;
+import com.luml.source.sence.rule.g7e6.format.DesensitizeVehicleEngineNumber;
+import com.luml.source.sence.rule.g7e6.format.DesensitizeVehicleIdentificationNumber;
+import com.luml.source.sence.rule.g7e6.format.DesensitizeWechatOrAlipayNumber;
+import com.luml.source.sence.rule.g7e6.format.FormatUpdateColumn;
+import com.luml.source.sence.rule.g7e6.format.special.DesensitizeDeliverymanList;
+import com.luml.source.sence.rule.g7e6.format.special.DesensitizeMainDriver;
+import com.luml.source.sence.rule.g7e6.format.special.DesensitizeOtherCommonDrivers;
+import com.luml.source.sence.rule.g7e6.format.special.DesensitizePersonalNameList;
+import com.luml.source.sence.rule.g7e6.format.special.DesensitizeVehicleNumberList;
 import com.ql.util.express.ExpressRunner;
 import lombok.extern.slf4j.Slf4j;
 
@@ -36,8 +36,6 @@ public class ExpressEngine {
         ExpressRunner runner = buildExpressRunner();
 
         // 字符串长度
-
-
         return runner;
     }
 
